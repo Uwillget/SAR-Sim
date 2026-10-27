@@ -1,0 +1,15 @@
+﻿{
+    "SchemaVersion":  1,
+    "Version":  "1.1.0",
+    "ArchiveFile":  "SarSensitivityRenderer-win-x64-v1.zip",
+    "Sha256":  "60139e8f75524d6f81d8eb089a8491b5b07f67a28918a785a463a66b6f469333",
+    "SourceSha256":  "b0d6c7343e502bad07ab3de0187f5806f4543349c927252850b3632dbe7af167",
+    "TrafficHeatmapSourceSha256":  "5b918bb1822b7eb16a6776ee4716b7215050d172ca6a40b591b5ff9f2d65db04",
+    "ExecutableRelativePath":  "SarSensitivityRenderer/SarSensitivityRenderer.exe",
+    "PythonVersion":  "3.12.7",
+    "PyInstallerVersion":  "6.15.0",
+    "RuntimeRequirementsSha256":  "ae07a57556b2a644328179ebec232b8f92d423d373a77111b2448b01a8c5da06",
+    "BuildRequirementsSha256":  "b065125f6ced0128c3b097e5e214b34cdae0e17d67f43f18849c8276b94635e3",
+    "ThirdPartyComponentsRelativePath":  "THIRD_PARTY_LICENSES/COMPONENTS.json",
+    "ThirdPartyComponentsSha256":  "6f419a02ca91c828510e8fc6a88b47842492e31b48ca62abbb9bfb3207e73603"
+}

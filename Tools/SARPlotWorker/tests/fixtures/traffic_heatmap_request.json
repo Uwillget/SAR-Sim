@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "kind": "traffic-heatmap",
+  "title": "Default Research Scene — Traffic Load",
+  "visible_layer_ids": ["L0", "L1"],
+  "network": {
+    "AltitudeLayers": [
+      {"LayerId": "L0", "DisplayName": "Lower layer", "NominalAltitude": 75, "Enabled": true},
+      {"LayerId": "L1", "DisplayName": "Upper layer", "NominalAltitude": 125, "Enabled": true}
+    ],
+    "Edges": [
+      {"EdgeId": "E0", "LayerId": "L0", "Lanes": [
+        {"LaneId": "L0-A", "LayerId": "L0", "Centerline": [{"x": 0, "y": 75, "z": 0}, {"x": 50, "y": 75, "z": 0}, {"x": 100, "y": 75, "z": 20}]},
+        {"LaneId": "L0-B", "LayerId": "L0", "Centerline": [{"x": 0, "y": 75, "z": 12}, {"x": 50, "y": 75, "z": 12}, {"x": 100, "y": 75, "z": 30}]}
+      ]},
+      {"EdgeId": "E1", "LayerId": "L1", "Lanes": [
+        {"LaneId": "L1-A", "LayerId": "L1", "Centerline": [{"x": 0, "y": 125, "z": 0}, {"x": 30, "y": 125, "z": 35}, {"x": 75, "y": 125, "z": 60}]}
+      ]}
+    ],
+    "LaneConnectionCorridors": [
+      {"CorridorId": "excluded-by-design", "Centerline": [{"x": -999, "y": 0, "z": -999}, {"x": 999, "y": 0, "z": 999}]}
+    ]
+  },
+  "lane_traversals": {"L0-A": 18, "L0-B": 4, "L1-A": 31},
+  "resource_reservation_seconds": {"H1": 22.5, "A": 13, "AP-1": 7, "V0": 19, "C1": 12, "R1": 30, "VC-1": 18, "VP2-H1": 8, "VP2-N1": 11, "VP2-AP-1": 15},
+  "vertiports": [
+    {
+      "VertiportId": "VP1",
+      "DisplayName": "West Hub",
+      "Boundary": [{"x": 130, "y": 0, "z": 0}, {"x": 190, "y": 0, "z": 0}, {"x": 190, "y": 0, "z": 70}, {"x": 130, "y": 0, "z": 70}],
+      "Helipads": [{"HelipadId": "H1", "Boundary": [{"x": 145, "y": 0, "z": 15}, {"x": 162, "y": 0, "z": 15}, {"x": 162, "y": 0, "z": 32}, {"x": 145, "y": 0, "z": 32}]}],
+      "ApproachNet": {
+        "Nodes": [{"NodeId": "A", "Position": {"x": 130, "y": 0, "z": 35}}, {"NodeId": "B", "Position": {"x": 105, "y": 0, "z": 35}}],
+        "Edges": [{"EdgeId": "AP-1", "FromNodeId": "A", "ToNodeId": "B"}]
+      },
+      "HoldingStructures": [{
+        "HoldingStructureId": "HS1",
+        "Circles": [{"CircleId": "C1", "Center": {"x": 170, "y": 80, "z": 50}, "Radius": 12}],
+        "Vertices": [{"VertexId": "V0", "Position": {"x": 182, "y": 80, "z": 50}}, {"VertexId": "V1", "Position": {"x": 170, "y": 80, "z": 62}}],
+        "Ramps": [{"RampId": "R1", "FromVertexId": "V0", "ToVertexId": "V1", "LinkCircleId": "C1", "Direction": "CounterClockwise"}]
+      }],
+      "Corridors": [{
+        "CorridorId": "VC-1", "CorridorType": "Entry",
+        "LinkLaneId": "L0-A", "LinkRampId": "R1",
+        "LaneLinkPoint": {"x": 100, "y": 75, "z": 20},
+        "RampLinkPoint": {"x": 182, "y": 80, "z": 50}
+      }]
+    },
+    {
+      "VertiportId": "VP2",
+      "DisplayName": "East Hub",
+      "Boundary": [{"x": 1000, "y": 0, "z": 1000}, {"x": 1060, "y": 0, "z": 1000}, {"x": 1060, "y": 0, "z": 1060}, {"x": 1000, "y": 0, "z": 1060}],
+      "Helipads": [{"HelipadId": "VP2-H1", "Boundary": [{"x": 1010, "y": 0, "z": 1010}, {"x": 1020, "y": 0, "z": 1010}, {"x": 1020, "y": 0, "z": 1020}, {"x": 1010, "y": 0, "z": 1020}]}],
+      "ApproachNet": {
+        "Nodes": [
+          {"NodeId": "VP2-N1", "Position": {"x": 1060, "y": 0, "z": 1030}},
+          {"NodeId": "VP2-N2", "Position": {"x": 1030, "y": 0, "z": 1030}}
+        ],
+        "Edges": [{"EdgeId": "VP2-AP-1", "FromNodeId": "VP2-N1", "ToNodeId": "VP2-N2"}]
+      },
+      "HoldingStructures": [],
+      "Corridors": []
+    }
+  ],
+  "dpi": 300
+}

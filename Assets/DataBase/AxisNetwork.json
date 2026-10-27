@@ -1,0 +1,7337 @@
+{
+  "SchemaVersion": 2,
+  "NetworkId": "AxisNetwork",
+  "Nodes": [
+    {
+      "NodeId": "N0",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 2509.89258
+      },
+      "ConnectedEdges": [
+        "0_7",
+        "0_66"
+      ],
+      "NeighborNodes": [
+        "N7",
+        "N66"
+      ]
+    },
+    {
+      "NodeId": "N7",
+      "LayerId": "L0",
+      "Position": {
+        "x": -827.115234,
+        "y": 75.0,
+        "z": 2509.89258
+      },
+      "ConnectedEdges": [
+        "0_7",
+        "7_15",
+        "7_63"
+      ],
+      "NeighborNodes": [
+        "N0",
+        "N15",
+        "N63"
+      ]
+    },
+    {
+      "NodeId": "N15",
+      "LayerId": "L0",
+      "Position": {
+        "x": -427.115234,
+        "y": 75.0,
+        "z": 2509.89258
+      },
+      "ConnectedEdges": [
+        "7_15",
+        "15_31",
+        "E20"
+      ],
+      "NeighborNodes": [
+        "N7",
+        "N31",
+        "N1903"
+      ]
+    },
+    {
+      "NodeId": "N31",
+      "LayerId": "L0",
+      "Position": {
+        "x": 372.884766,
+        "y": 75.0,
+        "z": 2509.89258
+      },
+      "ConnectedEdges": [
+        "15_31",
+        "31_78"
+      ],
+      "NeighborNodes": [
+        "N15",
+        "N78"
+      ]
+    },
+    {
+      "NodeId": "N63",
+      "LayerId": "L0",
+      "Position": {
+        "x": -830.249268,
+        "y": 75.0,
+        "z": 2747.65918
+      },
+      "ConnectedEdges": [
+        "7_63",
+        "63_71",
+        "E21"
+      ],
+      "NeighborNodes": [
+        "N7",
+        "N71",
+        "N1903"
+      ]
+    },
+    {
+      "NodeId": "N66",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 2859.89258
+      },
+      "ConnectedEdges": [
+        "0_66",
+        "66_71",
+        "66_131"
+      ],
+      "NeighborNodes": [
+        "N0",
+        "N71",
+        "N131"
+      ]
+    },
+    {
+      "NodeId": "N71",
+      "LayerId": "L0",
+      "Position": {
+        "x": -927.115234,
+        "y": 75.0,
+        "z": 2859.89258
+      },
+      "ConnectedEdges": [
+        "63_71",
+        "66_71",
+        "E18"
+      ],
+      "NeighborNodes": [
+        "N63",
+        "N66",
+        "N156"
+      ]
+    },
+    {
+      "NodeId": "N78",
+      "LayerId": "L0",
+      "Position": {
+        "x": 397.714722,
+        "y": 75.0,
+        "z": 2802.91138
+      },
+      "ConnectedEdges": [
+        "31_78",
+        "78_120",
+        "E22"
+      ],
+      "NeighborNodes": [
+        "N31",
+        "N120",
+        "N117"
+      ]
+    },
+    {
+      "NodeId": "N117",
+      "LayerId": "L0",
+      "Position": {
+        "x": -144.640091,
+        "y": 75.0,
+        "z": 3236.377
+      },
+      "ConnectedEdges": [
+        "E8",
+        "E9",
+        "E19",
+        "E22"
+      ],
+      "NeighborNodes": [
+        "N161",
+        "N186",
+        "N1903",
+        "N78"
+      ]
+    },
+    {
+      "NodeId": "N120",
+      "LayerId": "L0",
+      "Position": {
+        "x": 622.884766,
+        "y": 75.0,
+        "z": 3209.89258
+      },
+      "ConnectedEdges": [
+        "78_120",
+        "120_165",
+        "E11"
+      ],
+      "NeighborNodes": [
+        "N78",
+        "N165",
+        "N186"
+      ]
+    },
+    {
+      "NodeId": "N131",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 3409.85156
+      },
+      "ConnectedEdges": [
+        "66_131",
+        "131_259",
+        "E17"
+      ],
+      "NeighborNodes": [
+        "N66",
+        "N259",
+        "N156"
+      ]
+    },
+    {
+      "NodeId": "N156",
+      "LayerId": "L0",
+      "Position": {
+        "x": -627.115234,
+        "y": 75.0,
+        "z": 3409.89258
+      },
+      "ConnectedEdges": [
+        "156_161",
+        "156_213",
+        "E17",
+        "E18"
+      ],
+      "NeighborNodes": [
+        "N161",
+        "N213",
+        "N131",
+        "N71"
+      ]
+    },
+    {
+      "NodeId": "N161",
+      "LayerId": "L0",
+      "Position": {
+        "x": -377.115234,
+        "y": 75.0,
+        "z": 3409.89258
+      },
+      "ConnectedEdges": [
+        "156_161",
+        "161_218",
+        "E8"
+      ],
+      "NeighborNodes": [
+        "N156",
+        "N218",
+        "N117"
+      ]
+    },
+    {
+      "NodeId": "N165",
+      "LayerId": "L0",
+      "Position": {
+        "x": 922.884766,
+        "y": 75.0,
+        "z": 3409.89258
+      },
+      "ConnectedEdges": [
+        "120_165",
+        "E13"
+      ],
+      "NeighborNodes": [
+        "N120",
+        "N273"
+      ]
+    },
+    {
+      "NodeId": "N186",
+      "LayerId": "L0",
+      "Position": {
+        "x": 72.8847656,
+        "y": 75.0,
+        "z": 3559.89258
+      },
+      "ConnectedEdges": [
+        "186_232",
+        "E9",
+        "E11"
+      ],
+      "NeighborNodes": [
+        "N232",
+        "N117",
+        "N120"
+      ]
+    },
+    {
+      "NodeId": "N213",
+      "LayerId": "L0",
+      "Position": {
+        "x": -627.115234,
+        "y": 75.0,
+        "z": 3759.89258
+      },
+      "ConnectedEdges": [
+        "156_213",
+        "213_218",
+        "213_243"
+      ],
+      "NeighborNodes": [
+        "N156",
+        "N218",
+        "N243"
+      ]
+    },
+    {
+      "NodeId": "N218",
+      "LayerId": "L0",
+      "Position": {
+        "x": -377.115234,
+        "y": 75.0,
+        "z": 3759.89258
+      },
+      "ConnectedEdges": [
+        "161_218",
+        "213_218",
+        "218_232"
+      ],
+      "NeighborNodes": [
+        "N161",
+        "N213",
+        "N232"
+      ]
+    },
+    {
+      "NodeId": "N232",
+      "LayerId": "L0",
+      "Position": {
+        "x": -277.115234,
+        "y": 75.0,
+        "z": 3809.89258
+      },
+      "ConnectedEdges": [
+        "186_232",
+        "218_232",
+        "232_291"
+      ],
+      "NeighborNodes": [
+        "N186",
+        "N218",
+        "N291"
+      ]
+    },
+    {
+      "NodeId": "N239",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1027.11523,
+        "y": 75.0,
+        "z": 3859.89258
+      },
+      "ConnectedEdges": [
+        "239_243",
+        "E38",
+        "E39"
+      ],
+      "NeighborNodes": [
+        "N243",
+        "N259",
+        "N340"
+      ]
+    },
+    {
+      "NodeId": "N243",
+      "LayerId": "L0",
+      "Position": {
+        "x": -677.115234,
+        "y": 75.0,
+        "z": 3859.89258
+      },
+      "ConnectedEdges": [
+        "213_243",
+        "239_243",
+        "243_275"
+      ],
+      "NeighborNodes": [
+        "N213",
+        "N239",
+        "N275"
+      ]
+    },
+    {
+      "NodeId": "N259",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 3855.02881
+      },
+      "ConnectedEdges": [
+        "131_259",
+        "259_366",
+        "E38"
+      ],
+      "NeighborNodes": [
+        "N131",
+        "N366",
+        "N239"
+      ]
+    },
+    {
+      "NodeId": "N268",
+      "LayerId": "L0",
+      "Position": {
+        "x": 672.884766,
+        "y": 75.0,
+        "z": 3959.89258
+      },
+      "ConnectedEdges": [
+        "268_273",
+        "268_397",
+        "E12"
+      ],
+      "NeighborNodes": [
+        "N273",
+        "N397",
+        "N298"
+      ]
+    },
+    {
+      "NodeId": "N273",
+      "LayerId": "L0",
+      "Position": {
+        "x": 922.884766,
+        "y": 75.0,
+        "z": 3959.89258
+      },
+      "ConnectedEdges": [
+        "268_273",
+        "273_311",
+        "E13"
+      ],
+      "NeighborNodes": [
+        "N268",
+        "N311",
+        "N165"
+      ]
+    },
+    {
+      "NodeId": "N275",
+      "LayerId": "L0",
+      "Position": {
+        "x": -628.130066,
+        "y": 75.0,
+        "z": 4054.05957
+      },
+      "ConnectedEdges": [
+        "243_275",
+        "275_291",
+        "E24"
+      ],
+      "NeighborNodes": [
+        "N243",
+        "N291",
+        "N340"
+      ]
+    },
+    {
+      "NodeId": "N291",
+      "LayerId": "L0",
+      "Position": {
+        "x": -280.382935,
+        "y": 75.0,
+        "z": 4006.95654
+      },
+      "ConnectedEdges": [
+        "232_291",
+        "275_291",
+        "291_322"
+      ],
+      "NeighborNodes": [
+        "N232",
+        "N275",
+        "N322"
+      ]
+    },
+    {
+      "NodeId": "N292",
+      "LayerId": "L0",
+      "Position": {
+        "x": 72.8847656,
+        "y": 75.0,
+        "z": 4059.89258
+      },
+      "ConnectedEdges": [
+        "292_298",
+        "292_327"
+      ],
+      "NeighborNodes": [
+        "N298",
+        "N327"
+      ]
+    },
+    {
+      "NodeId": "N298",
+      "LayerId": "L0",
+      "Position": {
+        "x": 372.884766,
+        "y": 75.0,
+        "z": 4059.89258
+      },
+      "ConnectedEdges": [
+        "292_298",
+        "298_383",
+        "E12"
+      ],
+      "NeighborNodes": [
+        "N292",
+        "N383",
+        "N268"
+      ]
+    },
+    {
+      "NodeId": "N311",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1072.88477,
+        "y": 75.0,
+        "z": 4109.89258
+      },
+      "ConnectedEdges": [
+        "273_311",
+        "311_406"
+      ],
+      "NeighborNodes": [
+        "N273",
+        "N406"
+      ]
+    },
+    {
+      "NodeId": "N322",
+      "LayerId": "L0",
+      "Position": {
+        "x": -277.115234,
+        "y": 75.0,
+        "z": 4159.89258
+      },
+      "ConnectedEdges": [
+        "291_322",
+        "322_327",
+        "E60"
+      ],
+      "NeighborNodes": [
+        "N291",
+        "N327",
+        "N422"
+      ]
+    },
+    {
+      "NodeId": "N327",
+      "LayerId": "L0",
+      "Position": {
+        "x": -27.1152344,
+        "y": 75.0,
+        "z": 4159.89258
+      },
+      "ConnectedEdges": [
+        "292_327",
+        "322_327",
+        "327_358"
+      ],
+      "NeighborNodes": [
+        "N292",
+        "N322",
+        "N358"
+      ]
+    },
+    {
+      "NodeId": "N340",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1008.83447,
+        "y": 75.0,
+        "z": 4238.336
+      },
+      "ConnectedEdges": [
+        "E23",
+        "E24",
+        "E25",
+        "E39"
+      ],
+      "NeighborNodes": [
+        "N366",
+        "N275",
+        "N461",
+        "N239"
+      ]
+    },
+    {
+      "NodeId": "N347",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2222.88477,
+        "y": 75.0,
+        "z": 4209.89258
+      },
+      "ConnectedEdges": [
+        "347_409",
+        "347_407"
+      ],
+      "NeighborNodes": [
+        "N409",
+        "N407"
+      ]
+    },
+    {
+      "NodeId": "N358",
+      "LayerId": "L0",
+      "Position": {
+        "x": -81.347,
+        "y": 75.0,
+        "z": 4319.658
+      },
+      "ConnectedEdges": [
+        "327_358",
+        "358_440",
+        "358_379"
+      ],
+      "NeighborNodes": [
+        "N327",
+        "N440",
+        "N379"
+      ]
+    },
+    {
+      "NodeId": "N366",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 4309.89258
+      },
+      "ConnectedEdges": [
+        "259_366",
+        "366_617",
+        "E23"
+      ],
+      "NeighborNodes": [
+        "N259",
+        "N617",
+        "N340"
+      ]
+    },
+    {
+      "NodeId": "N379",
+      "LayerId": "L0",
+      "Position": {
+        "x": 172.884766,
+        "y": 75.0,
+        "z": 4309.89258
+      },
+      "ConnectedEdges": [
+        "358_379",
+        "379_383",
+        "379_559"
+      ],
+      "NeighborNodes": [
+        "N358",
+        "N383",
+        "N559"
+      ]
+    },
+    {
+      "NodeId": "N383",
+      "LayerId": "L0",
+      "Position": {
+        "x": 372.884766,
+        "y": 75.0,
+        "z": 4309.89258
+      },
+      "ConnectedEdges": [
+        "298_383",
+        "379_383",
+        "E14"
+      ],
+      "NeighborNodes": [
+        "N298",
+        "N379",
+        "N397"
+      ]
+    },
+    {
+      "NodeId": "N397",
+      "LayerId": "L0",
+      "Position": {
+        "x": 672.884766,
+        "y": 75.0,
+        "z": 4359.89258
+      },
+      "ConnectedEdges": [
+        "268_397",
+        "397_406",
+        "E14",
+        "E37"
+      ],
+      "NeighborNodes": [
+        "N268",
+        "N406",
+        "N383",
+        "N624"
+      ]
+    },
+    {
+      "NodeId": "N406",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1122.88477,
+        "y": 75.0,
+        "z": 4359.89258
+      },
+      "ConnectedEdges": [
+        "311_406",
+        "397_406",
+        "406_468"
+      ],
+      "NeighborNodes": [
+        "N311",
+        "N397",
+        "N468"
+      ]
+    },
+    {
+      "NodeId": "N407",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2022.88477,
+        "y": 75.0,
+        "z": 4359.89258
+      },
+      "ConnectedEdges": [
+        "347_407",
+        "407_681"
+      ],
+      "NeighborNodes": [
+        "N347",
+        "N681"
+      ]
+    },
+    {
+      "NodeId": "N409",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2972.88477,
+        "y": 75.0,
+        "z": 4359.89258
+      },
+      "ConnectedEdges": [
+        "347_409",
+        "409_482",
+        "E2"
+      ],
+      "NeighborNodes": [
+        "N347",
+        "N482",
+        "N512"
+      ]
+    },
+    {
+      "NodeId": "N422",
+      "LayerId": "L0",
+      "Position": {
+        "x": -429.80426,
+        "y": 75.0,
+        "z": 4463.27539
+      },
+      "ConnectedEdges": [
+        "422_461",
+        "422_440",
+        "E60"
+      ],
+      "NeighborNodes": [
+        "N461",
+        "N440",
+        "N322"
+      ]
+    },
+    {
+      "NodeId": "N440",
+      "LayerId": "L0",
+      "Position": {
+        "x": -127.115234,
+        "y": 75.0,
+        "z": 4459.89258
+      },
+      "ConnectedEdges": [
+        "358_440",
+        "422_440",
+        "E56"
+      ],
+      "NeighborNodes": [
+        "N358",
+        "N422",
+        "N654"
+      ]
+    },
+    {
+      "NodeId": "N461",
+      "LayerId": "L0",
+      "Position": {
+        "x": -944.6867,
+        "y": 75.0,
+        "z": 4537.144
+      },
+      "ConnectedEdges": [
+        "422_461",
+        "461_621",
+        "E25"
+      ],
+      "NeighborNodes": [
+        "N422",
+        "N621",
+        "N340"
+      ]
+    },
+    {
+      "NodeId": "N468",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1172.88477,
+        "y": 75.0,
+        "z": 4559.89258
+      },
+      "ConnectedEdges": [
+        "406_468",
+        "468_568"
+      ],
+      "NeighborNodes": [
+        "N406",
+        "N568"
+      ]
+    },
+    {
+      "NodeId": "N482",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3672.88477,
+        "y": 75.0,
+        "z": 4609.89258
+      },
+      "ConnectedEdges": [
+        "409_482",
+        "482_500",
+        "482_661"
+      ],
+      "NeighborNodes": [
+        "N409",
+        "N500",
+        "N661"
+      ]
+    },
+    {
+      "NodeId": "N500",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3922.88477,
+        "y": 75.0,
+        "z": 4659.89258
+      },
+      "ConnectedEdges": [
+        "482_500",
+        "500_758",
+        "500_756"
+      ],
+      "NeighborNodes": [
+        "N482",
+        "N758",
+        "N756"
+      ]
+    },
+    {
+      "NodeId": "N512",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2669.68481,
+        "y": 75.0,
+        "z": 4749.258
+      },
+      "ConnectedEdges": [
+        "512_753",
+        "E1",
+        "E2"
+      ],
+      "NeighborNodes": [
+        "N753",
+        "N570",
+        "N409"
+      ]
+    },
+    {
+      "NodeId": "N559",
+      "LayerId": "L0",
+      "Position": {
+        "x": 222.884766,
+        "y": 75.0,
+        "z": 4859.89258
+      },
+      "ConnectedEdges": [
+        "379_559",
+        "E36",
+        "E55"
+      ],
+      "NeighborNodes": [
+        "N379",
+        "N624",
+        "N654"
+      ]
+    },
+    {
+      "NodeId": "N568",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1122.88477,
+        "y": 75.0,
+        "z": 4859.89258
+      },
+      "ConnectedEdges": [
+        "468_568",
+        "568_631"
+      ],
+      "NeighborNodes": [
+        "N468",
+        "N631"
+      ]
+    },
+    {
+      "NodeId": "N570",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2522.88477,
+        "y": 75.0,
+        "z": 4859.89258
+      },
+      "ConnectedEdges": [
+        "570_701",
+        "E1"
+      ],
+      "NeighborNodes": [
+        "N701",
+        "N512"
+      ]
+    },
+    {
+      "NodeId": "N617",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 5009.89258
+      },
+      "ConnectedEdges": [
+        "366_617",
+        "617_621",
+        "617_927"
+      ],
+      "NeighborNodes": [
+        "N366",
+        "N621",
+        "N927"
+      ]
+    },
+    {
+      "NodeId": "N621",
+      "LayerId": "L0",
+      "Position": {
+        "x": -977.115234,
+        "y": 75.0,
+        "z": 5009.89258
+      },
+      "ConnectedEdges": [
+        "461_621",
+        "617_621",
+        "621_654"
+      ],
+      "NeighborNodes": [
+        "N461",
+        "N617",
+        "N654"
+      ]
+    },
+    {
+      "NodeId": "N624",
+      "LayerId": "L0",
+      "Position": {
+        "x": 622.884766,
+        "y": 75.0,
+        "z": 5009.89258
+      },
+      "ConnectedEdges": [
+        "624_631",
+        "624_735",
+        "E36",
+        "E37"
+      ],
+      "NeighborNodes": [
+        "N631",
+        "N735",
+        "N559",
+        "N397"
+      ]
+    },
+    {
+      "NodeId": "N631",
+      "LayerId": "L0",
+      "Position": {
+        "x": 972.884766,
+        "y": 75.0,
+        "z": 5009.89258
+      },
+      "ConnectedEdges": [
+        "568_631",
+        "624_631",
+        "631_709"
+      ],
+      "NeighborNodes": [
+        "N568",
+        "N624",
+        "N709"
+      ]
+    },
+    {
+      "NodeId": "N654",
+      "LayerId": "L0",
+      "Position": {
+        "x": -225.292633,
+        "y": 75.0,
+        "z": 4937.778
+      },
+      "ConnectedEdges": [
+        "621_654",
+        "654_884",
+        "E55",
+        "E56"
+      ],
+      "NeighborNodes": [
+        "N621",
+        "N884",
+        "N559",
+        "N440"
+      ]
+    },
+    {
+      "NodeId": "N661",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3222.88477,
+        "y": 75.0,
+        "z": 5059.89258
+      },
+      "ConnectedEdges": [
+        "482_661",
+        "E4"
+      ],
+      "NeighborNodes": [
+        "N482",
+        "N753"
+      ]
+    },
+    {
+      "NodeId": "N681",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1922.88477,
+        "y": 75.0,
+        "z": 5159.89258
+      },
+      "ConnectedEdges": [
+        "407_681",
+        "681_701",
+        "E29"
+      ],
+      "NeighborNodes": [
+        "N407",
+        "N701",
+        "N772"
+      ]
+    },
+    {
+      "NodeId": "N701",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2372.88477,
+        "y": 75.0,
+        "z": 5209.89258
+      },
+      "ConnectedEdges": [
+        "570_701",
+        "681_701",
+        "701_752"
+      ],
+      "NeighborNodes": [
+        "N570",
+        "N681",
+        "N752"
+      ]
+    },
+    {
+      "NodeId": "N709",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1222.88477,
+        "y": 75.0,
+        "z": 5259.89258
+      },
+      "ConnectedEdges": [
+        "631_709",
+        "709_769",
+        "709_797"
+      ],
+      "NeighborNodes": [
+        "N631",
+        "N769",
+        "N797"
+      ]
+    },
+    {
+      "NodeId": "N735",
+      "LayerId": "L0",
+      "Position": {
+        "x": 572.884766,
+        "y": 75.0,
+        "z": 5359.89258
+      },
+      "ConnectedEdges": [
+        "624_735",
+        "735_788",
+        "735_790"
+      ],
+      "NeighborNodes": [
+        "N624",
+        "N788",
+        "N790"
+      ]
+    },
+    {
+      "NodeId": "N752",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2372.88477,
+        "y": 75.0,
+        "z": 5359.89258
+      },
+      "ConnectedEdges": [
+        "701_752",
+        "E30",
+        "E40",
+        "E43"
+      ],
+      "NeighborNodes": [
+        "N701",
+        "N772",
+        "N847",
+        "N1904"
+      ]
+    },
+    {
+      "NodeId": "N753",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3082.60547,
+        "y": 75.0,
+        "z": 5354.11035
+      },
+      "ConnectedEdges": [
+        "512_753",
+        "E4",
+        "E5",
+        "E6"
+      ],
+      "NeighborNodes": [
+        "N512",
+        "N661",
+        "N897",
+        "N851"
+      ]
+    },
+    {
+      "NodeId": "N756",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3922.88477,
+        "y": 75.0,
+        "z": 5359.89258
+      },
+      "ConnectedEdges": [
+        "500_756",
+        "756_942",
+        "756_876"
+      ],
+      "NeighborNodes": [
+        "N500",
+        "N942",
+        "N876"
+      ]
+    },
+    {
+      "NodeId": "N758",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4522.885,
+        "y": 75.0,
+        "z": 5359.89258
+      },
+      "ConnectedEdges": [
+        "500_758",
+        "758_857",
+        "758_1011"
+      ],
+      "NeighborNodes": [
+        "N500",
+        "N857",
+        "N1011"
+      ]
+    },
+    {
+      "NodeId": "N769",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1572.88477,
+        "y": 75.0,
+        "z": 5409.89258
+      },
+      "ConnectedEdges": [
+        "709_769",
+        "769_772",
+        "E28"
+      ],
+      "NeighborNodes": [
+        "N709",
+        "N772",
+        "N983"
+      ]
+    },
+    {
+      "NodeId": "N772",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1845.31958,
+        "y": 75.0,
+        "z": 5409.41846
+      },
+      "ConnectedEdges": [
+        "769_772",
+        "772_985",
+        "E29",
+        "E30"
+      ],
+      "NeighborNodes": [
+        "N769",
+        "N985",
+        "N681",
+        "N752"
+      ]
+    },
+    {
+      "NodeId": "N788",
+      "LayerId": "L0",
+      "Position": {
+        "x": 322.884766,
+        "y": 75.0,
+        "z": 5459.89258
+      },
+      "ConnectedEdges": [
+        "735_788",
+        "788_817",
+        "788_933"
+      ],
+      "NeighborNodes": [
+        "N735",
+        "N817",
+        "N933"
+      ]
+    },
+    {
+      "NodeId": "N790",
+      "LayerId": "L0",
+      "Position": {
+        "x": 722.884766,
+        "y": 75.0,
+        "z": 5459.89258
+      },
+      "ConnectedEdges": [
+        "735_790",
+        "790_797",
+        "790_933"
+      ],
+      "NeighborNodes": [
+        "N735",
+        "N797",
+        "N933"
+      ]
+    },
+    {
+      "NodeId": "N797",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1072.88477,
+        "y": 75.0,
+        "z": 5459.89258
+      },
+      "ConnectedEdges": [
+        "709_797",
+        "790_797"
+      ],
+      "NeighborNodes": [
+        "N709",
+        "N790"
+      ]
+    },
+    {
+      "NodeId": "N817",
+      "LayerId": "L0",
+      "Position": {
+        "x": 156.778046,
+        "y": 75.0,
+        "z": 5606.90527
+      },
+      "ConnectedEdges": [
+        "788_817",
+        "817_887"
+      ],
+      "NeighborNodes": [
+        "N788",
+        "N887"
+      ]
+    },
+    {
+      "NodeId": "N847",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2731.77026,
+        "y": 75.0,
+        "z": 5505.367
+      },
+      "ConnectedEdges": [
+        "847_851",
+        "847_1001",
+        "E40"
+      ],
+      "NeighborNodes": [
+        "N851",
+        "N1001",
+        "N752"
+      ]
+    },
+    {
+      "NodeId": "N851",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2922.88477,
+        "y": 75.0,
+        "z": 5559.89258
+      },
+      "ConnectedEdges": [
+        "847_851",
+        "851_1077",
+        "E6"
+      ],
+      "NeighborNodes": [
+        "N847",
+        "N1077",
+        "N753"
+      ]
+    },
+    {
+      "NodeId": "N857",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4422.885,
+        "y": 75.0,
+        "z": 5559.89258
+      },
+      "ConnectedEdges": [
+        "758_857",
+        "857_1036",
+        "E33"
+      ],
+      "NeighborNodes": [
+        "N758",
+        "N1036",
+        "N876"
+      ]
+    },
+    {
+      "NodeId": "N876",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4122.885,
+        "y": 75.0,
+        "z": 5609.89258
+      },
+      "ConnectedEdges": [
+        "756_876",
+        "876_1006",
+        "E33"
+      ],
+      "NeighborNodes": [
+        "N756",
+        "N1006",
+        "N857"
+      ]
+    },
+    {
+      "NodeId": "N884",
+      "LayerId": "L0",
+      "Position": {
+        "x": -281.501343,
+        "y": 75.0,
+        "z": 5887.973
+      },
+      "ConnectedEdges": [
+        "654_884",
+        "884_887",
+        "E50",
+        "E51"
+      ],
+      "NeighborNodes": [
+        "N654",
+        "N887",
+        "N974",
+        "N1370"
+      ]
+    },
+    {
+      "NodeId": "N887",
+      "LayerId": "L0",
+      "Position": {
+        "x": 177.515381,
+        "y": 75.0,
+        "z": 5882.00439
+      },
+      "ConnectedEdges": [
+        "817_887",
+        "884_887",
+        "E54"
+      ],
+      "NeighborNodes": [
+        "N817",
+        "N884",
+        "N1141"
+      ]
+    },
+    {
+      "NodeId": "N897",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3422.88477,
+        "y": 75.0,
+        "z": 5659.89258
+      },
+      "ConnectedEdges": [
+        "897_942",
+        "897_1026",
+        "E5"
+      ],
+      "NeighborNodes": [
+        "N942",
+        "N1026",
+        "N753"
+      ]
+    },
+    {
+      "NodeId": "N927",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 5759.89258
+      },
+      "ConnectedEdges": [
+        "617_927",
+        "927_974",
+        "927_1185"
+      ],
+      "NeighborNodes": [
+        "N617",
+        "N974",
+        "N1185"
+      ]
+    },
+    {
+      "NodeId": "N933",
+      "LayerId": "L0",
+      "Position": {
+        "x": 722.884766,
+        "y": 75.0,
+        "z": 5759.89258
+      },
+      "ConnectedEdges": [
+        "788_933",
+        "790_933",
+        "933_1141"
+      ],
+      "NeighborNodes": [
+        "N788",
+        "N790",
+        "N1141"
+      ]
+    },
+    {
+      "NodeId": "N937",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2072.77783,
+        "y": 75.0,
+        "z": 5680.826
+      },
+      "ConnectedEdges": [
+        "937_989",
+        "E41"
+      ],
+      "NeighborNodes": [
+        "N989",
+        "N1904"
+      ]
+    },
+    {
+      "NodeId": "N942",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3722.88477,
+        "y": 75.0,
+        "z": 5759.89258
+      },
+      "ConnectedEdges": [
+        "756_942",
+        "897_942",
+        "942_1079"
+      ],
+      "NeighborNodes": [
+        "N756",
+        "N897",
+        "N1079"
+      ]
+    },
+    {
+      "NodeId": "N974",
+      "LayerId": "L0",
+      "Position": {
+        "x": -627.115234,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "927_974",
+        "E48",
+        "E50"
+      ],
+      "NeighborNodes": [
+        "N927",
+        "N1230",
+        "N884"
+      ]
+    },
+    {
+      "NodeId": "N983",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1163.40417,
+        "y": 75.0,
+        "z": 5766.216
+      },
+      "ConnectedEdges": [
+        "983_1143",
+        "E27",
+        "E28"
+      ],
+      "NeighborNodes": [
+        "N1143",
+        "N1144",
+        "N769"
+      ]
+    },
+    {
+      "NodeId": "N985",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1822.88477,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "772_985",
+        "985_989",
+        "985_1153"
+      ],
+      "NeighborNodes": [
+        "N772",
+        "N989",
+        "N1153"
+      ]
+    },
+    {
+      "NodeId": "N989",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2022.88477,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "937_989",
+        "985_989",
+        "989_999",
+        "E35"
+      ],
+      "NeighborNodes": [
+        "N937",
+        "N985",
+        "N999",
+        "N1174"
+      ]
+    },
+    {
+      "NodeId": "N999",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2442.75635,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "989_999",
+        "999_1001",
+        "E42"
+      ],
+      "NeighborNodes": [
+        "N989",
+        "N1001",
+        "N1904"
+      ]
+    },
+    {
+      "NodeId": "N1001",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2622.88477,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "847_1001",
+        "999_1001",
+        "1001_1243"
+      ],
+      "NeighborNodes": [
+        "N847",
+        "N999",
+        "N1243"
+      ]
+    },
+    {
+      "NodeId": "N1006",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4172.885,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "876_1006",
+        "E7",
+        "E58"
+      ],
+      "NeighborNodes": [
+        "N876",
+        "N1079",
+        "N1036"
+      ]
+    },
+    {
+      "NodeId": "N1011",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4672.885,
+        "y": 75.0,
+        "z": 5859.89258
+      },
+      "ConnectedEdges": [
+        "758_1011",
+        "1011_1061"
+      ],
+      "NeighborNodes": [
+        "N758",
+        "N1061"
+      ]
+    },
+    {
+      "NodeId": "N1026",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3422.88477,
+        "y": 75.0,
+        "z": 5909.89258
+      },
+      "ConnectedEdges": [
+        "897_1026",
+        "1026_1077"
+      ],
+      "NeighborNodes": [
+        "N897",
+        "N1077"
+      ]
+    },
+    {
+      "NodeId": "N1036",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4353.934,
+        "y": 75.0,
+        "z": 5895.05469
+      },
+      "ConnectedEdges": [
+        "857_1036",
+        "1036_1061",
+        "E58"
+      ],
+      "NeighborNodes": [
+        "N857",
+        "N1061",
+        "N1006"
+      ]
+    },
+    {
+      "NodeId": "N1061",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4522.885,
+        "y": 75.0,
+        "z": 5959.89258
+      },
+      "ConnectedEdges": [
+        "1011_1061",
+        "1036_1061",
+        "E32"
+      ],
+      "NeighborNodes": [
+        "N1011",
+        "N1036",
+        "N1352"
+      ]
+    },
+    {
+      "NodeId": "N1077",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3272.88477,
+        "y": 75.0,
+        "z": 6009.89258
+      },
+      "ConnectedEdges": [
+        "851_1077",
+        "1026_1077",
+        "1077_1180"
+      ],
+      "NeighborNodes": [
+        "N851",
+        "N1026",
+        "N1180"
+      ]
+    },
+    {
+      "NodeId": "N1079",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3772.88477,
+        "y": 75.0,
+        "z": 6009.89258
+      },
+      "ConnectedEdges": [
+        "942_1079",
+        "E7",
+        "E57"
+      ],
+      "NeighborNodes": [
+        "N942",
+        "N1006",
+        "N1294"
+      ]
+    },
+    {
+      "NodeId": "N1141",
+      "LayerId": "L0",
+      "Position": {
+        "x": 725.44104,
+        "y": 75.0,
+        "z": 6033.51025
+      },
+      "ConnectedEdges": [
+        "933_1141",
+        "1141_1143",
+        "1141_1216",
+        "E54"
+      ],
+      "NeighborNodes": [
+        "N933",
+        "N1143",
+        "N1216",
+        "N887"
+      ]
+    },
+    {
+      "NodeId": "N1143",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1040.16748,
+        "y": 75.0,
+        "z": 5976.42
+      },
+      "ConnectedEdges": [
+        "983_1143",
+        "1141_1143"
+      ],
+      "NeighborNodes": [
+        "N983",
+        "N1141"
+      ]
+    },
+    {
+      "NodeId": "N1144",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1545.371,
+        "y": 75.0,
+        "z": 6166.771
+      },
+      "ConnectedEdges": [
+        "1144_1153",
+        "E27",
+        "E53"
+      ],
+      "NeighborNodes": [
+        "N1153",
+        "N983",
+        "N1216"
+      ]
+    },
+    {
+      "NodeId": "N1153",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1852.46313,
+        "y": 75.0,
+        "z": 6342.99463
+      },
+      "ConnectedEdges": [
+        "985_1153",
+        "1144_1153",
+        "1153_1386"
+      ],
+      "NeighborNodes": [
+        "N985",
+        "N1144",
+        "N1386"
+      ]
+    },
+    {
+      "NodeId": "N1174",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2064.53516,
+        "y": 75.0,
+        "z": 6296.71045
+      },
+      "ConnectedEdges": [
+        "1174_1346",
+        "E34",
+        "E35"
+      ],
+      "NeighborNodes": [
+        "N1346",
+        "N1388",
+        "N989"
+      ]
+    },
+    {
+      "NodeId": "N1180",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3222.88477,
+        "y": 75.0,
+        "z": 6259.89258
+      },
+      "ConnectedEdges": [
+        "1077_1180",
+        "1180_1243"
+      ],
+      "NeighborNodes": [
+        "N1077",
+        "N1243"
+      ]
+    },
+    {
+      "NodeId": "N1185",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 6309.89258
+      },
+      "ConnectedEdges": [
+        "927_1185",
+        "1185_1230",
+        "1185_1302"
+      ],
+      "NeighborNodes": [
+        "N927",
+        "N1230",
+        "N1302"
+      ]
+    },
+    {
+      "NodeId": "N1216",
+      "LayerId": "L0",
+      "Position": {
+        "x": 722.884766,
+        "y": 75.0,
+        "z": 6359.89258
+      },
+      "ConnectedEdges": [
+        "1141_1216",
+        "E49",
+        "E52",
+        "E53"
+      ],
+      "NeighborNodes": [
+        "N1141",
+        "N1370",
+        "N1527",
+        "N1144"
+      ]
+    },
+    {
+      "NodeId": "N1230",
+      "LayerId": "L0",
+      "Position": {
+        "x": -671.3327,
+        "y": 75.0,
+        "z": 6390.236
+      },
+      "ConnectedEdges": [
+        "1185_1230",
+        "1230_1268",
+        "E47",
+        "E48"
+      ],
+      "NeighborNodes": [
+        "N1185",
+        "N1268",
+        "N1370",
+        "N974"
+      ]
+    },
+    {
+      "NodeId": "N1243",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3022.88477,
+        "y": 75.0,
+        "z": 6409.89258
+      },
+      "ConnectedEdges": [
+        "1001_1243",
+        "1180_1243",
+        "1243_1316"
+      ],
+      "NeighborNodes": [
+        "N1001",
+        "N1180",
+        "N1316"
+      ]
+    },
+    {
+      "NodeId": "N1268",
+      "LayerId": "L0",
+      "Position": {
+        "x": -790.817139,
+        "y": 75.0,
+        "z": 6580.205
+      },
+      "ConnectedEdges": [
+        "1230_1268",
+        "1268_1302"
+      ],
+      "NeighborNodes": [
+        "N1230",
+        "N1302"
+      ]
+    },
+    {
+      "NodeId": "N1294",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3806.10156,
+        "y": 75.0,
+        "z": 6561.08154
+      },
+      "ConnectedEdges": [
+        "1294_1318",
+        "1294_1352",
+        "E57"
+      ],
+      "NeighborNodes": [
+        "N1318",
+        "N1352",
+        "N1079"
+      ]
+    },
+    {
+      "NodeId": "N1302",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 6559.89258
+      },
+      "ConnectedEdges": [
+        "1185_1302",
+        "1268_1302",
+        "1302_1596"
+      ],
+      "NeighborNodes": [
+        "N1185",
+        "N1268",
+        "N1596"
+      ]
+    },
+    {
+      "NodeId": "N1316",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3022.88477,
+        "y": 75.0,
+        "z": 6559.89258
+      },
+      "ConnectedEdges": [
+        "1243_1316",
+        "1316_1346",
+        "1316_1318"
+      ],
+      "NeighborNodes": [
+        "N1243",
+        "N1346",
+        "N1318"
+      ]
+    },
+    {
+      "NodeId": "N1318",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3371.74438,
+        "y": 75.0,
+        "z": 6550.11035
+      },
+      "ConnectedEdges": [
+        "1294_1318",
+        "1316_1318",
+        "1318_1520"
+      ],
+      "NeighborNodes": [
+        "N1294",
+        "N1316",
+        "N1520"
+      ]
+    },
+    {
+      "NodeId": "N1346",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2822.88477,
+        "y": 75.0,
+        "z": 6609.89258
+      },
+      "ConnectedEdges": [
+        "1174_1346",
+        "1316_1346",
+        "1346_1400"
+      ],
+      "NeighborNodes": [
+        "N1174",
+        "N1316",
+        "N1400"
+      ]
+    },
+    {
+      "NodeId": "N1352",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4372.885,
+        "y": 75.0,
+        "z": 6609.89258
+      },
+      "ConnectedEdges": [
+        "1294_1352",
+        "E31",
+        "E32"
+      ],
+      "NeighborNodes": [
+        "N1294",
+        "N1661",
+        "N1061"
+      ]
+    },
+    {
+      "NodeId": "N1370",
+      "LayerId": "L0",
+      "Position": {
+        "x": -295.461121,
+        "y": 75.0,
+        "z": 6464.545
+      },
+      "ConnectedEdges": [
+        "1370_1498",
+        "E47",
+        "E49",
+        "E51"
+      ],
+      "NeighborNodes": [
+        "N1498",
+        "N1230",
+        "N1216",
+        "N884"
+      ]
+    },
+    {
+      "NodeId": "N1386",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1872.88477,
+        "y": 75.0,
+        "z": 6759.89258
+      },
+      "ConnectedEdges": [
+        "1153_1386",
+        "1386_1388",
+        "1386_1466"
+      ],
+      "NeighborNodes": [
+        "N1153",
+        "N1388",
+        "N1466"
+      ]
+    },
+    {
+      "NodeId": "N1388",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2132.45557,
+        "y": 75.0,
+        "z": 6766.81152
+      },
+      "ConnectedEdges": [
+        "1386_1388",
+        "1388_1400",
+        "E34"
+      ],
+      "NeighborNodes": [
+        "N1386",
+        "N1400",
+        "N1174"
+      ]
+    },
+    {
+      "NodeId": "N1400",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2572.88477,
+        "y": 75.0,
+        "z": 6759.89258
+      },
+      "ConnectedEdges": [
+        "1346_1400",
+        "1388_1400",
+        "1400_1490"
+      ],
+      "NeighborNodes": [
+        "N1346",
+        "N1388",
+        "N1490"
+      ]
+    },
+    {
+      "NodeId": "N1466",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1872.88477,
+        "y": 75.0,
+        "z": 7159.89258
+      },
+      "ConnectedEdges": [
+        "1386_1466",
+        "1466_1540"
+      ],
+      "NeighborNodes": [
+        "N1386",
+        "N1540"
+      ]
+    },
+    {
+      "NodeId": "N1490",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2622.88477,
+        "y": 75.0,
+        "z": 7259.89258
+      },
+      "ConnectedEdges": [
+        "1400_1490",
+        "1490_1505",
+        "1490_1554"
+      ],
+      "NeighborNodes": [
+        "N1400",
+        "N1505",
+        "N1554"
+      ]
+    },
+    {
+      "NodeId": "N1498",
+      "LayerId": "L0",
+      "Position": {
+        "x": -327.115234,
+        "y": 75.0,
+        "z": 7309.89258
+      },
+      "ConnectedEdges": [
+        "1370_1498",
+        "1498_1607"
+      ],
+      "NeighborNodes": [
+        "N1370",
+        "N1607"
+      ]
+    },
+    {
+      "NodeId": "N1505",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2881.16016,
+        "y": 75.0,
+        "z": 7321.616
+      },
+      "ConnectedEdges": [
+        "1490_1505",
+        "1505_1571"
+      ],
+      "NeighborNodes": [
+        "N1490",
+        "N1571"
+      ]
+    },
+    {
+      "NodeId": "N1520",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3472.88477,
+        "y": 75.0,
+        "z": 7359.89258
+      },
+      "ConnectedEdges": [
+        "1318_1520",
+        "1520_1655",
+        "E44"
+      ],
+      "NeighborNodes": [
+        "N1318",
+        "N1655",
+        "N1576"
+      ]
+    },
+    {
+      "NodeId": "N1527",
+      "LayerId": "L0",
+      "Position": {
+        "x": 707.8787,
+        "y": 75.0,
+        "z": 7385.50537
+      },
+      "ConnectedEdges": [
+        "1527_1540",
+        "E46",
+        "E52"
+      ],
+      "NeighborNodes": [
+        "N1540",
+        "N1649",
+        "N1216"
+      ]
+    },
+    {
+      "NodeId": "N1540",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1622.88477,
+        "y": 75.0,
+        "z": 7409.89258
+      },
+      "ConnectedEdges": [
+        "1466_1540",
+        "1527_1540",
+        "1540_1692"
+      ],
+      "NeighborNodes": [
+        "N1466",
+        "N1527",
+        "N1692"
+      ]
+    },
+    {
+      "NodeId": "N1554",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2496.97827,
+        "y": 75.0,
+        "z": 7402.497
+      },
+      "ConnectedEdges": [
+        "1490_1554",
+        "1554_1692"
+      ],
+      "NeighborNodes": [
+        "N1490",
+        "N1692"
+      ]
+    },
+    {
+      "NodeId": "N1571",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2916.99438,
+        "y": 75.0,
+        "z": 7486.81836
+      },
+      "ConnectedEdges": [
+        "1505_1571",
+        "1571_1613",
+        "1571_1576"
+      ],
+      "NeighborNodes": [
+        "N1505",
+        "N1613",
+        "N1576"
+      ]
+    },
+    {
+      "NodeId": "N1576",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3222.88477,
+        "y": 75.0,
+        "z": 7509.89258
+      },
+      "ConnectedEdges": [
+        "1571_1576",
+        "E44"
+      ],
+      "NeighborNodes": [
+        "N1571",
+        "N1520"
+      ]
+    },
+    {
+      "NodeId": "N1596",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 7609.89258
+      },
+      "ConnectedEdges": [
+        "1302_1596",
+        "1596_1607",
+        "1596_1787"
+      ],
+      "NeighborNodes": [
+        "N1302",
+        "N1607",
+        "N1787"
+      ]
+    },
+    {
+      "NodeId": "N1607",
+      "LayerId": "L0",
+      "Position": {
+        "x": -444.119049,
+        "y": 75.0,
+        "z": 7746.38135
+      },
+      "ConnectedEdges": [
+        "1498_1607",
+        "1596_1607",
+        "1607_1649"
+      ],
+      "NeighborNodes": [
+        "N1498",
+        "N1596",
+        "N1649"
+      ]
+    },
+    {
+      "NodeId": "N1613",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2722.88477,
+        "y": 75.0,
+        "z": 7609.89258
+      },
+      "ConnectedEdges": [
+        "1571_1613",
+        "1613_1735"
+      ],
+      "NeighborNodes": [
+        "N1571",
+        "N1735"
+      ]
+    },
+    {
+      "NodeId": "N1649",
+      "LayerId": "L0",
+      "Position": {
+        "x": 687.5684,
+        "y": 75.0,
+        "z": 8056.54
+      },
+      "ConnectedEdges": [
+        "1607_1649",
+        "1649_1820",
+        "E46",
+        "E59"
+      ],
+      "NeighborNodes": [
+        "N1607",
+        "N1820",
+        "N1527",
+        "N1735"
+      ]
+    },
+    {
+      "NodeId": "N1655",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3922.88477,
+        "y": 75.0,
+        "z": 7709.89258
+      },
+      "ConnectedEdges": [
+        "1520_1655",
+        "1655_1661",
+        "1655_1749"
+      ],
+      "NeighborNodes": [
+        "N1520",
+        "N1661",
+        "N1749"
+      ]
+    },
+    {
+      "NodeId": "N1661",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4222.885,
+        "y": 75.0,
+        "z": 7709.89258
+      },
+      "ConnectedEdges": [
+        "1655_1661",
+        "1661_1781",
+        "E31"
+      ],
+      "NeighborNodes": [
+        "N1655",
+        "N1781",
+        "N1352"
+      ]
+    },
+    {
+      "NodeId": "N1692",
+      "LayerId": "L0",
+      "Position": {
+        "x": 1847.168,
+        "y": 75.0,
+        "z": 7759.69727
+      },
+      "ConnectedEdges": [
+        "1540_1692",
+        "1554_1692",
+        "1692_1735"
+      ],
+      "NeighborNodes": [
+        "N1540",
+        "N1554",
+        "N1735"
+      ]
+    },
+    {
+      "NodeId": "N1735",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2040.47681,
+        "y": 75.0,
+        "z": 8068.30029
+      },
+      "ConnectedEdges": [
+        "1613_1735",
+        "1692_1735",
+        "1735_1858",
+        "E59"
+      ],
+      "NeighborNodes": [
+        "N1613",
+        "N1692",
+        "N1858",
+        "N1649"
+      ]
+    },
+    {
+      "NodeId": "N1749",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3551.72119,
+        "y": 75.0,
+        "z": 8302.537
+      },
+      "ConnectedEdges": [
+        "1655_1749",
+        "E45"
+      ],
+      "NeighborNodes": [
+        "N1655",
+        "N1881"
+      ]
+    },
+    {
+      "NodeId": "N1781",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4689.99658,
+        "y": 75.0,
+        "z": 8165.34961
+      },
+      "ConnectedEdges": [
+        "1661_1781",
+        "1781_1902"
+      ],
+      "NeighborNodes": [
+        "N1661",
+        "N1902"
+      ]
+    },
+    {
+      "NodeId": "N1787",
+      "LayerId": "L0",
+      "Position": {
+        "x": -1177.11523,
+        "y": 75.0,
+        "z": 8659.893
+      },
+      "ConnectedEdges": [
+        "1596_1787",
+        "1787_1820"
+      ],
+      "NeighborNodes": [
+        "N1596",
+        "N1820"
+      ]
+    },
+    {
+      "NodeId": "N1820",
+      "LayerId": "L0",
+      "Position": {
+        "x": 472.884766,
+        "y": 75.0,
+        "z": 8659.893
+      },
+      "ConnectedEdges": [
+        "1649_1820",
+        "1787_1820",
+        "1820_1858"
+      ],
+      "NeighborNodes": [
+        "N1649",
+        "N1787",
+        "N1858"
+      ]
+    },
+    {
+      "NodeId": "N1858",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2372.88477,
+        "y": 75.0,
+        "z": 8659.893
+      },
+      "ConnectedEdges": [
+        "1735_1858",
+        "1820_1858",
+        "1858_1881"
+      ],
+      "NeighborNodes": [
+        "N1735",
+        "N1820",
+        "N1881"
+      ]
+    },
+    {
+      "NodeId": "N1881",
+      "LayerId": "L0",
+      "Position": {
+        "x": 3522.88477,
+        "y": 75.0,
+        "z": 8659.893
+      },
+      "ConnectedEdges": [
+        "1858_1881",
+        "1881_1902",
+        "E45"
+      ],
+      "NeighborNodes": [
+        "N1858",
+        "N1902",
+        "N1749"
+      ]
+    },
+    {
+      "NodeId": "N1902",
+      "LayerId": "L0",
+      "Position": {
+        "x": 4572.885,
+        "y": 75.0,
+        "z": 8659.893
+      },
+      "ConnectedEdges": [
+        "1781_1902",
+        "1881_1902"
+      ],
+      "NeighborNodes": [
+        "N1781",
+        "N1881"
+      ]
+    },
+    {
+      "NodeId": "N1903",
+      "LayerId": "L0",
+      "Position": {
+        "x": -546.2632,
+        "y": 75.0,
+        "z": 2840.557
+      },
+      "ConnectedEdges": [
+        "E19",
+        "E20",
+        "E21"
+      ],
+      "NeighborNodes": [
+        "N117",
+        "N15",
+        "N63"
+      ]
+    },
+    {
+      "NodeId": "N1904",
+      "LayerId": "L0",
+      "Position": {
+        "x": 2384.505,
+        "y": 75.0,
+        "z": 5590.338
+      },
+      "ConnectedEdges": [
+        "E41",
+        "E42",
+        "E43"
+      ],
+      "NeighborNodes": [
+        "N937",
+        "N999",
+        "N752"
+      ]
+    }
+  ],
+  "Edges": [
+    {
+      "EdgeId": "0_7",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N0",
+        "N7"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": -827.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "0_66",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N0",
+        "N66"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 2859.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "7_15",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N7",
+        "N15"
+      ],
+      "Centerline": [
+        {
+          "x": -827.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": -427.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        }
+      ],
+      "Length": 400.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "7_63",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N7",
+        "N63"
+      ],
+      "Centerline": [
+        {
+          "x": -827.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": -830.249268,
+          "y": 75.0,
+          "z": 2747.65918
+        }
+      ],
+      "Length": 237.787262,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "15_31",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N15",
+        "N31"
+      ],
+      "Centerline": [
+        {
+          "x": -427.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 2509.89258
+        }
+      ],
+      "Length": 800.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "31_78",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N31",
+        "N78"
+      ],
+      "Centerline": [
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 2509.89258
+        },
+        {
+          "x": 397.714722,
+          "y": 75.0,
+          "z": 2802.91138
+        }
+      ],
+      "Length": 294.068939,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "63_71",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N63",
+        "N71"
+      ],
+      "Centerline": [
+        {
+          "x": -830.249268,
+          "y": 75.0,
+          "z": 2747.65918
+        },
+        {
+          "x": -927.115234,
+          "y": 75.0,
+          "z": 2859.89258
+        }
+      ],
+      "Length": 148.254349,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "66_71",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N66",
+        "N71"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 2859.89258
+        },
+        {
+          "x": -927.115234,
+          "y": 75.0,
+          "z": 2859.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "66_131",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N66",
+        "N131"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 2859.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3409.85156
+        }
+      ],
+      "Length": 549.959,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "78_120",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N78",
+        "N120"
+      ],
+      "Centerline": [
+        {
+          "x": 397.714722,
+          "y": 75.0,
+          "z": 2802.91138
+        },
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 3209.89258
+        }
+      ],
+      "Length": 465.11853,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "120_165",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N120",
+        "N165"
+      ],
+      "Centerline": [
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 3209.89258
+        },
+        {
+          "x": 922.884766,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 360.5551,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "131_259",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N131",
+        "N259"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3409.85156
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3855.02881
+        }
+      ],
+      "Length": 445.177246,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "156_161",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N156",
+        "N161"
+      ],
+      "Centerline": [
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        },
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "156_213",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N156",
+        "N213"
+      ],
+      "Centerline": [
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "161_218",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N161",
+        "N218"
+      ],
+      "Centerline": [
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        },
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "186_232",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N186",
+        "N232"
+      ],
+      "Centerline": [
+        {
+          "x": 72.8847656,
+          "y": 75.0,
+          "z": 3559.89258
+        },
+        {
+          "x": -127.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        },
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 3809.89258
+        }
+      ],
+      "Length": 440.9566,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "213_218",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N213",
+        "N218"
+      ],
+      "Centerline": [
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        },
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "213_243",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N213",
+        "N243"
+      ],
+      "Centerline": [
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        },
+        {
+          "x": -677.115234,
+          "y": 75.0,
+          "z": 3859.89258
+        }
+      ],
+      "Length": 111.8034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "218_232",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N218",
+        "N232"
+      ],
+      "Centerline": [
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3759.89258
+        },
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 3809.89258
+        }
+      ],
+      "Length": 111.8034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "232_291",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N232",
+        "N291"
+      ],
+      "Centerline": [
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 3809.89258
+        },
+        {
+          "x": -280.382935,
+          "y": 75.0,
+          "z": 4006.95654
+        }
+      ],
+      "Length": 197.091049,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "239_243",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N239",
+        "N243"
+      ],
+      "Centerline": [
+        {
+          "x": -1027.11523,
+          "y": 75.0,
+          "z": 3859.89258
+        },
+        {
+          "x": -677.115234,
+          "y": 75.0,
+          "z": 3859.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "243_275",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N243",
+        "N275"
+      ],
+      "Centerline": [
+        {
+          "x": -677.115234,
+          "y": 75.0,
+          "z": 3859.89258
+        },
+        {
+          "x": -628.130066,
+          "y": 75.0,
+          "z": 4054.05957
+        }
+      ],
+      "Length": 200.250763,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "259_366",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N259",
+        "N366"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3855.02881
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 4309.89258
+        }
+      ],
+      "Length": 454.86377,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "268_273",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N268",
+        "N273"
+      ],
+      "Centerline": [
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        },
+        {
+          "x": 922.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "268_397",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N268",
+        "N397"
+      ],
+      "Centerline": [
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        },
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 400.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "273_311",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N273",
+        "N311"
+      ],
+      "Centerline": [
+        {
+          "x": 922.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        },
+        {
+          "x": 1072.88477,
+          "y": 75.0,
+          "z": 4109.89258
+        }
+      ],
+      "Length": 212.132034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "275_291",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N275",
+        "N291"
+      ],
+      "Centerline": [
+        {
+          "x": -628.130066,
+          "y": 75.0,
+          "z": 4054.05957
+        },
+        {
+          "x": -280.382935,
+          "y": 75.0,
+          "z": 4006.95654
+        }
+      ],
+      "Length": 350.922729,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "291_322",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N291",
+        "N322"
+      ],
+      "Centerline": [
+        {
+          "x": -280.382935,
+          "y": 75.0,
+          "z": 4006.95654
+        },
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 4159.89258
+        }
+      ],
+      "Length": 152.970947,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "292_298",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N292",
+        "N298"
+      ],
+      "Centerline": [
+        {
+          "x": 72.8847656,
+          "y": 75.0,
+          "z": 4059.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4059.89258
+        }
+      ],
+      "Length": 300.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "292_327",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N292",
+        "N327"
+      ],
+      "Centerline": [
+        {
+          "x": 72.8847656,
+          "y": 75.0,
+          "z": 4059.89258
+        },
+        {
+          "x": -27.1152344,
+          "y": 75.0,
+          "z": 4159.89258
+        }
+      ],
+      "Length": 141.421356,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "298_383",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N298",
+        "N383"
+      ],
+      "Centerline": [
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4059.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "311_406",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N311",
+        "N406"
+      ],
+      "Centerline": [
+        {
+          "x": 1072.88477,
+          "y": 75.0,
+          "z": 4109.89258
+        },
+        {
+          "x": 1122.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 254.950974,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "322_327",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N322",
+        "N327"
+      ],
+      "Centerline": [
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 4159.89258
+        },
+        {
+          "x": -27.1152344,
+          "y": 75.0,
+          "z": 4159.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "327_358",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N327",
+        "N358"
+      ],
+      "Centerline": [
+        {
+          "x": -27.1152344,
+          "y": 75.0,
+          "z": 4159.89258
+        },
+        {
+          "x": -81.347,
+          "y": 75.0,
+          "z": 4319.658
+        }
+      ],
+      "Length": 168.719116,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "347_409",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N347",
+        "N409"
+      ],
+      "Centerline": [
+        {
+          "x": 2222.88477,
+          "y": 75.0,
+          "z": 4209.89258
+        },
+        {
+          "x": 2422.88477,
+          "y": 75.0,
+          "z": 4109.89258
+        },
+        {
+          "x": 2722.88477,
+          "y": 75.0,
+          "z": 4109.89258
+        },
+        {
+          "x": 2972.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 877.1602,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "347_407",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N347",
+        "N407"
+      ],
+      "Centerline": [
+        {
+          "x": 2222.88477,
+          "y": 75.0,
+          "z": 4209.89258
+        },
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "358_440",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N358",
+        "N440"
+      ],
+      "Centerline": [
+        {
+          "x": -81.347,
+          "y": 75.0,
+          "z": 4319.658
+        },
+        {
+          "x": -127.115234,
+          "y": 75.0,
+          "z": 4459.89258
+        }
+      ],
+      "Length": 147.5141,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "358_379",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N358",
+        "N379"
+      ],
+      "Centerline": [
+        {
+          "x": -81.347,
+          "y": 75.0,
+          "z": 4319.658
+        },
+        {
+          "x": 172.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        }
+      ],
+      "Length": 254.41925,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "366_617",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N366",
+        "N617"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 4309.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 700.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "379_383",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N379",
+        "N383"
+      ],
+      "Centerline": [
+        {
+          "x": 172.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        }
+      ],
+      "Length": 200.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "379_559",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N379",
+        "N559"
+      ],
+      "Centerline": [
+        {
+          "x": 172.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        },
+        {
+          "x": 222.884766,
+          "y": 75.0,
+          "z": 4409.89258
+        },
+        {
+          "x": 222.884766,
+          "y": 75.0,
+          "z": 4859.89258
+        }
+      ],
+      "Length": 561.8034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "397_406",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N397",
+        "N406"
+      ],
+      "Centerline": [
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 1122.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 450.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "406_468",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N406",
+        "N468"
+      ],
+      "Centerline": [
+        {
+          "x": 1122.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 1172.88477,
+          "y": 75.0,
+          "z": 4559.89258
+        }
+      ],
+      "Length": 206.155289,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "407_681",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N407",
+        "N681"
+      ],
+      "Centerline": [
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 1922.88477,
+          "y": 75.0,
+          "z": 5159.89258
+        }
+      ],
+      "Length": 806.225769,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "409_482",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N409",
+        "N482"
+      ],
+      "Centerline": [
+        {
+          "x": 2972.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 3472.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 3672.88477,
+          "y": 75.0,
+          "z": 4609.89258
+        }
+      ],
+      "Length": 820.15625,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "422_461",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N422",
+        "N461"
+      ],
+      "Centerline": [
+        {
+          "x": -429.80426,
+          "y": 75.0,
+          "z": 4463.27539
+        },
+        {
+          "x": -944.6867,
+          "y": 75.0,
+          "z": 4537.144
+        }
+      ],
+      "Length": 520.1543,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "422_440",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N422",
+        "N440"
+      ],
+      "Centerline": [
+        {
+          "x": -429.80426,
+          "y": 75.0,
+          "z": 4463.27539
+        },
+        {
+          "x": -127.115234,
+          "y": 75.0,
+          "z": 4459.89258
+        }
+      ],
+      "Length": 302.707916,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "461_621",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N461",
+        "N621"
+      ],
+      "Centerline": [
+        {
+          "x": -944.6867,
+          "y": 75.0,
+          "z": 4537.144
+        },
+        {
+          "x": -977.115234,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 473.859467,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "468_568",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N468",
+        "N568"
+      ],
+      "Centerline": [
+        {
+          "x": 1172.88477,
+          "y": 75.0,
+          "z": 4559.89258
+        },
+        {
+          "x": 1122.88477,
+          "y": 75.0,
+          "z": 4859.89258
+        }
+      ],
+      "Length": 304.138123,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "482_500",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N482",
+        "N500"
+      ],
+      "Centerline": [
+        {
+          "x": 3672.88477,
+          "y": 75.0,
+          "z": 4609.89258
+        },
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 4659.89258
+        }
+      ],
+      "Length": 254.950974,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "482_661",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N482",
+        "N661"
+      ],
+      "Centerline": [
+        {
+          "x": 3672.88477,
+          "y": 75.0,
+          "z": 4609.89258
+        },
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 5059.89258
+        }
+      ],
+      "Length": 636.3961,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "500_758",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N500",
+        "N758"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 4659.89258
+        },
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5209.89258
+        },
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 963.94104,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "500_756",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N500",
+        "N756"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 4659.89258
+        },
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 700.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "512_753",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N512",
+        "N753"
+      ],
+      "Centerline": [
+        {
+          "x": 2669.68481,
+          "y": 75.0,
+          "z": 4749.258
+        },
+        {
+          "x": 2794.236,
+          "y": 75.0,
+          "z": 5003.76953
+        },
+        {
+          "x": 3082.60547,
+          "y": 75.0,
+          "z": 5354.11035
+        }
+      ],
+      "Length": 737.1107,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "568_631",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N568",
+        "N631"
+      ],
+      "Centerline": [
+        {
+          "x": 1122.88477,
+          "y": 75.0,
+          "z": 4859.89258
+        },
+        {
+          "x": 972.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 212.132034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "570_701",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N570",
+        "N701"
+      ],
+      "Centerline": [
+        {
+          "x": 2522.88477,
+          "y": 75.0,
+          "z": 4859.89258
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5209.89258
+        }
+      ],
+      "Length": 380.788666,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "617_621",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N617",
+        "N621"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": -977.115234,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 200.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "617_927",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N617",
+        "N927"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5759.89258
+        }
+      ],
+      "Length": 750.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "621_654",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N621",
+        "N654"
+      ],
+      "Centerline": [
+        {
+          "x": -977.115234,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": -225.292633,
+          "y": 75.0,
+          "z": 4937.778
+        }
+      ],
+      "Length": 755.2733,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "624_631",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N624",
+        "N631"
+      ],
+      "Centerline": [
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": 972.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "624_735",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N624",
+        "N735"
+      ],
+      "Centerline": [
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": 572.884766,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 353.5534,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "631_709",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N631",
+        "N709"
+      ],
+      "Centerline": [
+        {
+          "x": 972.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": 1222.88477,
+          "y": 75.0,
+          "z": 5259.89258
+        }
+      ],
+      "Length": 353.5534,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "654_884",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N654",
+        "N884"
+      ],
+      "Centerline": [
+        {
+          "x": -225.292633,
+          "y": 75.0,
+          "z": 4937.778
+        },
+        {
+          "x": -281.501343,
+          "y": 75.0,
+          "z": 5887.973
+        }
+      ],
+      "Length": 951.8564,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "681_701",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N681",
+        "N701"
+      ],
+      "Centerline": [
+        {
+          "x": 1922.88477,
+          "y": 75.0,
+          "z": 5159.89258
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5209.89258
+        }
+      ],
+      "Length": 452.769257,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "701_752",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N701",
+        "N752"
+      ],
+      "Centerline": [
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5209.89258
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 150.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "709_769",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N709",
+        "N769"
+      ],
+      "Centerline": [
+        {
+          "x": 1222.88477,
+          "y": 75.0,
+          "z": 5259.89258
+        },
+        {
+          "x": 1572.88477,
+          "y": 75.0,
+          "z": 5409.89258
+        }
+      ],
+      "Length": 380.788666,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "709_797",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N709",
+        "N797"
+      ],
+      "Centerline": [
+        {
+          "x": 1222.88477,
+          "y": 75.0,
+          "z": 5259.89258
+        },
+        {
+          "x": 1072.88477,
+          "y": 75.0,
+          "z": 5459.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "735_788",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N735",
+        "N788"
+      ],
+      "Centerline": [
+        {
+          "x": 572.884766,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 322.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        }
+      ],
+      "Length": 269.25824,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "735_790",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N735",
+        "N790"
+      ],
+      "Centerline": [
+        {
+          "x": 572.884766,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        }
+      ],
+      "Length": 180.277557,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "756_942",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N756",
+        "N942"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 3722.88477,
+          "y": 75.0,
+          "z": 5759.89258
+        }
+      ],
+      "Length": 447.2136,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "756_876",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N756",
+        "N876"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 4122.885,
+          "y": 75.0,
+          "z": 5609.89258
+        }
+      ],
+      "Length": 320.156219,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "758_857",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N758",
+        "N857"
+      ],
+      "Centerline": [
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 4422.885,
+          "y": 75.0,
+          "z": 5409.89258
+        },
+        {
+          "x": 4422.885,
+          "y": 75.0,
+          "z": 5559.89258
+        }
+      ],
+      "Length": 261.8034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "758_1011",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N758",
+        "N1011"
+      ],
+      "Centerline": [
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 4722.885,
+          "y": 75.0,
+          "z": 5609.89258
+        },
+        {
+          "x": 4672.885,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 575.1072,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "769_772",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N769",
+        "N772"
+      ],
+      "Centerline": [
+        {
+          "x": 1572.88477,
+          "y": 75.0,
+          "z": 5409.89258
+        },
+        {
+          "x": 1845.31958,
+          "y": 75.0,
+          "z": 5409.41846
+        }
+      ],
+      "Length": 272.435242,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "772_985",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N772",
+        "N985"
+      ],
+      "Centerline": [
+        {
+          "x": 1845.31958,
+          "y": 75.0,
+          "z": 5409.41846
+        },
+        {
+          "x": 1822.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 451.03244,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "788_817",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N788",
+        "N817"
+      ],
+      "Centerline": [
+        {
+          "x": 322.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        },
+        {
+          "x": 156.778046,
+          "y": 75.0,
+          "z": 5606.90527
+        }
+      ],
+      "Length": 221.820145,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "788_933",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N788",
+        "N933"
+      ],
+      "Centerline": [
+        {
+          "x": 322.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        },
+        {
+          "x": 507.738037,
+          "y": 75.0,
+          "z": 5720.71143
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5759.89258
+        }
+      ],
+      "Length": 538.3683,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "790_797",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N790",
+        "N797"
+      ],
+      "Centerline": [
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        },
+        {
+          "x": 1072.88477,
+          "y": 75.0,
+          "z": 5459.89258
+        }
+      ],
+      "Length": 350.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "790_933",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N790",
+        "N933"
+      ],
+      "Centerline": [
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5459.89258
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5759.89258
+        }
+      ],
+      "Length": 300.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "817_887",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N817",
+        "N887"
+      ],
+      "Centerline": [
+        {
+          "x": 156.778046,
+          "y": 75.0,
+          "z": 5606.90527
+        },
+        {
+          "x": 177.515381,
+          "y": 75.0,
+          "z": 5882.00439
+        }
+      ],
+      "Length": 275.8796,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "847_851",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N847",
+        "N851"
+      ],
+      "Centerline": [
+        {
+          "x": 2731.77026,
+          "y": 75.0,
+          "z": 5505.367
+        },
+        {
+          "x": 2922.88477,
+          "y": 75.0,
+          "z": 5559.89258
+        }
+      ],
+      "Length": 198.740463,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "847_1001",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N847",
+        "N1001"
+      ],
+      "Centerline": [
+        {
+          "x": 2731.77026,
+          "y": 75.0,
+          "z": 5505.367
+        },
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 370.869659,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "851_1077",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N851",
+        "N1077"
+      ],
+      "Centerline": [
+        {
+          "x": 2922.88477,
+          "y": 75.0,
+          "z": 5559.89258
+        },
+        {
+          "x": 3272.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        }
+      ],
+      "Length": 570.0877,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "857_1036",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N857",
+        "N1036"
+      ],
+      "Centerline": [
+        {
+          "x": 4422.885,
+          "y": 75.0,
+          "z": 5559.89258
+        },
+        {
+          "x": 4353.934,
+          "y": 75.0,
+          "z": 5895.05469
+        }
+      ],
+      "Length": 342.181,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "876_1006",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N876",
+        "N1006"
+      ],
+      "Centerline": [
+        {
+          "x": 4122.885,
+          "y": 75.0,
+          "z": 5609.89258
+        },
+        {
+          "x": 4122.885,
+          "y": 75.0,
+          "z": 5759.89258
+        },
+        {
+          "x": 4172.885,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 261.8034,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "884_887",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N884",
+        "N887"
+      ],
+      "Centerline": [
+        {
+          "x": -281.501343,
+          "y": 75.0,
+          "z": 5887.973
+        },
+        {
+          "x": 177.515381,
+          "y": 75.0,
+          "z": 5882.00439
+        }
+      ],
+      "Length": 459.055542,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "897_942",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N897",
+        "N942"
+      ],
+      "Centerline": [
+        {
+          "x": 3422.88477,
+          "y": 75.0,
+          "z": 5659.89258
+        },
+        {
+          "x": 3599.69946,
+          "y": 75.0,
+          "z": 5696.717
+        },
+        {
+          "x": 3722.88477,
+          "y": 75.0,
+          "z": 5759.89258
+        }
+      ],
+      "Length": 319.0492,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "897_1026",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N897",
+        "N1026"
+      ],
+      "Centerline": [
+        {
+          "x": 3422.88477,
+          "y": 75.0,
+          "z": 5659.89258
+        },
+        {
+          "x": 3422.88477,
+          "y": 75.0,
+          "z": 5909.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "927_974",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N927",
+        "N974"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5759.89258
+        },
+        {
+          "x": -1027.11523,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 580.2776,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "927_1185",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N927",
+        "N1185"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 5759.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6309.89258
+        }
+      ],
+      "Length": 550.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "933_1141",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N933",
+        "N1141"
+      ],
+      "Centerline": [
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 5759.89258
+        },
+        {
+          "x": 725.44104,
+          "y": 75.0,
+          "z": 6033.51025
+        }
+      ],
+      "Length": 273.6296,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "937_989",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N937",
+        "N989"
+      ],
+      "Centerline": [
+        {
+          "x": 2072.77783,
+          "y": 75.0,
+          "z": 5680.826
+        },
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 185.887314,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "942_1079",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N942",
+        "N1079"
+      ],
+      "Centerline": [
+        {
+          "x": 3722.88477,
+          "y": 75.0,
+          "z": 5759.89258
+        },
+        {
+          "x": 3772.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        }
+      ],
+      "Length": 254.950974,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "983_1143",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N983",
+        "N1143"
+      ],
+      "Centerline": [
+        {
+          "x": 1163.40417,
+          "y": 75.0,
+          "z": 5766.216
+        },
+        {
+          "x": 1040.16748,
+          "y": 75.0,
+          "z": 5976.42
+        }
+      ],
+      "Length": 243.665848,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "985_989",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N985",
+        "N989"
+      ],
+      "Centerline": [
+        {
+          "x": 1822.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 200.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "985_1153",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N985",
+        "N1153"
+      ],
+      "Centerline": [
+        {
+          "x": 1822.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 1852.46313,
+          "y": 75.0,
+          "z": 6342.99463
+        }
+      ],
+      "Length": 484.006683,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "989_999",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N989",
+        "N999"
+      ],
+      "Centerline": [
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 2442.75635,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 419.871582,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "999_1001",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N999",
+        "N1001"
+      ],
+      "Centerline": [
+        {
+          "x": 2442.75635,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 180.128418,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1001_1243",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1001",
+        "N1243"
+      ],
+      "Centerline": [
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 2722.88477,
+          "y": 75.0,
+          "z": 6159.89258
+        },
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6409.89258
+        }
+      ],
+      "Length": 706.740234,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1011_1061",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1011",
+        "N1061"
+      ],
+      "Centerline": [
+        {
+          "x": 4672.885,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5959.89258
+        }
+      ],
+      "Length": 180.277557,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1026_1077",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1026",
+        "N1077"
+      ],
+      "Centerline": [
+        {
+          "x": 3422.88477,
+          "y": 75.0,
+          "z": 5909.89258
+        },
+        {
+          "x": 3272.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        }
+      ],
+      "Length": 180.277557,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1036_1061",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1036",
+        "N1061"
+      ],
+      "Centerline": [
+        {
+          "x": 4353.934,
+          "y": 75.0,
+          "z": 5895.05469
+        },
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5959.89258
+        }
+      ],
+      "Length": 180.964874,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1077_1180",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1077",
+        "N1180"
+      ],
+      "Centerline": [
+        {
+          "x": 3272.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        },
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 6259.89258
+        }
+      ],
+      "Length": 254.950974,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1141_1143",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1141",
+        "N1143"
+      ],
+      "Centerline": [
+        {
+          "x": 725.44104,
+          "y": 75.0,
+          "z": 6033.51025
+        },
+        {
+          "x": 1040.16748,
+          "y": 75.0,
+          "z": 5976.42
+        }
+      ],
+      "Length": 319.862518,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1141_1216",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1141",
+        "N1216"
+      ],
+      "Centerline": [
+        {
+          "x": 725.44104,
+          "y": 75.0,
+          "z": 6033.51025
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 6359.89258
+        }
+      ],
+      "Length": 326.392334,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1144_1153",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1144",
+        "N1153"
+      ],
+      "Centerline": [
+        {
+          "x": 1545.371,
+          "y": 75.0,
+          "z": 6166.771
+        },
+        {
+          "x": 1852.46313,
+          "y": 75.0,
+          "z": 6342.99463
+        }
+      ],
+      "Length": 354.062653,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1153_1386",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1153",
+        "N1386"
+      ],
+      "Centerline": [
+        {
+          "x": 1852.46313,
+          "y": 75.0,
+          "z": 6342.99463
+        },
+        {
+          "x": 1872.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        }
+      ],
+      "Length": 417.397827,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1174_1346",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1174",
+        "N1346"
+      ],
+      "Centerline": [
+        {
+          "x": 2064.53516,
+          "y": 75.0,
+          "z": 6296.71045
+        },
+        {
+          "x": 2282.338,
+          "y": 75.0,
+          "z": 6297.921
+        },
+        {
+          "x": 2734.293,
+          "y": 75.0,
+          "z": 6444.947
+        },
+        {
+          "x": 2822.88477,
+          "y": 75.0,
+          "z": 6609.89258
+        }
+      ],
+      "Length": 880.3059,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1180_1243",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1180",
+        "N1243"
+      ],
+      "Centerline": [
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 6259.89258
+        },
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6409.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1185_1230",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1185",
+        "N1230"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6309.89258
+        },
+        {
+          "x": -827.115234,
+          "y": 75.0,
+          "z": 6309.89258
+        },
+        {
+          "x": -671.3327,
+          "y": 75.0,
+          "z": 6390.236
+        }
+      ],
+      "Length": 525.280457,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1185_1302",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1185",
+        "N1302"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6309.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6559.89258
+        }
+      ],
+      "Length": 250.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1230_1268",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1230",
+        "N1268"
+      ],
+      "Centerline": [
+        {
+          "x": -671.3327,
+          "y": 75.0,
+          "z": 6390.236
+        },
+        {
+          "x": -790.817139,
+          "y": 75.0,
+          "z": 6580.205
+        }
+      ],
+      "Length": 224.421127,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1243_1316",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1243",
+        "N1316"
+      ],
+      "Centerline": [
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6409.89258
+        },
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6559.89258
+        }
+      ],
+      "Length": 150.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1268_1302",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1268",
+        "N1302"
+      ],
+      "Centerline": [
+        {
+          "x": -790.817139,
+          "y": 75.0,
+          "z": 6580.205
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6559.89258
+        }
+      ],
+      "Length": 386.831757,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1294_1318",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1294",
+        "N1318"
+      ],
+      "Centerline": [
+        {
+          "x": 3806.10156,
+          "y": 75.0,
+          "z": 6561.08154
+        },
+        {
+          "x": 3371.74438,
+          "y": 75.0,
+          "z": 6550.11035
+        }
+      ],
+      "Length": 434.495728,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1294_1352",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1294",
+        "N1352"
+      ],
+      "Centerline": [
+        {
+          "x": 3806.10156,
+          "y": 75.0,
+          "z": 6561.08154
+        },
+        {
+          "x": 4372.885,
+          "y": 75.0,
+          "z": 6609.89258
+        }
+      ],
+      "Length": 568.8811,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1302_1596",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1302",
+        "N1596"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 6559.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 7609.89258
+        }
+      ],
+      "Length": 1050.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1316_1346",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1316",
+        "N1346"
+      ],
+      "Centerline": [
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6559.89258
+        },
+        {
+          "x": 2822.88477,
+          "y": 75.0,
+          "z": 6609.89258
+        }
+      ],
+      "Length": 206.155289,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1316_1318",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1316",
+        "N1318"
+      ],
+      "Centerline": [
+        {
+          "x": 3022.88477,
+          "y": 75.0,
+          "z": 6559.89258
+        },
+        {
+          "x": 3371.74438,
+          "y": 75.0,
+          "z": 6550.11035
+        }
+      ],
+      "Length": 348.996735,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1318_1520",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1318",
+        "N1520"
+      ],
+      "Centerline": [
+        {
+          "x": 3371.74438,
+          "y": 75.0,
+          "z": 6550.11035
+        },
+        {
+          "x": 3472.88477,
+          "y": 75.0,
+          "z": 7359.89258
+        }
+      ],
+      "Length": 816.0739,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1346_1400",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1346",
+        "N1400"
+      ],
+      "Centerline": [
+        {
+          "x": 2822.88477,
+          "y": 75.0,
+          "z": 6609.89258
+        },
+        {
+          "x": 2572.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        }
+      ],
+      "Length": 291.5476,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1370_1498",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1370",
+        "N1498"
+      ],
+      "Centerline": [
+        {
+          "x": -295.461121,
+          "y": 75.0,
+          "z": 6464.545
+        },
+        {
+          "x": -327.115234,
+          "y": 75.0,
+          "z": 7309.89258
+        }
+      ],
+      "Length": 845.9401,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1386_1388",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1386",
+        "N1388"
+      ],
+      "Centerline": [
+        {
+          "x": 1872.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        },
+        {
+          "x": 2132.45557,
+          "y": 75.0,
+          "z": 6766.81152
+        }
+      ],
+      "Length": 259.663,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1386_1466",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1386",
+        "N1466"
+      ],
+      "Centerline": [
+        {
+          "x": 1872.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        },
+        {
+          "x": 1872.88477,
+          "y": 75.0,
+          "z": 7159.89258
+        }
+      ],
+      "Length": 400.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1388_1400",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1388",
+        "N1400"
+      ],
+      "Centerline": [
+        {
+          "x": 2132.45557,
+          "y": 75.0,
+          "z": 6766.81152
+        },
+        {
+          "x": 2572.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        }
+      ],
+      "Length": 440.483551,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1400_1490",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1400",
+        "N1490"
+      ],
+      "Centerline": [
+        {
+          "x": 2572.88477,
+          "y": 75.0,
+          "z": 6759.89258
+        },
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 7259.89258
+        }
+      ],
+      "Length": 502.493774,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1466_1540",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1466",
+        "N1540"
+      ],
+      "Centerline": [
+        {
+          "x": 1872.88477,
+          "y": 75.0,
+          "z": 7159.89258
+        },
+        {
+          "x": 1622.88477,
+          "y": 75.0,
+          "z": 7409.89258
+        }
+      ],
+      "Length": 353.5534,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1490_1505",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1490",
+        "N1505"
+      ],
+      "Centerline": [
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 7259.89258
+        },
+        {
+          "x": 2881.16016,
+          "y": 75.0,
+          "z": 7321.616
+        }
+      ],
+      "Length": 265.548462,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1490_1554",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1490",
+        "N1554"
+      ],
+      "Centerline": [
+        {
+          "x": 2622.88477,
+          "y": 75.0,
+          "z": 7259.89258
+        },
+        {
+          "x": 2496.97827,
+          "y": 75.0,
+          "z": 7402.497
+        }
+      ],
+      "Length": 190.232712,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1498_1607",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1498",
+        "N1607"
+      ],
+      "Centerline": [
+        {
+          "x": -327.115234,
+          "y": 75.0,
+          "z": 7309.89258
+        },
+        {
+          "x": -444.119049,
+          "y": 75.0,
+          "z": 7746.38135
+        }
+      ],
+      "Length": 451.8986,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1505_1571",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1505",
+        "N1571"
+      ],
+      "Centerline": [
+        {
+          "x": 2881.16016,
+          "y": 75.0,
+          "z": 7321.616
+        },
+        {
+          "x": 2916.99438,
+          "y": 75.0,
+          "z": 7486.81836
+        }
+      ],
+      "Length": 169.0439,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1520_1655",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1520",
+        "N1655"
+      ],
+      "Centerline": [
+        {
+          "x": 3472.88477,
+          "y": 75.0,
+          "z": 7359.89258
+        },
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 7709.89258
+        }
+      ],
+      "Length": 570.0877,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1527_1540",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1527",
+        "N1540"
+      ],
+      "Centerline": [
+        {
+          "x": 707.8787,
+          "y": 75.0,
+          "z": 7385.50537
+        },
+        {
+          "x": 1622.88477,
+          "y": 75.0,
+          "z": 7409.89258
+        }
+      ],
+      "Length": 915.331,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1540_1692",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1540",
+        "N1692"
+      ],
+      "Centerline": [
+        {
+          "x": 1622.88477,
+          "y": 75.0,
+          "z": 7409.89258
+        },
+        {
+          "x": 1847.168,
+          "y": 75.0,
+          "z": 7759.69727
+        }
+      ],
+      "Length": 415.5313,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1554_1692",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1554",
+        "N1692"
+      ],
+      "Centerline": [
+        {
+          "x": 2496.97827,
+          "y": 75.0,
+          "z": 7402.497
+        },
+        {
+          "x": 1847.168,
+          "y": 75.0,
+          "z": 7759.69727
+        }
+      ],
+      "Length": 741.5156,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1571_1613",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1571",
+        "N1613"
+      ],
+      "Centerline": [
+        {
+          "x": 2916.99438,
+          "y": 75.0,
+          "z": 7486.81836
+        },
+        {
+          "x": 2722.88477,
+          "y": 75.0,
+          "z": 7609.89258
+        }
+      ],
+      "Length": 229.838654,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1571_1576",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1571",
+        "N1576"
+      ],
+      "Centerline": [
+        {
+          "x": 2916.99438,
+          "y": 75.0,
+          "z": 7486.81836
+        },
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 7509.89258
+        }
+      ],
+      "Length": 306.75943,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1596_1607",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1596",
+        "N1607"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 7609.89258
+        },
+        {
+          "x": -444.119049,
+          "y": 75.0,
+          "z": 7746.38135
+        }
+      ],
+      "Length": 745.5955,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1596_1787",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1596",
+        "N1787"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 7609.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 1050.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1607_1649",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1607",
+        "N1649"
+      ],
+      "Centerline": [
+        {
+          "x": -444.119049,
+          "y": 75.0,
+          "z": 7746.38135
+        },
+        {
+          "x": 687.5684,
+          "y": 75.0,
+          "z": 8056.54
+        }
+      ],
+      "Length": 1173.42017,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1613_1735",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1613",
+        "N1735"
+      ],
+      "Centerline": [
+        {
+          "x": 2722.88477,
+          "y": 75.0,
+          "z": 7609.89258
+        },
+        {
+          "x": 2040.47681,
+          "y": 75.0,
+          "z": 8068.30029
+        }
+      ],
+      "Length": 822.081665,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1649_1820",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1649",
+        "N1820"
+      ],
+      "Centerline": [
+        {
+          "x": 687.5684,
+          "y": 75.0,
+          "z": 8056.54
+        },
+        {
+          "x": 472.884766,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 640.408752,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1655_1661",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1655",
+        "N1661"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 7709.89258
+        },
+        {
+          "x": 4222.885,
+          "y": 75.0,
+          "z": 7709.89258
+        }
+      ],
+      "Length": 300.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1655_1749",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1655",
+        "N1749"
+      ],
+      "Centerline": [
+        {
+          "x": 3922.88477,
+          "y": 75.0,
+          "z": 7709.89258
+        },
+        {
+          "x": 3551.72119,
+          "y": 75.0,
+          "z": 8302.537
+        }
+      ],
+      "Length": 699.278137,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1661_1781",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1661",
+        "N1781"
+      ],
+      "Centerline": [
+        {
+          "x": 4222.885,
+          "y": 75.0,
+          "z": 7709.89258
+        },
+        {
+          "x": 4689.99658,
+          "y": 75.0,
+          "z": 8165.34961
+        }
+      ],
+      "Length": 652.406738,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1692_1735",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1692",
+        "N1735"
+      ],
+      "Centerline": [
+        {
+          "x": 1847.168,
+          "y": 75.0,
+          "z": 7759.69727
+        },
+        {
+          "x": 2040.47681,
+          "y": 75.0,
+          "z": 8068.30029
+        }
+      ],
+      "Length": 364.1485,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1735_1858",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1735",
+        "N1858"
+      ],
+      "Centerline": [
+        {
+          "x": 2040.47681,
+          "y": 75.0,
+          "z": 8068.30029
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 678.584167,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1781_1902",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1781",
+        "N1902"
+      ],
+      "Centerline": [
+        {
+          "x": 4689.99658,
+          "y": 75.0,
+          "z": 8165.34961
+        },
+        {
+          "x": 4572.885,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 508.220337,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1787_1820",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1787",
+        "N1820"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 8659.893
+        },
+        {
+          "x": 472.884766,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 1650.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1820_1858",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1820",
+        "N1858"
+      ],
+      "Centerline": [
+        {
+          "x": 472.884766,
+          "y": 75.0,
+          "z": 8659.893
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 1900.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1858_1881",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1858",
+        "N1881"
+      ],
+      "Centerline": [
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 8659.893
+        },
+        {
+          "x": 3522.88477,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 1150.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "1881_1902",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1881",
+        "N1902"
+      ],
+      "Centerline": [
+        {
+          "x": 3522.88477,
+          "y": 75.0,
+          "z": 8659.893
+        },
+        {
+          "x": 4572.885,
+          "y": 75.0,
+          "z": 8659.893
+        }
+      ],
+      "Length": 1050.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E1",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N570",
+        "N512"
+      ],
+      "Centerline": [
+        {
+          "x": 2522.88477,
+          "y": 75.0,
+          "z": 4859.89258
+        },
+        {
+          "x": 2669.68481,
+          "y": 75.0,
+          "z": 4749.258
+        }
+      ],
+      "Length": 183.8214,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E2",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N512",
+        "N409"
+      ],
+      "Centerline": [
+        {
+          "x": 2669.68481,
+          "y": 75.0,
+          "z": 4749.258
+        },
+        {
+          "x": 2972.88477,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 493.493164,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E4",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N753",
+        "N661"
+      ],
+      "Centerline": [
+        {
+          "x": 3082.60547,
+          "y": 75.0,
+          "z": 5354.11035
+        },
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 5059.89258
+        }
+      ],
+      "Length": 325.948425,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E5",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N753",
+        "N897"
+      ],
+      "Centerline": [
+        {
+          "x": 3082.60547,
+          "y": 75.0,
+          "z": 5354.11035
+        },
+        {
+          "x": 3422.88477,
+          "y": 75.0,
+          "z": 5659.89258
+        }
+      ],
+      "Length": 457.48526,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E6",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N753",
+        "N851"
+      ],
+      "Centerline": [
+        {
+          "x": 3082.60547,
+          "y": 75.0,
+          "z": 5354.11035
+        },
+        {
+          "x": 2922.88477,
+          "y": 75.0,
+          "z": 5559.89258
+        }
+      ],
+      "Length": 260.4938,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E7",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1006",
+        "N1079"
+      ],
+      "Centerline": [
+        {
+          "x": 4172.885,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 3772.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        }
+      ],
+      "Length": 427.2002,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E8",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N117",
+        "N161"
+      ],
+      "Centerline": [
+        {
+          "x": -144.640091,
+          "y": 75.0,
+          "z": 3236.377
+        },
+        {
+          "x": -377.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 290.090271,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E9",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N117",
+        "N186"
+      ],
+      "Centerline": [
+        {
+          "x": -144.640091,
+          "y": 75.0,
+          "z": 3236.377
+        },
+        {
+          "x": 72.8847656,
+          "y": 75.0,
+          "z": 3559.89258
+        }
+      ],
+      "Length": 389.8454,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E11",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N120",
+        "N186"
+      ],
+      "Centerline": [
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 3209.89258
+        },
+        {
+          "x": 72.8847656,
+          "y": 75.0,
+          "z": 3559.89258
+        }
+      ],
+      "Length": 651.9202,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E12",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N268",
+        "N298"
+      ],
+      "Centerline": [
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4059.89258
+        }
+      ],
+      "Length": 316.227753,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E13",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N273",
+        "N165"
+      ],
+      "Centerline": [
+        {
+          "x": 922.884766,
+          "y": 75.0,
+          "z": 3959.89258
+        },
+        {
+          "x": 922.884766,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 550.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E14",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N397",
+        "N383"
+      ],
+      "Centerline": [
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 4359.89258
+        },
+        {
+          "x": 372.884766,
+          "y": 75.0,
+          "z": 4309.89258
+        }
+      ],
+      "Length": 304.138123,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E17",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N131",
+        "N156"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3409.85156
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 550.0,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E18",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N71",
+        "N156"
+      ],
+      "Centerline": [
+        {
+          "x": -927.115234,
+          "y": 75.0,
+          "z": 2859.89258
+        },
+        {
+          "x": -874.704041,
+          "y": 75.0,
+          "z": 3160.94385
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 3409.89258
+        }
+      ],
+      "Length": 656.6858,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E19",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N117",
+        "N1903"
+      ],
+      "Centerline": [
+        {
+          "x": -144.640091,
+          "y": 75.0,
+          "z": 3236.377
+        },
+        {
+          "x": -546.2632,
+          "y": 75.0,
+          "z": 2840.557
+        }
+      ],
+      "Length": 563.8924,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E20",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1903",
+        "N15"
+      ],
+      "Centerline": [
+        {
+          "x": -546.2632,
+          "y": 75.0,
+          "z": 2840.557
+        },
+        {
+          "x": -427.115234,
+          "y": 75.0,
+          "z": 2509.89258
+        }
+      ],
+      "Length": 351.475616,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E21",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N63",
+        "N1903"
+      ],
+      "Centerline": [
+        {
+          "x": -830.249268,
+          "y": 75.0,
+          "z": 2747.65918
+        },
+        {
+          "x": -546.2632,
+          "y": 75.0,
+          "z": 2840.557
+        }
+      ],
+      "Length": 298.794373,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E22",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N78",
+        "N117"
+      ],
+      "Centerline": [
+        {
+          "x": 397.714722,
+          "y": 75.0,
+          "z": 2802.91138
+        },
+        {
+          "x": -144.640091,
+          "y": 75.0,
+          "z": 3236.377
+        }
+      ],
+      "Length": 694.2918,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E23",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N366",
+        "N340"
+      ],
+      "Centerline": [
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 4309.89258
+        },
+        {
+          "x": -1008.83447,
+          "y": 75.0,
+          "z": 4238.336
+        }
+      ],
+      "Length": 182.8627,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E24",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N275",
+        "N340"
+      ],
+      "Centerline": [
+        {
+          "x": -628.130066,
+          "y": 75.0,
+          "z": 4054.05957
+        },
+        {
+          "x": -1008.83447,
+          "y": 75.0,
+          "z": 4238.336
+        }
+      ],
+      "Length": 422.9582,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E25",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N340",
+        "N461"
+      ],
+      "Centerline": [
+        {
+          "x": -1008.83447,
+          "y": 75.0,
+          "z": 4238.336
+        },
+        {
+          "x": -944.6867,
+          "y": 75.0,
+          "z": 4537.144
+        }
+      ],
+      "Length": 305.616119,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E27",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N983",
+        "N1144"
+      ],
+      "Centerline": [
+        {
+          "x": 1163.40417,
+          "y": 75.0,
+          "z": 5766.216
+        },
+        {
+          "x": 1545.371,
+          "y": 75.0,
+          "z": 6166.771
+        }
+      ],
+      "Length": 553.482666,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E28",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N983",
+        "N769"
+      ],
+      "Centerline": [
+        {
+          "x": 1163.40417,
+          "y": 75.0,
+          "z": 5766.216
+        },
+        {
+          "x": 1572.88477,
+          "y": 75.0,
+          "z": 5409.89258
+        }
+      ],
+      "Length": 542.8081,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E29",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N772",
+        "N681"
+      ],
+      "Centerline": [
+        {
+          "x": 1845.31958,
+          "y": 75.0,
+          "z": 5409.41846
+        },
+        {
+          "x": 1922.88477,
+          "y": 75.0,
+          "z": 5159.89258
+        }
+      ],
+      "Length": 261.3035,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E30",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N772",
+        "N752"
+      ],
+      "Centerline": [
+        {
+          "x": 1845.31958,
+          "y": 75.0,
+          "z": 5409.41846
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 529.884766,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E31",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1661",
+        "N1352"
+      ],
+      "Centerline": [
+        {
+          "x": 4222.885,
+          "y": 75.0,
+          "z": 7709.89258
+        },
+        {
+          "x": 4372.885,
+          "y": 75.0,
+          "z": 6609.89258
+        }
+      ],
+      "Length": 1110.18018,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E32",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1352",
+        "N1061"
+      ],
+      "Centerline": [
+        {
+          "x": 4372.885,
+          "y": 75.0,
+          "z": 6609.89258
+        },
+        {
+          "x": 4522.885,
+          "y": 75.0,
+          "z": 5959.89258
+        }
+      ],
+      "Length": 667.0832,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E33",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N876",
+        "N857"
+      ],
+      "Centerline": [
+        {
+          "x": 4122.885,
+          "y": 75.0,
+          "z": 5609.89258
+        },
+        {
+          "x": 4422.885,
+          "y": 75.0,
+          "z": 5559.89258
+        }
+      ],
+      "Length": 304.138123,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E34",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1388",
+        "N1174"
+      ],
+      "Centerline": [
+        {
+          "x": 2132.45557,
+          "y": 75.0,
+          "z": 6766.81152
+        },
+        {
+          "x": 2064.53516,
+          "y": 75.0,
+          "z": 6296.71045
+        }
+      ],
+      "Length": 474.98233,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E35",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1174",
+        "N989"
+      ],
+      "Centerline": [
+        {
+          "x": 2064.53516,
+          "y": 75.0,
+          "z": 6296.71045
+        },
+        {
+          "x": 2022.88477,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 438.799042,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E36",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N559",
+        "N624"
+      ],
+      "Centerline": [
+        {
+          "x": 222.884766,
+          "y": 75.0,
+          "z": 4859.89258
+        },
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        }
+      ],
+      "Length": 427.2002,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E37",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N624",
+        "N397"
+      ],
+      "Centerline": [
+        {
+          "x": 622.884766,
+          "y": 75.0,
+          "z": 5009.89258
+        },
+        {
+          "x": 672.884766,
+          "y": 75.0,
+          "z": 4359.89258
+        }
+      ],
+      "Length": 651.9202,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E38",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N239",
+        "N259"
+      ],
+      "Centerline": [
+        {
+          "x": -1027.11523,
+          "y": 75.0,
+          "z": 3859.89258
+        },
+        {
+          "x": -1177.11523,
+          "y": 75.0,
+          "z": 3855.02881
+        }
+      ],
+      "Length": 150.078827,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E39",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N239",
+        "N340"
+      ],
+      "Centerline": [
+        {
+          "x": -1027.11523,
+          "y": 75.0,
+          "z": 3859.89258
+        },
+        {
+          "x": -1008.83447,
+          "y": 75.0,
+          "z": 4238.336
+        }
+      ],
+      "Length": 378.884644,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E40",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N752",
+        "N847"
+      ],
+      "Centerline": [
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        },
+        {
+          "x": 2731.77026,
+          "y": 75.0,
+          "z": 5505.367
+        }
+      ],
+      "Length": 387.24884,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E41",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N937",
+        "N1904"
+      ],
+      "Centerline": [
+        {
+          "x": 2072.77783,
+          "y": 75.0,
+          "z": 5680.826
+        },
+        {
+          "x": 2384.505,
+          "y": 75.0,
+          "z": 5590.338
+        }
+      ],
+      "Length": 324.59494,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E42",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1904",
+        "N999"
+      ],
+      "Centerline": [
+        {
+          "x": 2384.505,
+          "y": 75.0,
+          "z": 5590.338
+        },
+        {
+          "x": 2442.75635,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 275.777,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E43",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1904",
+        "N752"
+      ],
+      "Centerline": [
+        {
+          "x": 2384.505,
+          "y": 75.0,
+          "z": 5590.338
+        },
+        {
+          "x": 2372.88477,
+          "y": 75.0,
+          "z": 5359.89258
+        }
+      ],
+      "Length": 230.7381,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E44",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1520",
+        "N1576"
+      ],
+      "Centerline": [
+        {
+          "x": 3472.88477,
+          "y": 75.0,
+          "z": 7359.89258
+        },
+        {
+          "x": 3222.88477,
+          "y": 75.0,
+          "z": 7509.89258
+        }
+      ],
+      "Length": 291.5476,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E45",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1881",
+        "N1749"
+      ],
+      "Centerline": [
+        {
+          "x": 3522.88477,
+          "y": 75.0,
+          "z": 8659.893
+        },
+        {
+          "x": 3551.72119,
+          "y": 75.0,
+          "z": 8302.537
+        }
+      ],
+      "Length": 358.517029,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E46",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1649",
+        "N1527"
+      ],
+      "Centerline": [
+        {
+          "x": 687.5684,
+          "y": 75.0,
+          "z": 8056.54
+        },
+        {
+          "x": 707.8787,
+          "y": 75.0,
+          "z": 7385.50537
+        }
+      ],
+      "Length": 671.342,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E47",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1230",
+        "N1370"
+      ],
+      "Centerline": [
+        {
+          "x": -671.3327,
+          "y": 75.0,
+          "z": 6390.236
+        },
+        {
+          "x": -295.461121,
+          "y": 75.0,
+          "z": 6464.545
+        }
+      ],
+      "Length": 383.146545,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E48",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1230",
+        "N974"
+      ],
+      "Centerline": [
+        {
+          "x": -671.3327,
+          "y": 75.0,
+          "z": 6390.236
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 532.1834,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E49",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1370",
+        "N1216"
+      ],
+      "Centerline": [
+        {
+          "x": -295.461121,
+          "y": 75.0,
+          "z": 6464.545
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 6359.89258
+        }
+      ],
+      "Length": 1023.70917,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E50",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N884",
+        "N974"
+      ],
+      "Centerline": [
+        {
+          "x": -281.501343,
+          "y": 75.0,
+          "z": 5887.973
+        },
+        {
+          "x": -627.115234,
+          "y": 75.0,
+          "z": 5859.89258
+        }
+      ],
+      "Length": 346.752777,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E51",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1370",
+        "N884"
+      ],
+      "Centerline": [
+        {
+          "x": -295.461121,
+          "y": 75.0,
+          "z": 6464.545
+        },
+        {
+          "x": -281.501343,
+          "y": 75.0,
+          "z": 5887.973
+        }
+      ],
+      "Length": 576.7407,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E52",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1216",
+        "N1527"
+      ],
+      "Centerline": [
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 6359.89258
+        },
+        {
+          "x": 707.8787,
+          "y": 75.0,
+          "z": 7385.50537
+        }
+      ],
+      "Length": 1025.72253,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E53",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1144",
+        "N1216"
+      ],
+      "Centerline": [
+        {
+          "x": 1545.371,
+          "y": 75.0,
+          "z": 6166.771
+        },
+        {
+          "x": 722.884766,
+          "y": 75.0,
+          "z": 6359.89258
+        }
+      ],
+      "Length": 844.854736,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E54",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N887",
+        "N1141"
+      ],
+      "Centerline": [
+        {
+          "x": 177.515381,
+          "y": 75.0,
+          "z": 5882.00439
+        },
+        {
+          "x": 725.44104,
+          "y": 75.0,
+          "z": 6033.51025
+        }
+      ],
+      "Length": 568.4862,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E55",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N559",
+        "N654"
+      ],
+      "Centerline": [
+        {
+          "x": 222.884766,
+          "y": 75.0,
+          "z": 4859.89258
+        },
+        {
+          "x": -225.292633,
+          "y": 75.0,
+          "z": 4937.778
+        }
+      ],
+      "Length": 454.8946,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E56",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N654",
+        "N440"
+      ],
+      "Centerline": [
+        {
+          "x": -225.292633,
+          "y": 75.0,
+          "z": 4937.778
+        },
+        {
+          "x": -127.115234,
+          "y": 75.0,
+          "z": 4459.89258
+        }
+      ],
+      "Length": 487.865875,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E57",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1079",
+        "N1294"
+      ],
+      "Centerline": [
+        {
+          "x": 3772.88477,
+          "y": 75.0,
+          "z": 6009.89258
+        },
+        {
+          "x": 3806.10156,
+          "y": 75.0,
+          "z": 6561.08154
+        }
+      ],
+      "Length": 552.188965,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E58",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1006",
+        "N1036"
+      ],
+      "Centerline": [
+        {
+          "x": 4172.885,
+          "y": 75.0,
+          "z": 5859.89258
+        },
+        {
+          "x": 4353.934,
+          "y": 75.0,
+          "z": 5895.05469
+        }
+      ],
+      "Length": 184.432175,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E59",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N1649",
+        "N1735"
+      ],
+      "Centerline": [
+        {
+          "x": 687.5684,
+          "y": 75.0,
+          "z": 8056.54
+        },
+        {
+          "x": 2040.47681,
+          "y": 75.0,
+          "z": 8068.30029
+        }
+      ],
+      "Length": 1352.95959,
+      "Lanes": []
+    },
+    {
+      "EdgeId": "E60",
+      "LayerId": "L0",
+      "LinkNodesId": [
+        "N422",
+        "N322"
+      ],
+      "Centerline": [
+        {
+          "x": -429.80426,
+          "y": 75.0,
+          "z": 4463.27539
+        },
+        {
+          "x": -277.115234,
+          "y": 75.0,
+          "z": 4159.89258
+        }
+      ],
+      "Length": 339.639618,
+      "Lanes": []
+    }
+  ],
+  "AltitudeLayers": [
+    {
+      "LayerId": "L0",
+      "DisplayName": "Default Layer",
+      "NominalAltitude": 75.0,
+      "VerticalTolerance": 5.0,
+      "Enabled": true,
+      "Frozen": false
+    }
+  ],
+  "LaneConnectionCorridors": []
+}

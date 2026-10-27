@@ -1,0 +1,675 @@
+{
+  "schema_version": 1,
+  "python_runtime": {
+    "implementation": "cpython",
+    "version": "3.12.7",
+    "platform": "win32"
+  },
+  "components": [
+    {
+      "name": "altgraph",
+      "version": "0.17.5",
+      "roles": [
+        "build-tool"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://github.com/ronaldoussoren/altgraph",
+      "license_files": [
+        {
+          "path": "python/altgraph-0.17.5/altgraph-0.17.5.dist-info/LICENSE",
+          "sha256": "6c194d6db0c64d45535d10c95142b9b0cda7b7dcc7f1ddee302b3d536f3dbe46"
+        }
+      ]
+    },
+    {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "build": "h2bbff1b_6",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "bzip2-1.0.8",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/bzip2-1.0.8-h2bbff1b_6.conda",
+      "bundled_artifacts": [
+        "libbz2.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/bzip2-1.0.8-h2bbff1b_6/LICENSE",
+          "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3"
+        }
+      ]
+    },
+    {
+      "name": "contourpy",
+      "version": "1.3.3",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "OSI Approved :: BSD License",
+      "project_url": "https://github.com/contourpy/contourpy",
+      "license_files": [
+        {
+          "path": "python/contourpy-1.3.3/contourpy-1.3.3.dist-info/LICENSE",
+          "sha256": "8553102e03001dd966278098cc027d0683c412b34ea141351b060be4330f39a9"
+        }
+      ]
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "OSI Approved :: BSD License",
+      "project_url": "https://matplotlib.org/cycler/",
+      "license_files": [
+        {
+          "path": "python/cycler-0.12.1/cycler-0.12.1.dist-info/LICENSE",
+          "sha256": "f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408"
+        }
+      ]
+    },
+    {
+      "name": "expat",
+      "version": "2.6.3",
+      "build": "h5da7b33_0",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/expat-2.6.3-h5da7b33_0.conda",
+      "bundled_artifacts": [
+        "libexpat.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/expat-2.6.3-h5da7b33_0/COPYING",
+          "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534"
+        }
+      ]
+    },
+    {
+      "name": "fonttools",
+      "version": "4.63.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "MIT",
+      "project_url": "http://github.com/fonttools/fonttools",
+      "license_files": [
+        {
+          "path": "python/fonttools-4.63.0/fonttools-4.63.0.dist-info/licenses/LICENSE",
+          "sha256": "22bef80697ecfaa17f97e62b9a26dfa12820be05583e8dd12ad169b241274c99"
+        },
+        {
+          "path": "python/fonttools-4.63.0/fonttools-4.63.0.dist-info/licenses/LICENSE.external",
+          "sha256": "b082a5f86775b2641f01bccb8b9c82908481de5f502bb254b1e13bfc2a9f303d"
+        }
+      ]
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "OSI Approved :: BSD License",
+      "project_url": "https://github.com/nucleic/kiwi",
+      "license_files": [
+        {
+          "path": "python/kiwisolver-1.5.0/kiwisolver-1.5.0.dist-info/licenses/LICENSE",
+          "sha256": "b24c2bf6185f31a124ad6bacccae3071bdc7ad7882de00b00110aa62abb76a15"
+        }
+      ]
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.4",
+      "build": "hd77b12b_1",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/libffi-3.4.4-hd77b12b_1.conda",
+      "bundled_artifacts": [
+        "ffi.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/libffi-3.4.4-hd77b12b_1/LICENSE",
+          "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388"
+        }
+      ]
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "OSI Approved :: Python Software Foundation License",
+      "project_url": "https://matplotlib.org",
+      "license_files": [
+        {
+          "path": "python/matplotlib-3.11.0/matplotlib-3.11.0.dist-info/LICENSE",
+          "sha256": "822e8e528147569a41975592aee19c11992ab667ba50451cd929031d5fc74491"
+        },
+        {
+          "path": "python/matplotlib-3.11.0/matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU",
+          "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e"
+        },
+        {
+          "path": "python/matplotlib-3.11.0/matplotlib/mpl-data/fonts/ttf/LICENSE_STIX",
+          "sha256": "bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959"
+        }
+      ]
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "project_url": "https://numpy.org",
+      "license_files": [
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "a804dff0ead9fadc5293456410bcbfc32bf024be9c4513459663fb7b442d2341"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+          "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+          "sha256": "aea41976c720f91bd19725c16916a1ace40eb1ea42620d340e587a5de4bbcea0"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+          "sha256": "d208152e2777ffd0126eacc1bd21c0320d69e4e6b622d21a2a12a47e8ef73763"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+          "sha256": "a732977853530066790c42817087f4829b518dd98d340c916acbfd227e39d3cb"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+          "sha256": "585483905b13d4b42f800c55ba99e89d6e2e33ccd5f503e201c07531d148ff41"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+          "sha256": "8db000e158c162e7249787852d8c69764706502ccee725c06641b31c1e95c8af"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+          "sha256": "19060ef465e1797d682ee0fc3081bd25ab1395e995e43d25c9d13c95d9a3cd6b"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/ma/LICENSE",
+          "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/LICENSE.md",
+          "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+          "sha256": "cf5619f25b112d5ce7c896efffc8e610bcb345dfadcc19f2c1460aa48fff2c9e"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+          "sha256": "92c10699884321f1c2947fe2a70ab23b0fbf1507f756d89dd08f38c61fc3d4fa"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+          "sha256": "41190663b77bee5302386495a07b7eabfbfa571aa0ae2f11da6764162062fc4f"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+          "sha256": "322ac46d870c8aeead6c53adcccc839296fb3c8e456eae155081297daf7f8013"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+          "sha256": "28cad82ce1379dc529df30da78ec012d7d0d1d576b03ddcb93388aee53659f59"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy-2.5.0.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+          "sha256": "454ec7350e478e037061850b67395753b425b1cb0a34bbc26290b020bf89d763"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy/_core/include/numpy/random/LICENSE.txt",
+          "sha256": "d544761558b510866c21f7e8a2d5716fca76e0b98117e3b6b86314db7244d150"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy/ma/LICENSE",
+          "sha256": "d78dbb208b80d92b4d333e41a4baae50d12444f46e53199fa7726a91de6e2da7"
+        },
+        {
+          "path": "python/numpy-2.5.0/numpy/random/LICENSE.md",
+          "sha256": "b4bc2f4fa1c95778f1ed3dd8f14706bece399475b978f9f34b5d3cd72521b48a"
+        }
+      ]
+    },
+    {
+      "name": "openssl",
+      "version": "3.5.5",
+      "build": "hbb43b14_0",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "Apache-2.0",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/openssl-3.5.5-hbb43b14_0.conda",
+      "bundled_artifacts": [
+        "libcrypto-3-x64.dll",
+        "libssl-3-x64.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/openssl-3.5.5-hbb43b14_0/LICENSE.txt",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.2",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "Apache-2.0 OR BSD-2-Clause",
+      "project_url": "https://github.com/pypa/packaging",
+      "license_files": [
+        {
+          "path": "python/packaging-26.2/packaging-26.2.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path": "python/packaging-26.2/packaging-26.2.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "python/packaging-26.2/packaging-26.2.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "name": "pandas",
+      "version": "3.0.5",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "OSI Approved :: BSD License",
+      "project_url": "https://pandas.pydata.org",
+      "license_files": [
+        {
+          "path": "python/pandas-3.0.5/pandas-3.0.5.dist-info/LICENSE",
+          "sha256": "9850f6b5bdef7346503065807b878deb8058b976c5c329f4c4d23bf4796ce9ae"
+        }
+      ]
+    },
+    {
+      "name": "pefile",
+      "version": "2023.2.7",
+      "roles": [
+        "build-tool"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://github.com/erocarrera/pefile",
+      "license_files": [
+        {
+          "path": "python/pefile-2023.2.7/pefile-2023.2.7.dist-info/LICENSE",
+          "sha256": "bfd4b5e4f8a99c961fd6f94d708e38396cc146bfe8fbc5d2a86e63aa29fb4208"
+        }
+      ]
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "MIT-CMU",
+      "project_url": "https://python-pillow.github.io",
+      "license_files": [
+        {
+          "path": "python/pillow-12.3.0/pillow-12.3.0.dist-info/licenses/LICENSE",
+          "sha256": "4f7866a74802c6326f81faff59a56546b6aec2b10b91973e0e9308de95e79857"
+        }
+      ]
+    },
+    {
+      "name": "pyinstaller",
+      "version": "6.15.0",
+      "roles": [
+        "build-tool",
+        "redistributed-bootloader"
+      ],
+      "declared_license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+      "project_url": "https://github.com/pyinstaller/pyinstaller",
+      "license_files": [
+        {
+          "path": "python/pyinstaller-6.15.0/pyinstaller-6.15.0.dist-info/COPYING.txt",
+          "sha256": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
+        }
+      ]
+    },
+    {
+      "name": "pyinstaller-hooks-contrib",
+      "version": "2026.7",
+      "roles": [
+        "build-tool"
+      ],
+      "declared_license": "OSI Approved :: Apache Software License; OSI Approved :: GNU General Public License v2 (GPLv2)",
+      "project_url": "https://github.com/pyinstaller/pyinstaller-hooks-contrib",
+      "license_files": [
+        {
+          "path": "python/pyinstaller-hooks-contrib-2026.7/pyinstaller_hooks_contrib-2026.7.dist-info/licenses/LICENSE",
+          "sha256": "91d0baaff00773038e72c0a1fc9d5d2d38706b7a2b9c04f34296608f931b9cd0"
+        }
+      ]
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.2",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://github.com/pyparsing/pyparsing/",
+      "license_files": [
+        {
+          "path": "python/pyparsing-3.3.2/pyparsing-3.3.2.dist-info/licenses/LICENSE",
+          "sha256": "a5425f9dc14ac74d4c5f0b679e941f2442e32cca7452a4418d5b1a49893ebe4e"
+        }
+      ]
+    },
+    {
+      "name": "python",
+      "version": "3.12.7",
+      "build": "h14ffc60_0",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "PSF-2.0",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/python-3.12.7-h14ffc60_0.conda",
+      "bundled_artifacts": [
+        "python312.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/python-3.12.7-h14ffc60_0/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "Dual License",
+      "project_url": "https://github.com/dateutil/dateutil",
+      "license_files": [
+        {
+          "path": "python/python-dateutil-2.9.0.post0/python_dateutil-2.9.0.post0.dist-info/LICENSE",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e"
+        }
+      ]
+    },
+    {
+      "name": "pywin32-ctypes",
+      "version": "0.2.3",
+      "roles": [
+        "build-tool"
+      ],
+      "declared_license": "BSD-3-Clause",
+      "project_url": "https://github.com/enthought/pywin32-ctypes",
+      "license_files": [
+        {
+          "path": "python/pywin32-ctypes-0.2.3/pywin32_ctypes-0.2.3.dist-info/LICENSE.txt",
+          "sha256": "dfa83b3e2709adfcdb838d9ad55823ca674abb780e60563d9dd9544ccbf785e9"
+        }
+      ]
+    },
+    {
+      "name": "setuptools",
+      "version": "84.0.0",
+      "roles": [
+        "build-tool"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://github.com/pypa/setuptools",
+      "license_files": [
+        {
+          "path": "python/setuptools-84.0.0/setuptools-84.0.0.dist-info/licenses/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+          "sha256": "458502e12d97bbf64438606a20044aa85eb05fb0a8a807bb35dbec253fd1fc04"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+          "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+          "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+          "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/config/_validate_pyproject/NOTICE",
+          "sha256": "09c9bcea95ca086f8bc5bed174e40bc835b297d40fb5f86bbbb570fe0a5581a7"
+        },
+        {
+          "path": "python/setuptools-84.0.0/setuptools/config/NOTICE",
+          "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8"
+        }
+      ]
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "MIT",
+      "project_url": "https://github.com/benjaminp/six",
+      "license_files": [
+        {
+          "path": "python/six-1.17.0/six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ]
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.3",
+      "roles": [
+        "runtime"
+      ],
+      "declared_license": "Apache-2.0",
+      "project_url": "https://github.com/python/tzdata",
+      "license_files": [
+        {
+          "path": "python/tzdata-2026.3/tzdata-2026.3.dist-info/licenses/LICENSE",
+          "sha256": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46"
+        },
+        {
+          "path": "python/tzdata-2026.3/tzdata-2026.3.dist-info/licenses/licenses/LICENSE_APACHE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "name": "ucrt",
+      "version": "10.0.22621.0",
+      "build": "haa95532_0",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "LicenseRef-MicrosoftWindowsSDK10",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/ucrt-10.0.22621.0-haa95532_0.conda",
+      "bundled_artifacts": [
+        "api-ms-win-core-console-l1-1-0.dll",
+        "api-ms-win-core-datetime-l1-1-0.dll",
+        "api-ms-win-core-debug-l1-1-0.dll",
+        "api-ms-win-core-errorhandling-l1-1-0.dll",
+        "api-ms-win-core-fibers-l1-1-0.dll",
+        "api-ms-win-core-file-l1-1-0.dll",
+        "api-ms-win-core-file-l1-2-0.dll",
+        "api-ms-win-core-file-l2-1-0.dll",
+        "api-ms-win-core-handle-l1-1-0.dll",
+        "api-ms-win-core-heap-l1-1-0.dll",
+        "api-ms-win-core-interlocked-l1-1-0.dll",
+        "api-ms-win-core-libraryloader-l1-1-0.dll",
+        "api-ms-win-core-localization-l1-2-0.dll",
+        "api-ms-win-core-memory-l1-1-0.dll",
+        "api-ms-win-core-namedpipe-l1-1-0.dll",
+        "api-ms-win-core-path-l1-1-0.dll",
+        "api-ms-win-core-processenvironment-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-0.dll",
+        "api-ms-win-core-processthreads-l1-1-1.dll",
+        "api-ms-win-core-profile-l1-1-0.dll",
+        "api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "api-ms-win-core-string-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-1-0.dll",
+        "api-ms-win-core-synch-l1-2-0.dll",
+        "api-ms-win-core-sysinfo-l1-1-0.dll",
+        "api-ms-win-core-timezone-l1-1-0.dll",
+        "api-ms-win-core-util-l1-1-0.dll",
+        "api-ms-win-crt-conio-l1-1-0.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-private-l1-1-0.dll",
+        "api-ms-win-crt-process-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "ucrtbase.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/ucrt-10.0.22621.0-haa95532_0/LICENSE.txt",
+          "sha256": "2169a9a139c5c16e5566f679fe06b555254f3e2e1f0054f9eaa3059202c76cda"
+        }
+      ]
+    },
+    {
+      "name": "vc14_runtime",
+      "version": "14.44.35208",
+      "build": "h4927774_10",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "LicenseRef-MicrosoftVisualCpp2015-2022Runtime",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/vc14_runtime-14.44.35208-h4927774_10.conda",
+      "bundled_artifacts": [
+        "msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+        "VCRUNTIME140.dll",
+        "VCRUNTIME140_1.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/vc14_runtime-14.44.35208-h4927774_10/LICENSE.RTF",
+          "sha256": "8099dc3cf9502c335da829e5c755948a12e3e6de490eb492a99deb673d883d8b"
+        },
+        {
+          "path": "native/vc14_runtime-14.44.35208-h4927774_10/LICENSE.TXT",
+          "sha256": "ed29042f5034e8fa9eff7c13ae07144d7ba68d4f09f50180fd9eee2c41843159"
+        }
+      ]
+    },
+    {
+      "name": "xz",
+      "version": "5.4.6",
+      "build": "h8cc25b3_1",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "LGPL-2.1-or-later and GPL-2.0-or-later and 0BSD",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/xz-5.4.6-h8cc25b3_1.conda",
+      "bundled_artifacts": [
+        "liblzma.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/xz-5.4.6-h8cc25b3_1/COPYING",
+          "sha256": "29a1e305b2e34eefe5d4602d00cde1d528b71c5d9f2eec5106972cf6ddb6f73f"
+        }
+      ]
+    },
+    {
+      "name": "zlib",
+      "version": "1.2.13",
+      "build": "h8cc25b3_1",
+      "roles": [
+        "redistributed-native-runtime"
+      ],
+      "declared_license": "Zlib",
+      "project_url": "https://repo.anaconda.com/pkgs/main/win-64/zlib-1.2.13-h8cc25b3_1.conda",
+      "bundled_artifacts": [
+        "zlib.dll"
+      ],
+      "license_files": [
+        {
+          "path": "native/zlib-1.2.13-h8cc25b3_1/zlib.h",
+          "sha256": "a980a0d104198a53cc220c51ab5856e5be901bec8a2d02e0ee79a8754219dfed"
+        }
+      ]
+    }
+  ]
+}

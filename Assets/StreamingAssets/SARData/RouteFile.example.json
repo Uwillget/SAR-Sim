@@ -1,0 +1,19 @@
+{
+  "routes": [],
+  "vehicles": [
+    {
+      "id": "demo-json-001",
+      "from": "VP1",
+      "to": "VP2",
+      "depart": 0,
+      "priority": 1
+    },
+    {
+      "id": "demo-json-002",
+      "from": "VP3",
+      "to": "VP5",
+      "depart": 15,
+      "priority": 1
+    }
+  ]
+}

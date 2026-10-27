@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c21f621ee20c1429d1b6fff6d9baaf, type: 3}
+  m_Name: DefaultSimulationConfig
+  m_EditorClassIdentifier: 
+  missionsFileName: Missions.json
+  resultsFileName: SimulationResults.json
+  maxSpeed: 20
+  rotationSpeed: 20
+  acceleration: 20
+  maxDeceleration: 40
+  safeInterval: 10
+  laneChangeDistance: 5
+  laneChangeFrontGapFactor: 1
+  laneChangeRearGapFactor: 1.5
+  laneChangeRerouteTimeout: 15
+  laneChangeRemovalTimeout: 120
+  resourceBuffer: 0.5
+  maxWaitPerResource: 30
+  maxCorridorWaitTime: 90
+  maxHelipadWaitTime: 120
+  nodeDwellTime: 3
+  greenWaveSpeed: 15
+  greenSignalTime: 10
+  signalClearanceTime: 2
+  signalStopLineDistance: 10
+  permissiveRightTurn: 0
+  missionMode: 1
+  maxConcurrentAircraft: 60
+  randomTurnaroundTime: 10
+  showLaneStateGizmos: 1
+  signalGizmoSize: 1
+  signalHeightOffset: 3
+  signalPropagationDelay: 0
+  positioningErrorStdDev: 0

@@ -1,0 +1,385 @@
+{
+  "SchemaVersion": 2,
+  "Missions": [
+    {
+      "TaskId": "M-235753-0001",
+      "RouteId": "R-M-235753-0001",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 0.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0002",
+      "RouteId": "R-M-235753-0002",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 8.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0003",
+      "RouteId": "R-M-235753-0003",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 16.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0004",
+      "RouteId": "R-M-235753-0004",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 24.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0005",
+      "RouteId": "R-M-235753-0005",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 32.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0006",
+      "RouteId": "R-M-235753-0006",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 40.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0007",
+      "RouteId": "R-M-235753-0007",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 48.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0008",
+      "RouteId": "R-M-235753-0008",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 56.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0009",
+      "RouteId": "R-M-235753-0009",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 64.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0010",
+      "RouteId": "R-M-235753-0010",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 72.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0011",
+      "RouteId": "R-M-235753-0011",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 80.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0012",
+      "RouteId": "R-M-235753-0012",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 88.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0013",
+      "RouteId": "R-M-235753-0013",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 96.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0014",
+      "RouteId": "R-M-235753-0014",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 104.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0015",
+      "RouteId": "R-M-235753-0015",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 112.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0016",
+      "RouteId": "R-M-235753-0016",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 120.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0017",
+      "RouteId": "R-M-235753-0017",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 128.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0018",
+      "RouteId": "R-M-235753-0018",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 136.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0019",
+      "RouteId": "R-M-235753-0019",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 144.0,
+      "Priority": 1
+    },
+    {
+      "TaskId": "M-235753-0020",
+      "RouteId": "R-M-235753-0020",
+      "OriginVertiportId": "VP1",
+      "DestinationVertiportId": "VP4",
+      "OriginHelipadId": "VP1-HP1",
+      "DestinationHelipadId": "VP4-HP11",
+      "RouteLaneIds": [
+        "E76_fwd_3",
+        "E76_fwd_2",
+        "E77_fwd_2",
+        "E61_bwd_2",
+        "E54_bwd_2",
+        "E54_bwd_3",
+        "E84_bwd_3"
+      ],
+      "DepartureTime": 152.0,
+      "Priority": 1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<routes>
+  <trip id="demo-xml-001" from="VP1" to="VP4" depart="0" priority="1" />
+  <flow id="demo-flow" from="VP2" to="VP6"
+        begin="20" period="10" number="3" priority="1" />
+</routes>
