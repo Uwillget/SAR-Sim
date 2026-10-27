@@ -4,8 +4,11 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-0078D6?logo=windows)](#ways-to-run)
 [![AirSim](https://img.shields.io/badge/AirSim-1.8.1%20%2B%20UE%204.27-3949AB)](#joint-simulation-with-unreal-engine-and-airsim)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
 
 **English** | [简体中文](README.zh-CN.md)
+
+> **Download the ready-to-run Windows application** from the [Releases page](https://github.com/Uwillget/SAR-Sim/releases/latest) — English and 简体中文 portable archives, no Unity installation required. The source tree is for development; the executables are published only as release assets. See [Releases](#releases) for what each archive contains.
 
 The Structured Air Route Simulation System (SAR-Sim) is a Unity-based research platform for urban low-altitude public-route systems. It combines city geometry, multilayer air-route networks, vertiport ground infrastructure, holding structures, connection corridors, traffic-demand authoring, microscopic simulation, and result inspection in one editable environment.
 
@@ -99,7 +102,7 @@ For an illustrated walkthrough of both equivalent workflows, see the [English Qu
 
 ### Portable Windows application
 
-Download the complete Windows x64 archive from the repository's GitHub Releases page. Extract the archive and keep the executable together with its `_Data` folder and all supplied directories.
+Download the complete Windows x64 archive from the [**Releases page**](https://github.com/Uwillget/SAR-Sim/releases/latest). Extract the archive and keep the executable together with its `_Data` folder and all supplied directories.
 
 The local build command produces two clean release directories from one validated
 Windows player binary:

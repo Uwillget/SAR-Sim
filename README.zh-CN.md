@@ -4,8 +4,11 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-0078D6?logo=windows)](#运行方式)
 [![AirSim](https://img.shields.io/badge/AirSim-1.8.1%20%2B%20UE%204.27-3949AB)](#与-unreal-engine--airsim-的联合仿真)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
 
 [English](README.md) | **简体中文**
+
+> **可直接运行的 Windows 程序请在 [Releases 页面](https://github.com/Uwillget/SAR-Sim/releases/latest) 下载**——英文与简体中文两个便携版压缩包，无需安装 Unity。本仓库是开发用源码，可执行程序只作为 Release 资产发布。各压缩包的内容见[发行版](#发行版)一节。
 
 结构化航路仿真系统（Structured Air Route Simulation System，SAR-Sim）是面向城市低空公共航路体系的 Unity 研究平台。它把城市几何、多层空中路网、起降场地面设施、等待结构、连接走廊、交通需求编排、微观仿真与结果分析集中在一个可编辑环境中。
 
@@ -99,7 +102,7 @@ Unity 工程还可以把每一架仿真飞行器的位姿实时推送到运行 A
 
 ### 便携式 Windows 程序
 
-从本仓库的 GitHub Releases 页面下载完整的 Windows x64 压缩包。解压后必须保持可执行文件与其 `_Data` 目录、以及随包提供的全部目录在一起。
+从 [**Releases 页面**](https://github.com/Uwillget/SAR-Sim/releases/latest) 下载完整的 Windows x64 压缩包。解压后必须保持可执行文件与其 `_Data` 目录、以及随包提供的全部目录在一起。
 
 本地构建命令会由同一个已验证的 Windows 播放器产出两个干净的发行目录：
 
