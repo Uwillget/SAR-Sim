@@ -5,10 +5,13 @@
 [![AirSim](https://img.shields.io/badge/AirSim-1.8.1%20%2B%20UE%204.27-3949AB)](#与-unreal-engine--airsim-的联合仿真)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
+[![Demo](https://img.shields.io/badge/Demo-YouTube-FF0000?logo=youtube)](https://youtu.be/wICTW1oSdc0)
 
 [English](README.md) | **简体中文**
 
 > **可直接运行的 Windows 程序请在 [Releases 页面](https://github.com/Uwillget/SAR-Sim/releases/latest) 下载**——英文与简体中文两个便携版压缩包，无需安装 Unity。本仓库是开发用源码，可执行程序只作为 Release 资产发布。各压缩包的内容见[发行版](#发行版)一节。
+
+> **先看演示：** [SAR-Sim 功能演示](https://youtu.be/wICTW1oSdc0)（YouTube）——英文便携版程序的录屏，展示工作台各项功能的实际操作。在下载或从源码构建之前，这是了解本程序能做什么最快的方式。
 
 结构化航路仿真系统（Structured Air Route Simulation System，SAR-Sim）是面向城市低空公共航路体系的 Unity 研究平台。它把城市几何、多层空中路网、起降场地面设施、等待结构、连接走廊、交通需求编排、微观仿真与结果分析集中在一个可编辑环境中。
 
@@ -103,6 +106,8 @@ Unity 工程还可以把每一架仿真飞行器的位姿实时推送到运行 A
 ### 便携式 Windows 程序
 
 从 [**Releases 页面**](https://github.com/Uwillget/SAR-Sim/releases/latest) 下载完整的 Windows x64 压缩包。解压后必须保持可执行文件与其 `_Data` 目录、以及随包提供的全部目录在一起。
+
+YouTube 上的[功能演示](https://youtu.be/wICTW1oSdc0)就是在本压缩包的英文版上录制的，因此演示内容与解压后实际看到的一致。
 
 本地构建命令会由同一个已验证的 Windows 播放器产出两个干净的发行目录：
 
@@ -502,6 +507,7 @@ Tools/SARPlotWorker/build_worker.ps1 -PythonExecutable <path-to-python.exe>
 
 ## 文档
 
+- [英文便携版功能演示（YouTube）](https://youtu.be/wICTW1oSdc0)
 - [快速入门：Unity 编辑器与 Windows 工作流（英文图解）](OperationGuide/QuickStart/README.md)
 - [工作台与 Windows 构建指南](OperationGuide/WorkbenchAndBuild.md)
 - [航路文件格式](OperationGuide/RouteFileFormat.md)
@@ -567,9 +573,42 @@ Windows 便携版（无需安装 Unity）：
 
 > **A Benchmark-Oriented Framework for Design, Simulation, and Evaluation of Urban Low-Altitude Structured Air Route Systems**
 >
-> Zichun Zhao, Yuejie Lin, Tao Ma —— 东南大学交通学院。
+> Zichun Zhao、Yuejie Lin、Tao Ma
+
+作者单位：Zichun Zhao 为东南大学交通学院（南京 211189）与 Zhongguancun Academy（北京 100094）；Yuejie Lin 为上海交通大学机械与动力工程学院（上海 200240）；Tao Ma 为东南大学交通学院（南京 211189）。
 
 系统把组件编排、运行机制与实验配置相互分离，使其他路网、设施、路径或控制方法能够通过一致的数据与记录接口被评估。
+
+### 术语对照：论文模型与代码实现
+
+论文 III-A 节把航空器运行实例写成一个包含任务阶段、执行模式与生命周期状态的元组。代码库承载同一个设计，但记录的是各机制真正需要的动作粒度，因此标识符与取值边界都不是一一对应。
+
+`AircraftState` 定义在 `Assets/DataStructrue/DynamicDataStructure.cs`。`MissionPhase` 与 `State` 都是普通 `string` 字段而非枚举，下表的值集合由 `AircraftAgent.HandlePhaseTransition` 与 `SimulationManager` 中的赋值约定构成，而不是由类型系统保证。
+
+| 论文 | 实现 |
+|---|---|
+| `S_ph`，任务阶段 | `AircraftState.MissionPhase` |
+| `S_md`，执行模式 | 无单一字段，见下 |
+| `S_st`，生命周期状态 | `AircraftState.State` |
+
+**任务阶段。** 进离场走廊被并入相邻的运动阶段，而不是单列为阶段，因此论文的六个取值对应代码的四个取值加两个记账取值：
+
+| 论文 `S_ph` | `MissionPhase` | 说明 |
+|---|---|---|
+| `Idle` | `START` | 停在起始停机坪，尚未发出第一个坡道点。 |
+| `Departure` | `TAKEOFF` | 经进近网络与等待结构的坡道轨迹。 |
+| `Entry` | — | 不单列：进场走廊属于 `TAKEOFF` 的坡道轨迹，由其中的 `EntryMerge` 检查点把关。 |
+| `Cruise` | `CRUISE` | 车道序列穿越。 |
+| `Exit` | — | 不单列：`ExitCorridorId` 在车道序列走完后申请，是 `LANDING` 轨迹的第一段。 |
+| `Arrival` | `LANDING` | 至目的停机坪的降落轨迹。 |
+| — | `WAITING` | 论文无对应项：在停机坪等待，同时重试目的地或后续任务链。 |
+| — | `END` | 论文无对应项：终止记账，总与 `SUCCESS` 或 `FAIL` 配对。 |
+
+**执行模式。** `Proceed` 表现为"没有任何等待条件"，而不是一个存储的取值。`Hold` 分散在若干等待与访问受阻标志上：计划性释放用 `FlightController.HasPendingHold`，受阻用 `AircraftAgent.isWaitingForEntry`、`isWaitingForLaneChange`、`isHoldingForLandingPlan`、`isWaitingForVertiportResource`。`Replan` 由各条重试路径实现——`SimulationManager.TryRerouteCruise` 的换道重路由（受 `laneChangeRerouteTimeout` 约束）、最多 `maxCorridorWaitTime` 的延迟降落规划、最多 `maxHelipadWaitTime` 的停机坪重排队。
+
+**生命周期状态。** `State` 直接对应：`ACTIVE`、`SUCCESS`、`FAIL` 即论文的 `Active`、`Success`、`Failure`。两个终止取值会释放该机的资源登记。
+
+论文报告的任何结论都不依赖这些标识符，也不依赖取值边界落在哪里：元组描述的是规范层，字段以实现层真正被消费的粒度记录同一信息。
 
 ## 许可
 

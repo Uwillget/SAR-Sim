@@ -5,10 +5,13 @@
 [![AirSim](https://img.shields.io/badge/AirSim-1.8.1%20%2B%20UE%204.27-3949AB)](#joint-simulation-with-unreal-engine-and-airsim)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
+[![Demo](https://img.shields.io/badge/Demo-YouTube-FF0000?logo=youtube)](https://youtu.be/wICTW1oSdc0)
 
 **English** | [简体中文](README.zh-CN.md)
 
 > **Download the ready-to-run Windows application** from the [Releases page](https://github.com/Uwillget/SAR-Sim/releases/latest) — English and 简体中文 portable archives, no Unity installation required. The source tree is for development; the executables are published only as release assets. See [Releases](#releases) for what each archive contains.
+
+> **Watch the demo first:** [SAR-Sim feature walkthrough](https://youtu.be/wICTW1oSdc0) on YouTube — a screen recording of the English portable Windows build, showing the workbench features in use. It is the fastest way to see what the application does before downloading it or building it from source.
 
 The Structured Air Route Simulation System (SAR-Sim) is a Unity-based research platform for urban low-altitude public-route systems. It combines city geometry, multilayer air-route networks, vertiport ground infrastructure, holding structures, connection corridors, traffic-demand authoring, microscopic simulation, and result inspection in one editable environment.
 
@@ -103,6 +106,8 @@ For an illustrated walkthrough of both equivalent workflows, see the [English Qu
 ### Portable Windows application
 
 Download the complete Windows x64 archive from the [**Releases page**](https://github.com/Uwillget/SAR-Sim/releases/latest). Extract the archive and keep the executable together with its `_Data` folder and all supplied directories.
+
+The [feature walkthrough](https://youtu.be/wICTW1oSdc0) on YouTube was recorded on the English build of this archive, so it shows exactly what you get after extracting it.
 
 The local build command produces two clean release directories from one validated
 Windows player binary:
@@ -521,6 +526,7 @@ The script freezes `SensitivityAnalysis.py` and `TrafficHeatmapAnalysis.py`, col
 
 ## Documentation
 
+- [Video walkthrough of the English portable build](https://youtu.be/wICTW1oSdc0) (YouTube)
 - [English Quick Start: Unity Editor and Windows Workflows](OperationGuide/QuickStart/README.md)
 - [Workbench and Windows Build Guide](OperationGuide/WorkbenchAndBuild.md)
 - [Route File Format](OperationGuide/RouteFileFormat.md)
@@ -587,9 +593,42 @@ This repository accompanies:
 
 > **A Benchmark-Oriented Framework for Design, Simulation, and Evaluation of Urban Low-Altitude Structured Air Route Systems**
 >
-> Zichun Zhao, Yuejie Lin, Tao Ma — School of Transportation, Southeast University.
+> Zichun Zhao, Yuejie Lin, Tao Ma
+
+Author affiliations: Zichun Zhao is with the School of Transportation, Southeast University, Nanjing 211189, China, and also with Zhongguancun Academy, Beijing 100094, China; Yuejie Lin is with the School of Mechanical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China; Tao Ma is with the School of Transportation, Southeast University, Nanjing 211189, China.
 
 The system separates component authoring, operational mechanisms, and experiment configuration so alternative network, facility, routing, or control methods can be evaluated through consistent data and recording interfaces.
+
+### Notation: paper model vs. implementation
+
+Section III-A of the paper specifies the aircraft operational instance as a tuple with a mission phase, an execution mode, and a lifecycle status. The code base carries the same design, but records what an agent is doing at the granularity the mechanisms need, so neither the identifiers nor the boundaries between values match one to one.
+
+`AircraftState` is defined in `Assets/DataStructrue/DynamicDataStructure.cs`. `MissionPhase` and `State` are plain `string` fields, not enumerations, so the value sets below are conventions enforced by the assignments in `AircraftAgent.HandlePhaseTransition` and `SimulationManager` rather than by the type system.
+
+| Paper | Implementation |
+|---|---|
+| `S_ph`, mission phase | `AircraftState.MissionPhase` |
+| `S_md`, execution mode | no single field; see below |
+| `S_st`, lifecycle status | `AircraftState.State` |
+
+**Mission phase.** The entry and exit corridors are handled inside the adjacent motion phase rather than as phases of their own, so six paper values become four code values plus two bookkeeping values:
+
+| Paper `S_ph` | `MissionPhase` | Comment |
+|---|---|---|
+| `Idle` | `START` | Parked at the origin helipad, before the first ramp point is issued. |
+| `Departure` | `TAKEOFF` | Ramp trajectory through the approach network and holding structure. |
+| `Entry` | — | Not a separate value: the entry corridor is part of the `TAKEOFF` ramp trajectory, gated by its `EntryMerge` checkpoint. |
+| `Cruise` | `CRUISE` | Lane-sequence traversal. |
+| `Exit` | — | Not a separate value: `ExitCorridorId` is claimed as the lane sequence ends and is the first leg of the `LANDING` trajectory. |
+| `Arrival` | `LANDING` | Landing trajectory to the destination helipad. |
+| — | `WAITING` | No paper counterpart: the aircraft is held at a helipad while a destination or a chained mission is retried. |
+| — | `END` | No paper counterpart: terminal bookkeeping, always paired with `SUCCESS` or `FAIL`. |
+
+**Execution mode.** `Proceed` is the absence of any hold condition rather than a stored value. `Hold` is spread over the wait and blocked-access flags: `FlightController.HasPendingHold` for a scheduled release, plus `AircraftAgent.isWaitingForEntry`, `isWaitingForLaneChange`, `isHoldingForLandingPlan`, and `isWaitingForVertiportResource`. `Replan` is realised by the retry paths — lane-change rerouting in `SimulationManager.TryRerouteCruise` gated by `laneChangeRerouteTimeout`, deferred landing planning up to `maxCorridorWaitTime`, and helipad requeue up to `maxHelipadWaitTime`.
+
+**Lifecycle status.** `State` maps directly: `ACTIVE`, `SUCCESS`, and `FAIL` stand for the paper's `Active`, `Success`, and `Failure`. The two terminal values release the aircraft's resource registrations.
+
+Nothing reported in the paper depends on these identifiers or on where a value boundary falls: the tuple describes the specification, and the fields record the same information at the granularity the mechanisms consume.
 
 ## License
 
