@@ -178,7 +178,7 @@ Builds/Releases/zh-CN/
 
 ## 与 Unreal Engine / AirSim 的联合仿真
 
-Unity 始终是运动主控。微观仿真产生的每一帧飞行器位姿都转发给一个小型 Python 进程，由它传送对应的 AirSim 载具与 Unreal 相机。AirSim 不承担任何飞行动力学、碰撞响应或感知计算：Unreal 场景只是 Unity 已解算完毕的交通流的高保真观察器。
+Unity 始终是运动主控。微观仿真产生的每一帧飞行器位姿都转发给一个小型 Python 进程，由它把对应的 AirSim 载具平滑滑到该位姿，并带动 Unreal 相机。AirSim 不承担任何飞行动力学、碰撞响应或感知计算：Unreal 场景只是 Unity 已解算完毕的交通流的高保真观察器。
 
 ```text
 Unity（编辑器）                              Python 桥接                      Unreal Engine 4.27
@@ -235,7 +235,7 @@ Unity 侧的飞行器名称在发送前会被过滤为 `A-Z a-z 0-9 _`，因为 
 1. 把 `JointSimulation/settings.example.json` 复制到运行 Unreal 那台机器的 `Documents/AirSim/settings.json`。
 2. 保留 `"ViewMode": "Manual"`。在其他任何视图模式下 `ACameraDirector::Tick` 会持续把相机插值向飞行器而永不收敛，表现就是画面抖动。`Manual` 模式下导演只施加键盘增量，无人操作时为零，因此相机精确停留在桥接进程指定的位置。
 3. 保持该文件中的 `OriginGeopoint` 不变。它必须与 `airsim_bridge/coords.py` 以及 Unity 场景中编译的原点一致，否则两个世界会整体错位。
-4. `Vehicles` 里的出生坐标同样不要随意改动。`simSetVehiclePose` 以出生点为锚，桥接进程不做补偿，出生点移动多少载具就偏移多少。示例把 `ChaseCam` 放在上方 2 米是有意的。
+4. `Vehicles` 里的出生坐标同样不要随意改动。`simSetVehiclePose` 以出生点为锚，桥接进程不做补偿，出生点移动多少载具就偏移多少。示例把 `ChaseCam` 放在原点。小窗读取外部相机 `SensorCam`，桥接进程会把它移到当前选中的飞行器上。
 5. 在 Unity 之前或之后启动 AirSim 工程（PIE 或打包版本皆可）——桥接进程会等待 RPC 端口，也能自行拉起 Unreal。
 
 ### 配置 Unity 侧
@@ -272,18 +272,22 @@ python -m airsim_bridge.joint_bridge --launch-airsim
 
 | 按键 | 作用 |
 |---|---|
-| `H` | 在跟随模式与自由飞行之间切换 |
+| `B` | 第三人称跟随，机体停在画面中间 |
+| `H` | 机头视角，地平线保持水平 |
+| `/` | 更近的第三人称 |
 | `N` | 循环切换被跟随的飞行器 |
-| `J` / `L` | 相机拉近／拉远 |
-| `U` / `O` | 相机升高／降低 |
+| `J` / `L` | 当前视角拉近／拉远 |
+| `U` / `O` | 当前视角升高／降低 |
+| `M` | 自由飞行 |
+| `1` / `2` / `3` | 当前飞行器的深度、分割和场景小窗 |
 
-自由飞行模式下桥接进程不再干预相机，改由 Unreal 自带的 `Manual` 模式按键接管：方向键平移，`PageUp`／`PageDown` 改变高度，`A`／`D` 偏航，`W`／`S` 俯仰，`Q`／`E` 横滚，`Shift`／`Ctrl` 改变速度。AirSim 自带的相机热键（`F`、`B`、`/`、`M`、`K`、`-`、`I`）会离开 `Manual` 视图模式并重新引入抖动，之后按 `H` 即可交还桥接进程控制。
+`M` 会在 `B`、`H` 或 `/` 之后把 AirSim 交回 `Manual`。自由飞行时桥接进程不再移动相机，改由 Unreal 自带的 `Manual` 按键接管：方向键平移，`PageUp`／`PageDown` 改变高度，`A`／`D` 偏航，`W`／`S` 俯仰，`Q`／`E` 横滚，`Shift`／`Ctrl` 改变速度。
 
 ### 需要注意的行为
 
-- 有意从不启用 AirSim 的 API 控制。`SimpleFlight` 在外部目标停止到达时会进入悬停模式，随后在每个物理步施加作用力，与传送相互冲突。桥接进程改为先传送，再把 AirSim 运动学状态清零，因此帧与帧之间不会有积累量。
+- 有意从不启用 AirSim 的 API 控制。`SimpleFlight` 在外部目标停止到达时会进入悬停模式，随后在每个物理步施加作用力，与位姿写入相互冲突。桥接进程把机体平滑滑向最新的 Unity 位姿，并写入这段滑行速度，包与包之间也继续写，因此机体不会跳变，也不会往下掉。
 - 载具通过 `simAddVehicle` 按需创建，一架 Unity 飞行器对应一个 AirSim 载具。因此在仿真过程中新增飞行器的运行也能正常工作。
-- 载具传送走 `simSetVehiclePose`（以 Pawn 出生点为锚），相机走世界 NED 坐标下的 `simSetObjectPose`。桥接进程不做偏移补偿，因此出生点离开 Unreal 原点多远，载具就被位移多远；示例设置把 `ChaseCam` 放在上方 2 米，这是有意为之。
+- 载具位姿走 `simSetKinematics` 与 `simSetVehiclePose`（以 Pawn 出生点为锚），相机走世界 NED 坐标下的 `simSetObjectPose`。桥接进程不做偏移补偿，因此出生点离开 Unreal 原点多远，载具就被位移多远。示例设置把 `ChaseCam` 放在原点。数字键小窗读取外部相机 `SensorCam`，桥接进程会把它移到当前选中的飞行器上。
 - `bridge_diag.csv` 写在桥接源码所在目录，每五帧采样一次，记录 Unity 原始位姿、转换后的 NED 位姿以及期望与平滑后的相机位姿；最后三列预留给 set/get 差值，目前固定写为 0。
 - 联合仿真仅在编辑器可用，且相关代码用 `#if UNITY_EDITOR` 完全排除在 Windows 播放器之外。便携版没有该开关，因为它既不携带 Python 解释器也没有 Unreal 宿主。
 

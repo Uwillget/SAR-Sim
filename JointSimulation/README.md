@@ -1,10 +1,10 @@
 # Joint Simulation (Unity ↔ Unreal Engine / AirSim)
 
 Unity is the motion master. Every aircraft pose produced by SAR-Sim's microscopic
-simulation is streamed to a Python bridge, which teleports the matching AirSim
-vehicle and the Unreal camera. AirSim contributes geometry and rendering only: it
-does not integrate flight dynamics, and its collision response is not part of any
-simulation result.
+simulation is streamed to a Python bridge, which glides the matching AirSim
+vehicle along that pose and moves the Unreal camera with it. AirSim contributes
+geometry and rendering only: it does not integrate flight dynamics, and its
+collision response is not part of any simulation result.
 
 This is an experimental pilot rather than a finished product. What works today is the
 one-way path: poses leave Unity, the bridge creates vehicles, and the camera follows.
@@ -30,7 +30,7 @@ ITS1 frame, 30 Hz, UDP 127.0.0.1:49001      simSetVehiclePose              Exter
 | `airsim_bridge/kinematic_slave.py` | Legacy single-stream alternative: consumes newline-free JSON `{"frame":"unity_enu","vehicles":[...]}` from `AirSimKinematicPublisher.cs` instead of the binary ITS1 frames, and can plot a locker demo and probe a locker without Unity |
 | `airsim_bridge/test_coords.py` | Conversion round-trips and locker table checks |
 | `airsim_bridge/test_pipeline.py` | Frame parsing, smoother convergence, jitter detection — no Unity, AirSim or socket needed |
-| `settings.example.json` | AirSim host template: `Manual` view mode, shared `OriginGeopoint`, camera director defaults |
+| `settings.example.json` | AirSim host template: `Manual` view mode, shared `OriginGeopoint`, `SensorCam` for sub-windows 1/2/3 |
 
 `joint_bridge.py` and `kinematic_slave.py` are alternatives, not components that run together: both bind UDP 49001 by default and both teleport the same AirSim vehicles. Run one at a time, or give the second one a different `--port` and matching publisher port.
 
@@ -92,16 +92,25 @@ Registered globally, so they act while the Unreal window has focus:
 
 | Key | Action |
 |---|---|
-| `H` | Toggle follow mode / free-flight mode |
+| `B` | Chase view. The aircraft stays in the middle of the frame. |
+| `H` | Nose view, horizon level. |
+| `/` | Closer chase. |
 | `N` | Cycle the followed aircraft |
-| `J` / `L` | Camera closer / farther |
-| `U` / `O` | Camera higher / lower |
+| `J` / `L` | Distance closer / farther for the active view |
+| `U` / `O` | Height higher / lower for the active view |
+| `M` | Free flight. The bridge stops moving the camera. |
+| `1` / `2` / `3` | Depth, segmentation and scene of the aircraft currently followed |
 
-In free-flight mode the bridge stops touching the camera and Unreal's own
-`Manual`-mode keys take over: arrows move, `PageUp`/`PageDown` change altitude,
-`A`/`D` yaw, `W`/`S` pitch, `Q`/`E` roll, `Shift`/`Ctrl` change speed. AirSim's own
-camera hotkeys (`F`, `B`, `/`, `M`, `K`, `-`, `I`) leave `Manual` view mode and
-bring the shake back; press `H` to return to bridge control.
+Distance and height ease toward the new value, so `U` / `O` and switching between
+`B` and `/` do not snap the camera. Sub-windows read `SensorCam` from
+`settings.example.json`. The bridge moves that camera onto whichever aircraft
+`N` has selected.
+
+`M` returns AirSim to `Manual` after `B`, `H` or `/`, because those keys also
+belong to AirSim and would otherwise hand the camera back to `CameraDirector`.
+In free flight Unreal's own `Manual`-mode keys take over: arrows move,
+`PageUp`/`PageDown` change altitude, `A`/`D` yaw, `W`/`S` pitch, `Q`/`E` roll,
+`Shift`/`Ctrl` change speed.
 
 ## Frame conventions
 
@@ -111,10 +120,12 @@ bring the shake back; press `H` to return to bridge control.
 | AirSim / AirLib NED | x = north, y = east, z = down; yaw 0 faces north, positive yaw turns east | metres |
 | Unreal world | X = north, Y = east, Z = up (city meshes use scale Y = −1 to undo OBJ import mirroring) | centimetres |
 
-Vehicles are teleported with `simSetVehiclePose` and the camera with
-`simSetObjectPose`. The bridge applies no spawn-offset correction, so keep the
-vehicle spawn in `settings.json` at the Unreal origin (the example file does);
-moving it shifts every mirrored aircraft by the same offset.
+Each aircraft is written with `simSetKinematics` and `simSetVehiclePose`. The
+written velocity is the glide between Unity packets, not zero: a zeroed
+velocity holds the mesh still and the next packet then jumps. The camera is
+moved with `simSetObjectPose`. The bridge applies no spawn-offset correction,
+so keep the vehicle spawn in `settings.json` at the Unreal origin (the example
+file does); moving it shifts every mirrored aircraft by the same offset.
 
 ## Diagnostics
 
@@ -127,7 +138,8 @@ moving it shifts every mirrored aircraft by the same offset.
 - If the vehicles do not move: check whether the console printed a hotkey or API
   warning. AirSim API control must stay disabled — `SimpleFlight` enters hover mode
   when offboard goals stop arriving and then applies forces on every physics step,
-  which fights the teleports. The bridge teleports and then zeroes the kinematics.
+  which fights the pose writes. The bridge keeps writing the glide, including
+  while it is waiting for the next Unity packet.
 - If the camera does not move: the console says whether `ExternalCamera` exists.
   A warning there means the Unreal map lacks the actor that `Manual` view mode
   renders through.

@@ -4,24 +4,30 @@ Unity is the motion master. This process:
 
 * listens for binary pose frames on UDP 49001 (latest frame wins)
 * creates one AirSim simpleFlight vehicle per Unity aircraft
-* writes poses with simSetVehiclePose so the vehicles track Unity
-* drives the view camera by teleporting the "ExternalCamera" actor with
-  simSetObjectPose (world-NED)
+* glides each mesh along the Unity pose and writes that glide velocity, so
+  the airframe does not jump between 30 Hz packets or fall between them
+* drives ExternalCamera in world-NED: B chase, H nose, "/" a closer chase
+* moves SensorCam with the aircraft currently in view, so sub-windows 1/2/3
+  show that aircraft
 
 AirSim must start with "ViewMode": "Manual" in settings.json.  In every other
 view mode ACameraDirector::Tick lerps the camera towards the aircraft on every
 frame (position and rotation never converge) — that is what produced the
 on-screen shake.  In Manual mode CameraDirector only applies key deltas, which
 are zero when nobody touches the keyboard, so the camera stays exactly where
-this bridge puts it.  The ChaseCam vehicle is teleported to the same pose so
-the FPV view (F key) shows the same viewpoint.
+this bridge puts it.  Pressing B, H or "/" also taps M so the director returns
+to Manual after AirSim handles the same key.
 
-Executable hotkeys (RegisterHotKey — they act while the UE window has focus):
+Keys while the UE window has focus:
 
-    H          toggle free-flight <-> follow
+    B          chase view, aircraft centred
+    H          nose view, horizon level
+    /          closer chase
     N          cycle the followed aircraft
-    J / L      follow distance closer / farther
-    U / O      follow height higher / lower
+    J / L      distance closer / farther
+    U / O      height higher / lower
+    M          free flight (UE manual keys)
+    1 / 2 / 3  depth, segmentation and scene of the followed aircraft
 
 In free mode the bridge stops touching the camera and the operator flies it
 with UE's native Manual-mode keys (arrows = move, PageUp/PageDown = up/down,
@@ -29,7 +35,7 @@ A/D = yaw, W/S = pitch, Q/E = roll, Shift/Ctrl = speed).
 
 API control is deliberately never enabled: SimpleFlight's offboard API enters
 hover mode when it stops receiving goals and then applies forces on every
-physics step, which fights the teleports.
+physics step, which fights the pose writes.
 
 Every frame is written to bridge_diag.csv (raw Unity pose, NED conversion,
 computed camera pose, AirSim readback) for offline jitter analysis.
@@ -66,6 +72,7 @@ DEFAULT_BIND = "127.0.0.1"
 DEFAULT_PORT = 49001
 CHASE_CAM = "ChaseCam"            # FPV vehicle (IsFpvVehicle in settings.json)
 EXTERNAL_CAM = "ExternalCamera"   # the actor shown in Manual view mode
+SENSOR_CAM_ACTORS = ("external_SensorCam", "SensorCam")
 
 
 def _env_path(name: str, default: str) -> Path:
@@ -94,6 +101,13 @@ DEFAULT_FOLLOW = {
     "extra_pitch_deg": -8.0,
     "extra_yaw_deg": 0.0,
     "free_mode": False,
+    "view": "chase",
+    "chase_back": 8.0,
+    "chase_up": 1.8,
+    "spring_back": 6.0,
+    "spring_up": 3.5,
+    "nose_ahead": 1.8,
+    "nose_up": 0.35,
 }
 
 DIAG_EVERY_N = 30       # log detailed diagnostics every N frames
@@ -272,6 +286,118 @@ def pin_pose(client: airsim.MultirotorClient, name: str, pose: airsim.Pose) -> O
         return None
 
 
+def yaw_from_ned_quat(qx: float, qy: float, qz: float, qw: float) -> float:
+    """Yaw in radians, NED, from north toward east."""
+    siny = 2.0 * (qw * qz + qx * qy)
+    cosy = 1.0 - 2.0 * (qy * qy + qz * qz)
+    return math.atan2(siny, cosy)
+
+
+class PoseTrack:
+    """Follow the latest Unity pose through a short low-pass.
+
+    A new packet used to move the mesh by the whole distance flown since the
+    previous one. Waiting has no distance, so it looked steady. Moving made
+    the mesh jump, and a closer or higher chase camera turns that jump into
+    a visible shake.
+    """
+
+    def __init__(self, tau: float = 0.06) -> None:
+        self.target: Optional[airsim.Pose] = None
+        self.shown: Optional[airsim.Pose] = None
+        self.last = 0.0
+        self.tau = tau
+        self.velocity = (0.0, 0.0, 0.0)
+
+    def push(self, t: float, pose: airsim.Pose) -> None:
+        del t
+        self.target = pose
+
+    def sample(self, t: float) -> Optional[airsim.Pose]:
+        if self.target is None:
+            return None
+        if self.shown is None:
+            self.shown = self.target
+            self.last = t
+            return self.shown
+        if t <= self.last:
+            return self.shown
+        dt = min(0.05, max(1e-3, t - self.last))
+        self.last = t
+        alpha = 1.0 - math.exp(-dt / self.tau)
+        a, b = self.shown, self.target
+        orientation = _slerp(a.orientation, b.orientation, alpha)
+        shown = _pose(
+            _lerp(a.position.x_val, b.position.x_val, alpha),
+            _lerp(a.position.y_val, b.position.y_val, alpha),
+            _lerp(a.position.z_val, b.position.z_val, alpha),
+            orientation.x_val, orientation.y_val, orientation.z_val, orientation.w_val,
+        )
+        self.velocity = (
+            (shown.position.x_val - a.position.x_val) / dt,
+            (shown.position.y_val - a.position.y_val) / dt,
+            (shown.position.z_val - a.position.z_val) / dt,
+        )
+        horiz = math.hypot(self.velocity[0], self.velocity[1])
+        if horiz > 40.0:
+            scale = 40.0 / horiz
+            self.velocity = (self.velocity[0] * scale, self.velocity[1] * scale, self.velocity[2] * scale)
+        self.shown = shown
+        return self.shown
+
+
+def pin_pose_fast(client: airsim.MultirotorClient, name: str, pose: airsim.Pose,
+                  velocity: Tuple[float, float, float] = (0.0, 0.0, 0.0)) -> None:
+    """Place the pawn and keep the glide velocity.
+
+    Zero velocity holds the mesh still until the next pin, then it jumps by the
+    distance flown. That jump is the shake. The velocity is the glide itself,
+    so the physics step continues the same motion instead of being yanked back.
+    """
+    state = airsim.KinematicsState()
+    state.position = pose.position
+    state.orientation = pose.orientation
+    state.linear_velocity = airsim.Vector3r(velocity[0], velocity[1], velocity[2])
+    state.angular_velocity = airsim.Vector3r()
+    state.linear_acceleration = airsim.Vector3r()
+    state.angular_acceleration = airsim.Vector3r()
+    client.simSetKinematics(state, True, name)
+    client.simSetVehiclePose(pose, True, name)
+
+
+def place_sensor_camera(client: airsim.MultirotorClient, vehicle: airsim.Pose) -> None:
+    """Put the sub-window camera on the aircraft currently in view.
+
+    Keys 1, 2 and 3 read this one camera. Moving it with the selected drone
+    makes those pictures follow whichever aircraft is on screen.
+    """
+    yaw = yaw_from_ned_quat(
+        vehicle.orientation.x_val, vehicle.orientation.y_val,
+        vehicle.orientation.z_val, vehicle.orientation.w_val)
+    quat = airsim.to_quaternion(0.0, 0.0, yaw)
+    pose = _pose(
+        vehicle.position.x_val + math.cos(yaw) * 1.6,
+        vehicle.position.y_val + math.sin(yaw) * 1.6,
+        vehicle.position.z_val - 0.25,
+        quat.x_val, quat.y_val, quat.z_val, quat.w_val,
+    )
+    for name in SENSOR_CAM_ACTORS:
+        try:
+            if client.simSetObjectPose(name, pose, True):
+                return
+        except Exception as exc:
+            if not place_sensor_camera.warned:
+                place_sensor_camera.warned = True
+                print(f"sensor camera {name} failed: {exc}")
+            return
+    if not place_sensor_camera.warned:
+        place_sensor_camera.warned = True
+        print("sensor camera was not found; sub-windows stay on the startup drone")
+
+
+place_sensor_camera.warned = False
+
+
 def apply_vehicle(client: airsim.MultirotorClient, name: str, msg: dict) -> Tuple[airsim.Pose, Optional[airsim.Pose]]:
     px, py, pz = msg["pos"]
     qx, qy, qz, qw = msg["quat"]
@@ -332,6 +458,54 @@ def look_pose(vehicle: airsim.Pose, follow: dict) -> airsim.Pose:
     yaw = math.atan2(dy, dx) + math.radians(float(follow["extra_yaw_deg"]))
     pitch = math.atan2(-dz, max(horiz, 1e-4)) + math.radians(float(follow["extra_pitch_deg"]))
     return _pose(cx, cy, cz, *quat_xyzw(airsim.to_quaternion(pitch, 0.0, yaw)))
+
+
+def nose_pose(vehicle: airsim.Pose, ahead: float = 2.2, above: float = 0.35) -> airsim.Pose:
+    """Onboard view just ahead of the nose. Roll and pitch of the airframe are not copied.
+
+    An actor pitch of 0 looks above the horizon on this camera, so the pitch
+    here holds the horizon near the middle of the picture.
+    """
+    yaw = yaw_from_ned_quat(
+        vehicle.orientation.x_val, vehicle.orientation.y_val,
+        vehicle.orientation.z_val, vehicle.orientation.w_val)
+    quat = airsim.to_quaternion(-0.12, 0.0, yaw)
+    return _pose(
+        vehicle.position.x_val + math.cos(yaw) * ahead,
+        vehicle.position.y_val + math.sin(yaw) * ahead,
+        vehicle.position.z_val - above,
+        quat.x_val, quat.y_val, quat.z_val, quat.w_val)
+
+
+def chase_pose(vehicle: airsim.Pose, back: float, above: float) -> airsim.Pose:
+    """Behind and above the airframe, with the lens pitched onto the model.
+
+    The extra pitch and yaw put the aircraft in the middle of the picture.
+    The camera actor's lens looks above its forward axis, so a pure look-at
+    left the airframe in the lower third.
+    """
+    yaw = yaw_from_ned_quat(
+        vehicle.orientation.x_val, vehicle.orientation.y_val,
+        vehicle.orientation.z_val, vehicle.orientation.w_val)
+    aim = math.atan2(max(above, 0.4), max(back, 1.0))
+    quat = airsim.to_quaternion(-aim - 0.22, 0.0, yaw + 0.32)
+    return _pose(
+        vehicle.position.x_val - math.cos(yaw) * back,
+        vehicle.position.y_val - math.sin(yaw) * back,
+        vehicle.position.z_val - above,
+        quat.x_val, quat.y_val, quat.z_val, quat.w_val)
+
+
+def place_window_camera(client: airsim.MultirotorClient, pose: airsim.Pose) -> None:
+    try:
+        client.simSetObjectPose(EXTERNAL_CAM, pose, True)
+    except Exception as exc:
+        if not place_window_camera.warned:
+            place_window_camera.warned = True
+            print(f"simSetObjectPose({EXTERNAL_CAM}) failed: {exc}")
+
+
+place_window_camera.warned = False
 
 
 def quat_xyzw(q: airsim.Quaternionr) -> Tuple[float, float, float, float]:
@@ -512,23 +686,20 @@ class JitterDetector:
 # ---------------------------------------------------------------------------
 
 class FollowKeys(threading.Thread):
-    """Global-hotkey thread for follow-mode adjustments and mode switching.
+    """View keys while the Unreal window is in front.
 
-    Keys are registered with the Win32 RegisterHotKey API, so they act while
-    the UE window has focus (msvcrt only worked when this console was focused,
-    which is why the old keys appeared dead).  None of these keys is bound
-    inside AirSim, so there is no clash with UE's own bindings.
-
-        H          toggle free-flight <-> follow
-        N          cycle the followed aircraft
-        J / L      follow distance closer / farther
-        U / O      follow height higher / lower
-
-    Free-flight itself is flown with UE's native Manual-mode keys (arrows,
-    PageUp/PageDown, A/D, W/S, Q/E, Shift/Ctrl).
+    B is registered so AirSim's own chase camera does not also take it.
+    H, /, J, L, U and O are polled only while the game window is focused.
     """
 
-    HOTKEYS = {"H": 0x48, "N": 0x4E, "J": 0x4A, "L": 0x4C, "U": 0x55, "O": 0x4F}
+    HOTKEYS = {"N": 0x4E, "B": 0x42}
+    MODE_KEYS = {
+        0xBF: "spring",
+        0x46: "nose",
+        0x48: "nose",
+        0x4D: "free",
+    }
+    ADJUST_KEYS = {0x4A: "J", 0x4C: "L", 0x55: "U", 0x4F: "O"}
     MOD_NOREPEAT = 0x4000
     WM_HOTKEY = 0x0312
     QS_ALLINPUT = 0x04FF
@@ -539,6 +710,8 @@ class FollowKeys(threading.Thread):
         self.follow = follow
         self.names = names
         self._mtime = FOLLOW_PATH.stat().st_mtime if FOLLOW_PATH.exists() else 0
+        self._held: set = set()
+        self.user32 = None
 
     def run(self) -> None:
         try:
@@ -547,42 +720,102 @@ class FollowKeys(threading.Thread):
         except ImportError:
             return
         user32 = ctypes.windll.user32
+        self.user32 = user32
         for name, vk in self.HOTKEYS.items():
             if not user32.RegisterHotKey(None, vk, self.MOD_NOREPEAT, vk):
                 print(f"warning: hotkey {name} is already taken by another application")
-        print("H=free/follow  N=next target  J/L=distance  U/O=height   (global hotkeys)")
+        print("H=nose camera  N=next aircraft  J/L=closer/farther  U/O=higher/lower")
+        print("B=chase  /=closer chase  M=manual keys  1/2/3=sensor windows")
         msg = wintypes.MSG()
         while True:
-            # wake on a hotkey, or every 500 ms just to re-check follow_camera.json
-            user32.MsgWaitForMultipleObjects(0, None, False, 500, self.QS_ALLINPUT)
+            user32.MsgWaitForMultipleObjects(0, None, False, 50, self.QS_ALLINPUT)
             while user32.PeekMessageW(ctypes.byref(msg), None, 0, 0, self.PM_REMOVE):
                 if msg.message == self.WM_HOTKEY:
                     self._on_hotkey(int(msg.wParam))
+            self._poll_view_keys()
             self._reload_if_edited()
 
-    def _on_hotkey(self, vk: int) -> None:
-        if vk == 0x48:  # H — toggle follow / free-flight
-            self.follow["free_mode"] = not self.follow.get("free_mode", False)
-            mode = "FREE-FLIGHT (fly the camera with UE's manual keys)" \
-                if self.follow["free_mode"] else "FOLLOW"
-            print(f"\n>>> SWITCHED TO {mode} MODE <<<")
-            save_follow(self.follow)
+    def _game_focused(self) -> bool:
+        if self.user32 is None:
+            return False
+        import ctypes
+        hwnd = self.user32.GetForegroundWindow()
+        title = ctypes.create_unicode_buffer(512)
+        self.user32.GetWindowTextW(hwnd, title, 512)
+        return "TestArea" in title.value
+
+    def _poll_view_keys(self) -> None:
+        if self.user32 is None or not self._game_focused():
             return
-        if vk == 0x4E:  # N — cycle target
-            self._cycle(1)
-        elif vk == 0x4A:  # J — closer
-            self.follow["offset_forward_m"] = float(self.follow["offset_forward_m"]) - 2
-        elif vk == 0x4C:  # L — farther
-            self.follow["offset_forward_m"] = min(-2.0, float(self.follow["offset_forward_m"]) + 2)
-        elif vk == 0x55:  # U — higher
-            self.follow["offset_up_m"] = float(self.follow["offset_up_m"]) + 1
-        elif vk == 0x4F:  # O — lower
-            self.follow["offset_up_m"] = max(0.5, float(self.follow["offset_up_m"]) - 1)
+        for vk, mode in self.MODE_KEYS.items():
+            down = bool(self.user32.GetAsyncKeyState(vk) & 0x8000)
+            if down and vk not in self._held:
+                if vk == 0x4D and time.time() < float(self.follow.get("suppress_m_until", 0.0)):
+                    pass
+                else:
+                    self._set_view(mode)
+            if down:
+                self._held.add(vk)
+            else:
+                self._held.discard(vk)
+        for numpad, row in ((0x61, 0x31), (0x62, 0x32), (0x63, 0x33)):
+            down = bool(self.user32.GetAsyncKeyState(numpad) & 0x8000)
+            if down and numpad not in self._held:
+                self.user32.keybd_event(row, 0, 0, 0)
+                self.user32.keybd_event(row, 0, 2, 0)
+            if down:
+                self._held.add(numpad)
+            else:
+                self._held.discard(numpad)
+        for vk, name in self.ADJUST_KEYS.items():
+            down = bool(self.user32.GetAsyncKeyState(vk) & 0x8000)
+            if down and vk not in self._held:
+                self._nudge(name)
+            if down:
+                self._held.add(vk)
+            else:
+                self._held.discard(vk)
+
+    def _set_view(self, mode: str, release: bool = True) -> None:
+        self.follow["view"] = mode
+        self.follow["free_mode"] = mode == "free"
+        if release and mode != "free":
+            self.follow["release_pending"] = True
+            self.follow["release_at"] = time.time() + 0.2
+            self.follow["suppress_m_until"] = self.follow["release_at"] + 0.6
+        print(f"\n>>> view {mode} <<<")
+
+    def _nudge(self, name: str) -> None:
+        view = str(self.follow.get("view") or "chase")
+        if view == "spring":
+            back_key, up_key, back0, up0, lo, hi = "spring_back", "spring_up", 6.0, 3.5, 2.0, 20.0
+        elif view == "nose":
+            back_key, up_key, back0, up0, lo, hi = "nose_ahead", "nose_up", 1.8, 0.35, 0.8, 8.0
         else:
+            back_key, up_key, back0, up0, lo, hi = "chase_back", "chase_up", 8.0, 1.8, 4.0, 40.0
+        back = float(self.follow.get(back_key, back0))
+        up = float(self.follow.get(up_key, up0))
+        if name == "J":
+            back = max(lo, back - (0.4 if view == "nose" else 2.0))
+        elif name == "L":
+            back = min(hi, back + (0.4 if view == "nose" else 2.0))
+        elif name == "U":
+            up = min(30.0, up + (0.3 if view == "nose" else 1.5))
+        elif name == "O":
+            up = max(-1.0, up - (0.3 if view == "nose" else 1.5))
+        self.follow[back_key] = back
+        self.follow[up_key] = up
+        print(f"{view}: distance {back:.1f} m, height {up:.1f} m")
+
+    def _on_hotkey(self, vk: int) -> None:
+        if vk == 0x42:
+            self._set_view("chase", release=True)
             return
-        self._announce()
-        save_follow(self.follow)
-        self._mtime = FOLLOW_PATH.stat().st_mtime
+        if vk == 0x4E:
+            self._cycle(1)
+            self._announce()
+            save_follow(self.follow)
+            self._mtime = FOLLOW_PATH.stat().st_mtime
 
     def _cycle(self, step: int) -> None:
         if not self.names:
@@ -608,8 +841,10 @@ class FollowKeys(threading.Thread):
             return
         self._mtime = mtime
         fresh = load_follow()
+        keep = {key: self.follow[key] for key in self.follow if key not in fresh}
         self.follow.clear()
         self.follow.update(fresh)
+        self.follow.update(keep)
         print("reloaded follow_camera.json")
 
 
@@ -627,14 +862,76 @@ def choose_target(follow: dict, names: List[str], poses: Dict[str, airsim.Pose])
 # main loop
 # ---------------------------------------------------------------------------
 
+def _quiet_picture(client: airsim.MultirotorClient) -> None:
+    """Motion blur and temporal AA smear a mesh that is being written every frame."""
+    for command in (
+        "r.MotionBlurQuality 0",
+        "r.MotionBlur.Amount 0",
+        "r.DefaultFeature.MotionBlur 0",
+        "ShowFlag.MotionBlur 0",
+        "r.DefaultFeature.AntiAliasing 0",
+        "r.PostProcessAAQuality 0",
+        "r.TemporalAACurrentFrameWeight 1",
+    ):
+        try:
+            client.simRunConsoleCommand(command)
+        except Exception:
+            pass
+
+
+def _release_airsim_camera(follow: dict) -> bool:
+    """Manual mode detaches AirSim's spring arm so only this bridge moves the lens."""
+    import ctypes
+    user32 = ctypes.windll.user32
+    hwnd = user32.GetForegroundWindow()
+    title = ctypes.create_unicode_buffer(512)
+    user32.GetWindowTextW(hwnd, title, 512)
+    if "TestArea" not in title.value:
+        return False
+    follow["suppress_m_until"] = time.time() + 1.0
+    user32.keybd_event(0x4D, 0, 0, 0)
+    user32.keybd_event(0x4D, 0, 2, 0)
+    return True
+
+
+def _view_pose(follow: dict, subject: airsim.Pose, ease: dict, now: float) -> Optional[airsim.Pose]:
+    view = str(follow.get("view") or "chase")
+    if view == "free" or follow.get("free_mode"):
+        return None
+    if view in ("chase", "spring"):
+        if view == "chase":
+            back = float(follow.get("chase_back", 8.0))
+            up = float(follow.get("chase_up", 1.8))
+        else:
+            back = float(follow.get("spring_back", 6.0))
+            up = float(follow.get("spring_up", 3.5))
+        if ease["view"] != view:
+            ease["view"] = view
+            ease["back"] = back
+            ease["up"] = up
+            ease["t"] = now
+        else:
+            dt = min(0.05, max(0.0, now - ease["t"]))
+            ease["t"] = now
+            blend = 1.0 - math.exp(-dt / 0.12)
+            ease["back"] += (back - ease["back"]) * blend
+            ease["up"] += (up - ease["up"]) * blend
+        return chase_pose(subject, ease["back"], ease["up"])
+    if view == "nose":
+        return nose_pose(subject, float(follow.get("nose_ahead", 1.8)), float(follow.get("nose_up", 0.35)))
+    return look_pose(subject, follow)
+
+
 def run(bind: str, port: int, launch: bool) -> None:
     follow = load_follow()
+    follow["view"] = str(follow.get("view") or "chase")
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((bind, port))
     sock.setblocking(False)
     print(f"UDP {bind}:{port}  binary ITS1 frames  (diagnostic dump every {DIAG_EVERY_N} frames)")
     client = connect(launch)
     print("AirSim connected")
+    _quiet_picture(client)
     try:
         objects = client.simListSceneObjects("ExternalCamera.*")
         print(f"ExternalCamera lookup: {objects or 'NOT FOUND — camera cannot be driven'}")
@@ -653,10 +950,54 @@ def run(bind: str, port: int, launch: bool) -> None:
     names: List[str] = []
     keys = FollowKeys(follow, names)
     keys.start()
-    smoother = PoseSmoother()
     detector = JitterDetector()
+    tracks: Dict[str, PoseTrack] = {}
+    offset_ease = {"view": "", "back": 0.0, "up": 0.0, "t": 0.0}
     applied = 0
     last_status = 0.0
+    last_pin = 0.0
+    picture_settled = False
+
+    def advance_bodies(now: float, force: bool = False) -> None:
+        """Write the gliding pose often enough that gravity cannot accumulate."""
+        nonlocal last_pin
+        if not force and now - last_pin < 0.008:
+            return
+        last_pin = now
+        for tracked_name, track in tracks.items():
+            pose = track.sample(now)
+            if pose is None:
+                continue
+            try:
+                pin_pose_fast(client, tracked_name, pose, track.velocity)
+            except Exception as exc:
+                if not advance_bodies.warned:
+                    advance_bodies.warned = True
+                    print(f"pin {tracked_name} failed: {exc}")
+
+    advance_bodies.warned = False
+
+    def refresh_view(now: float) -> Optional[airsim.Pose]:
+        if follow.get("release_pending") and now >= float(follow.get("release_at", 0.0)):
+            if _release_airsim_camera(follow) or now > float(follow.get("release_at", 0.0)) + 1.0:
+                follow["release_pending"] = False
+        if not names:
+            return None
+        target_name = str(follow.get("target") or "")
+        if target_name not in tracks:
+            target_name = names[0]
+            follow["target"] = target_name
+        track = tracks.get(target_name)
+        if track is None:
+            return None
+        pose = track.sample(now)
+        if pose is None:
+            return None
+        place_sensor_camera(client, pose)
+        desired_pose = _view_pose(follow, pose, offset_ease, now)
+        if desired_pose is not None:
+            place_window_camera(client, desired_pose)
+        return desired_pose
 
     while True:
         # drain UDP — latest frame wins
@@ -666,8 +1007,11 @@ def run(bind: str, port: int, launch: bool) -> None:
                 packet = sock.recv(65535)
             except BlockingIOError:
                 break
+        now = time.time()
         if packet is None:
-            time.sleep(0.005)
+            advance_bodies(now)
+            refresh_view(now)
+            time.sleep(0.008)
             continue
         parsed = parse_frame(packet)
         if parsed is None:
@@ -693,7 +1037,12 @@ def run(bind: str, port: int, launch: bool) -> None:
             ensure_vehicle(client, name, init_pose, known)
             if name not in known:
                 continue
-            ned_pose, actual_pose = apply_vehicle(client, name, vehicle)
+            ned_pose = _pose(n, e, d, nqx, nqy, nqz, nqw)
+            track = tracks.get(name)
+            if track is None:
+                track = PoseTrack()
+                tracks[name] = track
+            track.push(now, ned_pose)
             poses[name] = ned_pose
 
             # --- feed diagnostics ---
@@ -703,33 +1052,9 @@ def run(bind: str, port: int, launch: bool) -> None:
                                    ned_pose.orientation.z_val, ned_pose.orientation.w_val))
 
         names[:] = frame_names
-
-        # --- camera ---
-        actual_cam: Optional[airsim.Pose] = None
-        desired: Optional[airsim.Pose] = None
-        smoothed: Optional[airsim.Pose] = None
-        target_pose: Optional[airsim.Pose] = None
-        if follow.get("free_mode", False):
-            # Free-flight: the bridge leaves the camera alone.  AirSim's Manual
-            # view mode flies ExternalCamera with its own keys and the motion
-            # never fights this bridge.
-            pass
-        else:
-            # Follow mode: track the selected vehicle
-            target_pose = choose_target(follow, names, poses)
-            if target_pose is not None:
-                desired = look_pose(target_pose, follow)
-                smoothed = smoother.step(str(follow.get("target") or ""), desired, time.time())
-                actual_cam = apply_follow(client, smoothed)
-                # --- feed camera diagnostics ---
-                detector.feed_camera(
-                    str(follow.get("target") or ""),
-                    (target_pose.position.x_val, target_pose.position.y_val, target_pose.position.z_val),
-                    (desired.position.x_val, desired.position.y_val, desired.position.z_val),
-                    (smoothed.position.x_val, smoothed.position.y_val, smoothed.position.z_val),
-                    (actual_cam.position.x_val, actual_cam.position.y_val, actual_cam.position.z_val)
-                    if actual_cam else None,
-                )
+        advance_bodies(now, force=True)
+        desired = refresh_view(now)
+        smoothed = desired
 
         applied += 1
 
@@ -767,11 +1092,13 @@ def run(bind: str, port: int, launch: bool) -> None:
             detector.dump(applied)
 
         # --- periodic status line ---
-        now = time.time()
+        if not picture_settled and applied > 40:
+            picture_settled = True
+            _quiet_picture(client)
         if now - last_status > 2.0:
             last_status = now
             print(f"frames={applied} vehicles={len(frame_names)} "
-                  f"mode={'FREE' if follow.get('free_mode') else 'FOLLOW'} "
+                  f"view={follow.get('view', 'chase')} "
                   f"target={follow.get('target')}")
 
 

@@ -104,7 +104,7 @@ The AirSim host settings come from `JointSimulation/settings.example.json`; thes
 
 - `"ViewMode": "Manual"` — in any other mode `ACameraDirector::Tick` interpolates the camera toward the aircraft every frame and never converges, which appears as on-screen shake. `Manual` mode only applies keyboard deltas, so the bridge's camera pose survives.
 - `OriginGeopoint` — must match the origin compiled into `airsim_bridge/coords.py` and into the Unity scene, or the Unreal and Unity worlds are offset by a constant.
-- The vehicle spawn coordinates — `simSetVehiclePose` is anchored at the spawn point and the bridge applies no offset correction, so any non-zero spawn offsets that vehicle by the same amount. The example file spawns `ChaseCam` at `Z = -2` (two metres up), which is the intended FPV seat height rather than an error; if you retune it, remember the FPV view moves with it.
+- The vehicle spawn coordinates — `simSetVehiclePose` is anchored at the spawn point and the bridge applies no offset correction, so any non-zero spawn offsets that vehicle by the same amount. The example file spawns `ChaseCam` at the origin; if you move it, every mirrored aircraft moves by the same offset.
 
 Frame conventions:
 

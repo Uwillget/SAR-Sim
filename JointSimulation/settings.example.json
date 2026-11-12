@@ -17,12 +17,38 @@
     "Pitch": -25.0,
     "Roll": 0.0
   },
+  "CameraDefaults": {
+    "CaptureSettings": [
+      {
+        "ImageType": 0,
+        "Width": 1280,
+        "Height": 800,
+        "FOV_Degrees": 90,
+        "MotionBlurAmount": 0.0
+      }
+    ]
+  },
+  "ExternalCameras": {
+    "SensorCam": {
+      "X": 0, "Y": 0, "Z": 0, "Pitch": 0, "Roll": 0, "Yaw": 0,
+      "CaptureSettings": [
+        { "ImageType": 0, "Width": 480, "Height": 270, "FOV_Degrees": 90 },
+        { "ImageType": 3, "Width": 480, "Height": 270, "FOV_Degrees": 90 },
+        { "ImageType": 5, "Width": 480, "Height": 270, "FOV_Degrees": 90 }
+      ]
+    }
+  },
+  "SubWindows": [
+    { "WindowID": 0, "CameraName": "SensorCam", "ImageType": 3, "External": true, "Visible": false },
+    { "WindowID": 1, "CameraName": "SensorCam", "ImageType": 5, "External": true, "Visible": false },
+    { "WindowID": 2, "CameraName": "SensorCam", "ImageType": 0, "External": true, "Visible": false }
+  ],
   "Vehicles": {
     "ChaseCam": {
       "VehicleType": "SimpleFlight",
       "X": 0,
       "Y": 0,
-      "Z": -2,
+      "Z": 0,
       "Yaw": 0,
       "IsFpvVehicle": true,
       "EnableCollisions": false

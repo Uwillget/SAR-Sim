@@ -250,7 +250,7 @@ Unity aircraft names are filtered to `A-Z a-z 0-9 _` before transmission, becaus
 1. Copy `JointSimulation/settings.example.json` to `Documents/AirSim/settings.json` on the machine that runs Unreal.
 2. Keep `"ViewMode": "Manual"`. In every other view mode `ACameraDirector::Tick` continuously interpolates the camera toward the aircraft and never converges, which shows up as on-screen shake. In `Manual` mode the director only applies keyboard deltas, so the camera stays exactly where the bridge puts it.
 3. Keep the `OriginGeopoint` in that file unchanged. It must match the origin compiled into `airsim_bridge/coords.py` and into the Unity scene; otherwise the two worlds are offset.
-4. Leave the `Vehicles` spawn coordinates alone as well. `simSetVehiclePose` is anchored at the spawn point and the bridge does not compensate, so a moved spawn displaces that vehicle by the same amount. The example spawns `ChaseCam` two metres up on purpose.
+4. Leave the `Vehicles` spawn coordinates alone as well. `simSetVehiclePose` is anchored at the spawn point and the bridge does not compensate, so a moved spawn displaces that vehicle by the same amount. The example spawns `ChaseCam` at the origin. `SubWindows` 0–2 read the external camera `SensorCam`, which the bridge moves onto the aircraft currently in view.
 5. Start the AirSim project (Play-In-Editor or a packaged build) before or after Unity — the bridge waits for the RPC port and can launch Unreal itself.
 
 ### Configure the Unity side
@@ -287,18 +287,22 @@ The bridge registers global hotkeys, so they act while the Unreal window has foc
 
 | Key | Action |
 |---|---|
-| `H` | Toggle follow mode and free-flight mode |
+| `B` | Chase view, with the aircraft in the middle of the frame |
+| `H` | Nose view, horizon level |
+| `/` | Closer chase |
 | `N` | Cycle the followed aircraft |
-| `J` / `L` | Move the camera closer / farther |
-| `U` / `O` | Raise / lower the camera |
+| `J` / `L` | Distance closer / farther |
+| `U` / `O` | Height higher / lower |
+| `M` | Free flight |
+| `1` / `2` / `3` | Depth, segmentation and scene of the followed aircraft |
 
-In free-flight mode the bridge stops touching the camera, and Unreal's own `Manual`-mode keys take over: arrow keys move, `PageUp`/`PageDown` change altitude, `A`/`D` yaw, `W`/`S` pitch, `Q`/`E` roll, `Shift`/`Ctrl` change speed. AirSim's own camera hotkeys (`F`, `B`, `/`, `M`, `K`, `-`, `I`) leave `Manual` view mode and bring the shake back, so press `H` to return to bridge control afterwards.
+`M` puts AirSim back in `Manual` after `B`, `H` or `/`. In free flight the bridge stops touching the camera, and Unreal's own `Manual`-mode keys take over: arrow keys move, `PageUp`/`PageDown` change altitude, `A`/`D` yaw, `W`/`S` pitch, `Q`/`E` roll, `Shift`/`Ctrl` change speed.
 
 ### Behaviour worth knowing
 
-- AirSim API control is deliberately never enabled. `SimpleFlight` enters hover mode when offboard goals stop arriving and then applies forces on every physics step, which fights the teleports. The bridge instead teleports and then zeroes the AirSim kinematics, so nothing accumulates between frames.
+- AirSim API control is deliberately never enabled. `SimpleFlight` enters hover mode when offboard goals stop arriving and then applies forces on every physics step, which fights the pose writes. The bridge glides each mesh toward the latest Unity pose and writes that glide velocity, including between packets, so the airframe does not jump or fall.
 - Vehicles are created on demand with `simAddVehicle`, one per Unity aircraft. Runs that create new aircraft mid-simulation therefore keep working.
-- Vehicle teleports go through `simSetVehiclePose`, which is anchored at the pawn's spawn point, and the camera is moved with `simSetObjectPose` in world-NED coordinates. The bridge applies no offset correction, so a vehicle spawned away from the Unreal origin is displaced by exactly that distance; the example settings spawn `ChaseCam` two metres up, which is deliberate.
+- Vehicle poses go through `simSetKinematics` and `simSetVehiclePose`, which are anchored at the pawn's spawn point, and the camera is moved with `simSetObjectPose` in world-NED coordinates. The bridge applies no offset correction, so a vehicle spawned away from the Unreal origin is displaced by exactly that distance. The example settings spawn `ChaseCam` at the origin.
 - `bridge_diag.csv` is written next to the bridge source and sampled every fifth frame. It records the raw Unity pose, the converted NED pose, and the desired and smoothed camera poses; the final three columns are reserved for the set/get delta and are currently written as zero.
 - Joint simulation is Editor-only, and the code is compiled out of the Windows player (`#if UNITY_EDITOR`). The portable application has no joint-simulation toggle at all, because it ships no Python interpreter and no Unreal host.
 
