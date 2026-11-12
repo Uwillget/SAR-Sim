@@ -75,7 +75,7 @@ Output/BatchExperimentRunSummaryTable.csv
 
 ### 2.3 Joint simulation with Unreal Engine and AirSim
 
-Unity is the motion master. `SimulationManager` starts a Python bridge when the run starts, streams every aircraft pose to it over UDP, and the bridge teleports the matching AirSim vehicle. AirSim contributes geometry and rendering only: it does not integrate flight dynamics and its collision response is not part of the simulation result.
+Unity is the motion master. `SimulationManager` starts a Python bridge when the run starts, streams every aircraft pose to it over UDP, and the bridge glides the matching AirSim vehicle along that pose. AirSim contributes geometry and rendering only: it does not integrate flight dynamics and its collision response is not part of the simulation result.
 
 This module is an experimental pilot. The one-way Unity-to-AirSim path works — poses, vehicle creation, camera. Anything that would need AirSim to report state back (pose read-back, closed-loop coordination, sensor or collision feedback) is not implemented; the read-back columns of `bridge_diag.csv` are placeholders written as zero. See the status table in the top-level `README.md`.
 
@@ -83,8 +83,9 @@ The host project is `UnrealHost/SZ_TestArea/` in this repository; it needs the A
 
 ```text
 SimulationManager / AirSimJointBridge      airsim_bridge.joint_bridge      Unreal Engine 4.27 + AirSim 1.8.1
-  ITS1 frame, 30 Hz, UDP 127.0.0.1:49001  ->  simSetVehiclePose           ->  one pawn per Unity aircraft
-                                             simSetObjectPose             ->  ExternalCamera
+  ITS1 frame, 30 Hz, UDP 127.0.0.1:49001  ->  simSetKinematics          ->  one pawn per Unity aircraft
+                                             simSetVehiclePose            ->  glide, not a per-packet snap
+                                             simSetObjectPose             ->  ExternalCamera and SensorCam
 ```
 
 Requirements are Unreal Engine 4.27 with the AirSim plugin compiled in, the AirSim Python client (`pip install airsim==1.8.1`), and Python 3.10 or newer. Nothing is sent to AirSim until the simulation actually starts, so Play Mode alone does not launch the bridge.
@@ -113,14 +114,14 @@ Frame conventions:
 | Unity world | x = east, y = up, z = north; yaw 0 faces north, positive yaw turns east | metres |
 | AirSim / AirLib NED | x = north, y = east, z = down; yaw 0 faces north, positive yaw turns east | metres |
 
-Vehicles are teleported with `simSetVehiclePose` and the camera with `simSetObjectPose`; the conversion between the two spaces lives in `airsim_bridge/coords.py` and is covered by `test_coords.py`.
+Vehicles are written with `simSetKinematics` and `simSetVehiclePose`. The velocity is the glide between Unity packets, so the mesh does not jump or fall while it is moving. The camera is moved with `simSetObjectPose`. The conversion between the two spaces lives in `airsim_bridge/coords.py` and is covered by `test_coords.py`.
 
 Diagnostics and troubleshooting:
 
 - The bridge console prints the connected AirSim instance, the frame count, the current mode, and the followed aircraft every two seconds.
 - `bridge_diag.csv`, written beside the bridge source, samples every fifth frame: the raw Unity pose, the converted NED pose, and the desired and smoothed camera poses. The last three columns are reserved for the set/get delta and are currently zero. `test_pipeline.py` exercises the same thresholds.
 - If the camera does not move, the console reports whether `ExternalCamera` exists — a warning there means the Unreal map is missing the actor that Manual view mode renders through.
-- If the vehicles do not move, check for a hotkey or API warning: AirSim API control must stay disabled, because `SimpleFlight` enters hover mode when offboard goals stop and then applies forces that fight the teleports.
+- If the vehicles do not move, check for a hotkey or API warning: AirSim API control must stay disabled, because `SimpleFlight` enters hover mode when offboard goals stop and then applies forces that fight the pose writes. The bridge keeps writing the glide between packets.
 - If the Console says the interpreter or the bridge folder was not found, the two messages are separate and name the resolved path; check which one is wrong before editing anything else.
 
 `python -m airsim_bridge.joint_bridge` runs the bridge by hand, with `--launch-airsim` to start Unreal itself and `--bind`/`--port` to move the UDP endpoint. `python airsim_bridge/test_coords.py` and `python airsim_bridge/test_pipeline.py` check the conversion and pipeline math without Unity, AirSim, or a socket.

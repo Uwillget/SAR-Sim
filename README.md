@@ -193,7 +193,7 @@ Stop the simulation before editing topology or applying a new parameter set.
 
 ## Joint simulation with Unreal Engine and AirSim
 
-Unity remains the motion master. Every aircraft pose produced by the microscopic simulation is forwarded to a small Python process, which teleports the matching AirSim vehicle and the Unreal camera. No flight dynamics, collision response, or sensing is delegated to AirSim: the Unreal scene is a high-fidelity viewer for traffic that Unity has already resolved.
+Unity remains the motion master. Every aircraft pose produced by the microscopic simulation is forwarded to a small Python process, which glides the matching AirSim vehicle along that pose and moves the Unreal camera with it. No flight dynamics, collision response, or sensing is delegated to AirSim: the Unreal scene is a high-fidelity viewer for traffic that Unity has already resolved.
 
 ```text
 Unity (UnityEditor)                         Python bridge                    Unreal Engine 4.27

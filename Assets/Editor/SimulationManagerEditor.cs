@@ -150,11 +150,12 @@ namespace RoadNetworkEditor.EditorScripts
             {
                 EditorGUILayout.HelpBox(
                     "The bridge starts when this simulation starts, not when Play Mode is entered. " +
-                    "One AirSim vehicle is created per Unity aircraft and teleported to the Unity " +
-                    "pose every frame; the Unreal camera follows the selected aircraft.\n\n" +
+                    "One AirSim vehicle is created per Unity aircraft and glides along the Unity " +
+                    "pose; the Unreal camera follows the selected aircraft.\n\n" +
                     "Bridge hotkeys (active while the Unreal window has focus): " +
-                    "H toggles follow/free-flight, N cycles the followed aircraft, " +
-                    "J/L move the camera closer or farther, U/O raise or lower it.\n\n" +
+                    "B chase, H level nose view, / closer chase, N cycles the aircraft, " +
+                    "J/L change distance, U/O change height, M releases the camera, " +
+                    "1/2/3 show that aircraft's sensor windows.\n\n" +
                     "Editor only. The bridge runs outside the Unity project, so set the interpreter " +
                     "and the folder that contains airsim_bridge on the AirSimJointBridge component, " +
                     "or through the SAR_BRIDGE_PYTHON and SAR_BRIDGE_WORKDIR environment variables.",

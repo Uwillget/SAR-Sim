@@ -32,7 +32,7 @@ ITS1 frame, 30 Hz, UDP 127.0.0.1:49001      simSetVehiclePose              Exter
 | `airsim_bridge/test_pipeline.py` | Frame parsing, smoother convergence, jitter detection — no Unity, AirSim or socket needed |
 | `settings.example.json` | AirSim host template: `Manual` view mode, shared `OriginGeopoint`, `SensorCam` for sub-windows 1/2/3 |
 
-`joint_bridge.py` and `kinematic_slave.py` are alternatives, not components that run together: both bind UDP 49001 by default and both teleport the same AirSim vehicles. Run one at a time, or give the second one a different `--port` and matching publisher port.
+`joint_bridge.py` and `kinematic_slave.py` are alternatives, not components that run together: both bind UDP 49001 by default and both write the same AirSim vehicles. Run one at a time, or give the second one a different `--port` and matching publisher port.
 
 ## Quick start
 

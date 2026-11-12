@@ -113,7 +113,7 @@ The Unreal side is the project under `UnrealHost/SZ_TestArea/`. It needs the Air
 3. In the `SimulationManager` Inspector under **Play Control**, tick `Start Joint AirSim Simulation`. The HelpBox that appears repeats the hotkeys and the two path settings.
 4. Either add an `AirSimJointBridge` component to the `SimulationManager` object and fill in `pythonPathOverride` and `workingDirectoryOverride`, or set the environment variables `SAR_BRIDGE_PYTHON` (interpreter) and `SAR_BRIDGE_WORKDIR` (folder containing `airsim_bridge`). Set `UE4EDITOR_EXE` and `UE4_PROJECT` as well if the bridge should launch Unreal itself.
 5. Start the simulation. The bridge process starts with the run, not with Play Mode, and is killed when the run stops. Its console reports the connected AirSim instance, the number of frames, and the followed aircraft.
-6. With the Unreal window focused, use `H` to toggle follow and free-flight, `N` to cycle the followed aircraft, `J`/`L` to move the camera closer or farther, and `U`/`O` to raise or lower it.
+6. With the Unreal window focused: `B` is the chase view with the aircraft centred, `H` is the level nose view, `/` is a closer chase, `N` cycles the followed aircraft, `J`/`L` change distance, `U`/`O` change height, `M` releases the camera, and `1`/`2`/`3` open that aircraft's depth, segmentation and scene windows.
 
 ![Configure the joint-simulation toggle](Images/annotated/07-unity-joint-simulation.png)
 
