@@ -154,3 +154,6 @@ __pycache__/
 
 # Claude Code — personal AI tool configuration, not for distribution
 /.claude/
+
+# Local dataset collection helpers — kept out of the repository
+/JointSimulation/dataset/
