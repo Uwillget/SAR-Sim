@@ -6,6 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
 [![Demo](https://img.shields.io/badge/Demo-YouTube-FF0000?logo=youtube)](https://youtu.be/wICTW1oSdc0)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FTITS.2026.3752188-0b6efd)](https://doi.org/10.1109/TITS.2026.3752188)
 
 [English](README.md) | **简体中文**
 
@@ -578,6 +579,8 @@ Windows 便携版（无需安装 Unity）：
 > **A Benchmark-Oriented Framework for Design, Simulation, and Evaluation of Urban Low-Altitude Structured Air Route Systems**
 >
 > Zichun Zhao、Yuejie Lin、Tao Ma
+>
+> 《IEEE Transactions on Intelligent Transportation Systems》，2026。DOI：[10.1109/TITS.2026.3752188](https://doi.org/10.1109/TITS.2026.3752188)
 
 作者单位：Zichun Zhao 为东南大学交通学院（南京 211189）与 Zhongguancun Academy（北京 100094）；Yuejie Lin 为上海交通大学机械与动力工程学院（上海 200240）；Tao Ma 为东南大学交通学院（南京 211189）。
 
@@ -613,6 +616,23 @@ Windows 便携版（无需安装 Unity）：
 **生命周期状态。** `State` 直接对应：`ACTIVE`、`SUCCESS`、`FAIL` 即论文的 `Active`、`Success`、`Failure`。两个终止取值会释放该机的资源登记。
 
 论文报告的任何结论都不依赖这些标识符，也不依赖取值边界落在哪里：元组描述的是规范层，字段以实现层真正被消费的粒度记录同一信息。
+
+## 引用
+
+如果在学术工作中使用 SAR-Sim，请引用上述论文；若结果依赖于某个具体发布版本，请同时引用该版本的归档记录。
+
+```bibtex
+@article{zhao2026sar,
+  author  = {Zhao, Zichun and Lin, Yuejie and Ma, Tao},
+  title   = {A Benchmark-Oriented Framework for Design, Simulation, and
+             Evaluation of Urban Low-Altitude Structured Air Route Systems},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  year    = {2026},
+  pages   = {1--16},
+  doi     = {10.1109/TITS.2026.3752188},
+  note    = {early access}
+}
+```
 
 ## 许可
 

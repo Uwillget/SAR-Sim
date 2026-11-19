@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use SAR-Sim in academic work, please cite the accompanying paper and this software record."
+title: "SAR-Sim: Structured Air Route Simulation System"
+type: software
+version: 1.0.0
+license: MIT
+abstract: "A Unity-based research platform for the design, simulation, and evaluation of urban low-altitude structured air route systems. It combines city geometry, multilayer air-route networks, vertiport ground infrastructure, holding structures, connection corridors, traffic-demand authoring, microscopic simulation, and result inspection in one editable environment."
+authors:
+  - family-names: Zhao
+    given-names: Zichun
+    affiliation: "School of Transportation, Southeast University"
+    orcid: "https://orcid.org/0009-0008-4547-2059"
+  - family-names: Lin
+    given-names: Yuejie
+    affiliation: "School of Mechanical Engineering, Shanghai Jiao Tong University"
+    orcid: "https://orcid.org/0009-0003-9613-3915"
+  - family-names: Ma
+    given-names: Tao
+    affiliation: "School of Transportation, Southeast University"
+    orcid: "https://orcid.org/0000-0002-7963-9370"
+keywords:
+  - urban air mobility
+  - structured air route
+  - low-altitude airspace design
+  - traffic organization
+  - microscopic traffic simulation
+  - performance benchmark
+  - Unity

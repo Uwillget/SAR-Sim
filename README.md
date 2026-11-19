@@ -6,6 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
 [![Demo](https://img.shields.io/badge/Demo-YouTube-FF0000?logo=youtube)](https://youtu.be/wICTW1oSdc0)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FTITS.2026.3752188-0b6efd)](https://doi.org/10.1109/TITS.2026.3752188)
 
 **English** | [简体中文](README.zh-CN.md)
 
@@ -598,6 +599,8 @@ This repository accompanies:
 > **A Benchmark-Oriented Framework for Design, Simulation, and Evaluation of Urban Low-Altitude Structured Air Route Systems**
 >
 > Zichun Zhao, Yuejie Lin, Tao Ma
+>
+> *IEEE Transactions on Intelligent Transportation Systems*, 2026. DOI: [10.1109/TITS.2026.3752188](https://doi.org/10.1109/TITS.2026.3752188)
 
 Author affiliations: Zichun Zhao is with the School of Transportation, Southeast University, Nanjing 211189, China, and also with Zhongguancun Academy, Beijing 100094, China; Yuejie Lin is with the School of Mechanical Engineering, Shanghai Jiao Tong University, Shanghai 200240, China; Tao Ma is with the School of Transportation, Southeast University, Nanjing 211189, China.
 
@@ -633,6 +636,23 @@ Section III-A of the paper specifies the aircraft operational instance as a tupl
 **Lifecycle status.** `State` maps directly: `ACTIVE`, `SUCCESS`, and `FAIL` stand for the paper's `Active`, `Success`, and `Failure`. The two terminal values release the aircraft's resource registrations.
 
 Nothing reported in the paper depends on these identifiers or on where a value boundary falls: the tuple describes the specification, and the fields record the same information at the granularity the mechanisms consume.
+
+## Citation
+
+If you use SAR-Sim in academic work, please cite the paper above. If a result depends on a specific released version, please also cite that archived software record.
+
+```bibtex
+@article{zhao2026sar,
+  author  = {Zhao, Zichun and Lin, Yuejie and Ma, Tao},
+  title   = {A Benchmark-Oriented Framework for Design, Simulation, and
+             Evaluation of Urban Low-Altitude Structured Air Route Systems},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  year    = {2026},
+  pages   = {1--16},
+  doi     = {10.1109/TITS.2026.3752188},
+  note    = {early access}
+}
+```
 
 ## License
 
