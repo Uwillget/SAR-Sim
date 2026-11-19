@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use SAR-Sim in academic work, please cite the accompanying paper and this software record."
 title: "SAR-Sim: Structured Air Route Simulation System"
 type: software
+doi: 10.5281/zenodo.24361816
 version: 1.0.0
 license: MIT
 abstract: "A Unity-based research platform for the design, simulation, and evaluation of urban low-altitude structured air route systems. It combines city geometry, multilayer air-route networks, vertiport ground infrastructure, holding structures, connection corridors, traffic-demand authoring, microscopic simulation, and result inspection in one editable environment."

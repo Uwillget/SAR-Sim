@@ -7,6 +7,7 @@
 [![Download](https://img.shields.io/badge/Download-v1.0.0-2E7D32?logo=github)](https://github.com/Uwillget/SAR-Sim/releases/latest)
 [![Demo](https://img.shields.io/badge/Demo-YouTube-FF0000?logo=youtube)](https://youtu.be/wICTW1oSdc0)
 [![DOI](https://img.shields.io/badge/DOI-10.1109%2FTITS.2026.3752188-0b6efd)](https://doi.org/10.1109/TITS.2026.3752188)
+[![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.24361816-1682D4?logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.24361816)
 
 [English](README.md) | **简体中文**
 
@@ -619,7 +620,7 @@ Windows 便携版（无需安装 Unity）：
 
 ## 引用
 
-如果在学术工作中使用 SAR-Sim，请引用上述论文；若结果依赖于某个具体发布版本，请同时引用该版本的归档记录。
+如果在学术工作中使用 SAR-Sim，请同时引用下方的论文与软件归档记录。
 
 ```bibtex
 @article{zhao2026sar,
@@ -631,6 +632,17 @@ Windows 便携版（无需安装 Unity）：
   pages   = {1--16},
   doi     = {10.1109/TITS.2026.3752188},
   note    = {early access}
+}
+```
+
+```bibtex
+@software{sarsim2026,
+  author    = {Zhao, Zichun and Lin, Yuejie and Ma, Tao},
+  title     = {SAR-Sim: Structured Air Route Simulation System},
+  version   = {v1.0.0},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24361816}
 }
 ```
 
